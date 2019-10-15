@@ -15,8 +15,8 @@
 				var return_response = options.return_response;
 				var return_user_message = options.return_user_message;
 				// Fill the data
-				var domain = 'https://woocommerce.dekkanjeh.com/wp-json';
-				// var domain = 'http://localhost:8888/costowoocommerce/wp-json';
+				// var domain = 'https://woocommerce.dekkanjeh.com/wp-json';
+				var domain = 'http://localhost:8888/costowoocommerce/wp-json';
 				var endpoint_url = domain + endpoint;
 				var url = endpoint_url;
 				var headers = {

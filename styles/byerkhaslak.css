@@ -2520,3 +2520,5 @@ display:block;
 .listingItem{
 width:calc(100% / 7);
 }
+.listingTitle a{text-transform:lowercase;}
+.listingTitle a:first-letter{text-transform:uppercase}
