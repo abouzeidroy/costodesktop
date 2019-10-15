@@ -98,6 +98,7 @@ h2.blockTitle {
 }
 .productsList .listingTitle a {
 	color: #1e2226;
+	font-size: 14px;
 }
 .productsList .listingItem {
 	text-align: center;
@@ -105,7 +106,7 @@ h2.blockTitle {
 .oldPrice, .newPrice {
 	display: inline-block;
 	vertical-align: middle;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 300;
 }
 .oldPrice {
