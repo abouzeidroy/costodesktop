@@ -1,0 +1,32 @@
+<div class="section">
+  <div class="fullHeight">
+    <h2 class="blockTitle">Energy Drinks</h2>
+    <div class="main_row_display">
+      <div class="left_column">
+        <div>
+          <div ng-repeat="category in categories" ng-click="filter_by_category(category.id)"
+            ng-if="category.product_count_product_cat > 0">
+            {{category.name}} {{category.id}}
+          </div>
+        </div>
+      </div>
+      <div class="right_column">
+        <div class="productsBlock">
+          <div class="productsList">
+            <div class="listingItem col-md-2 col-sm-6 halfHeight"
+              ng-repeat="product in filtered_products = (products | filter:product_filters)">
+              <div class="listingImage"><a href="javascript:;"><img src="{{product.better_featured_image.source_url}}"
+                    alt="{{product.title.rendered}}" title="{{product.title.rendered}}"></a></div>
+              <div class="listingInfos">
+                <h3 class="listingTitle"><a href="javscript:;">{{product.title.rendered}}</a></h3>
+                <div class="itemPrice"><span class="oldPrice">{{product._regular_price}} LBP</span><span
+                    class="newPrice" ng-if="product._sale_price">{{product._sale_price}} LBP</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blockAbsLink"><a href="cart.html" class="primaryBtn"><span>View Your Trolley</span></a></div>

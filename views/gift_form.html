@@ -1,0 +1,122 @@
+<div class="pageBody">
+	<div class="expandableAreas">
+		<div class="expandableItem" ng-class="{passedStartHere: page_values.step>0}">
+			<div class="startHere"><span>1. {{'create_own_box' | translate}}</span></div>
+		</div>
+		<div class="expandableItem" ng-class="{activeStartHere: page_values.step == 2, defaultStartHere: page_values.step != 2}">
+			<div class="startHere" ng-class="{disabled: page_values.passed_step < 2}" ng-click="switch_step(2)"><span>2. {{'the_box_is' | translate}}</span></div>
+			<div class="expandableContent animate-show" ng-show="page_values.step==2">
+				<div class="blockedLinks centerAligned"><a href="javascript:;" ng-click="switch_type(1)" ng-class="{selectedLinks: page_values.type==1}"><span>{{'for_yourself' | translate}}</span></a><a href="javascript:;" ng-click="switch_type(2)" ng-class="{selectedLinks: page_values.type==2}"><span>{{'a_gift' | translate}}</span></a></div>
+			</div>
+		</div>
+		<div class="expandableItem" ng-class="{activeStartHere: page_values.step == 3, defaultStartHere: page_values.step != 3}">
+			<div class="startHere" ng-class="{disabled: page_values.passed_step < 3}" ng-click="switch_step(3)"><span>3. {{'some_information_about' | translate}}</span><span ng-if="page_values.type == 1">{{'yourself' | translate}}</span><span ng-if="page_values.type == 2">3. {{'recepient' | translate}}</span></div>
+			<div class="expandableContent animate-show" ng-show="page_values.step==3">
+				<div class="journeyForm">
+				<form name="personal_info" ng-submit="validate_info(personal_info.$valid)" novalidate>
+					<div class="inputEntity">
+						<input type="text" placeholder="{{'name' | translate}}" class="normalInput" ng-model="page_values.name" name="Name" required>
+						<div class="validation_message" ng-if="personal_info.Name.$dirty && personal_info.Name.$invalid">This field is required</div>
+					</div>
+					<div class="inputEntity">
+						<input type="number" placeholder="{{'age' | translate}}" class="normalInput" ng-model="page_values.age" name="Age" required is-age>
+						<div class="validation_message" ng-if="personal_info.Age.$dirty && personal_info.Age.$invalid">This field is required, must be a numeric positive value between 0 and 124</div>
+					</div>
+					<div class="inputEntity" ng-class="{emptyGender: page_values.gender == 0}">
+						<div dropdown-select="ddGenderSelector" dropdown-model="page_values.gender" dropdown-onchange="setGenderDirty(selected)">{{'gender' | translate}}</div>
+						<div class="validation_message" ng-if="dirtyGender == true && page_values.gender == 0">This field is required</div>
+					</div>
+					<div class="inputEntity">
+						<input type="text" placeholder="{{'city' | translate}}" class="normalInput" ng-model="page_values.city" name="City" required>
+						<div class="validation_message" ng-if="personal_info.City.$dirty && personal_info.City.$invalid">This field is required</div>
+					</div>
+					<div class="inputEntity">
+						<input type="text" placeholder="{{'preferences_of_the_gift_recipient' | translate}}" class="normalInput" ng-model="page_values.preferences" name="Preferences" required>
+						<div class="validation_message" ng-if="personal_info.Preferences.$dirty && personal_info.Preferences.$invalid">This field is required</div>
+					</div>
+					<div class="inputEntity">
+						<input type="text" placeholder="{{'occasion' | translate}}" class="normalInput" ng-model="page_values.occasion" name="Occasion" required>
+						<div class="validation_message" ng-if="personal_info.Occasion.$dirty && personal_info.Occasion.$invalid">This field is required</div>
+					</div>
+					<div class="nextLink"><button type="submit">{{'next' | translate}}</button></div>
+				</form>
+				</div>
+			</div>
+		</div>
+		<div class="expandableItem" ng-class="{activeStartHere: page_values.step == 4, defaultStartHere: page_values.step != 4}">
+			<div class="startHere" ng-class="{disabled: page_values.passed_step < 4}" ng-click="switch_step(4)"><span>4. {{'select_categories' | translate}}</span></div>
+			<div class="expandableContent animate-show" ng-show="page_values.step==4">
+				<div class="container">
+					<div class="row categoriesCheckList">
+						<div class="col-md-12 all_selected_cats" ng-if="page_values.categories.length>0"><span class="inline_middle">{{'categories_selected' | translate}}: </span><span ng-repeat="item in page_values.categories" class="category_selected_item">{{item.Title}}</span></div>
+						<div ng-repeat="item in categories" class="col-md-4"><a ng-click="toggle_selected_cat(item)" href="javascript:;" ng-class="{activeCat: found_in_selected_cats(item)}"><img ng-src="{{item.ImageSelected}}" class="hoverImage"><img ng-src="{{item.Image}}"><span>{{item.Title}}</span></a></div>
+					</div>
+					<div class="validation_message" ng-show="choose_cats_required">{{'at_least_one' | translate}}</div>
+					<div class="nextLink"><a ng-click="choose_cats()" href="javascript:;">{{'next' | translate}}</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="expandableItem" ng-class="{activeStartHere: page_values.step == 5, defaultStartHere: page_values.step != 5}">
+			<div class="startHere" ng-class="{disabled: page_values.passed_step < 5}" ng-click="switch_step(5)"><span>5. {{'set_budget' | translate}}</span></div>
+			<div class="expandableContent animate-show" ng-show="page_values.step==5">
+				<div class="journeyForm">
+					<form name="budget_form">
+						<div class="inputEntity">
+							<input type="number" placeholder="50 USD" class="normalInput" ng-model="page_values.budget" ng-change="validate_budget()" name="Budget">
+						</div>
+					</form>
+					<div class="validation_message" ng-if="budget_form.Budget.$dirty" ng-show="invalid_budget">{{'budget_is_required' | translate}}</div>
+					<div class="nextLink"><a ng-click="set_budget()" href="javascript:;">{{'next' | translate}}</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="expandableItem" ng-class="{activeStartHere: page_values.step == 6, defaultStartHere: page_values.step != 6}">
+			<div class="startHere" ng-class="{disabled: page_values.passed_step < 6}" ng-click="switch_step(6)"><span>6. {{'register_and_send' | translate}}</span></div>
+			<div class="expandableContent animate-show" ng-show="page_values.step==6">
+				<div class="container-fluid loginPopup sameHeightPads journeyForm centerAligned">
+					<div class="row" ng-if="!cookie_session">
+						<div class="col-xs-6">
+							<div class="blockMain">
+								<div class="blockHead">
+									<h3 class="blockTitle">{{'already_a_member_log_in' | translate}}</h3>
+								</div>
+								<div class="blockBody">
+									<div class="normalForm">
+										<form name="login_form">
+											<div class="inputEntity">
+												<input type="email" placeholder="{{'email' | translate}}" ng-model="login.email" required name="email">
+												<div class="validation_message" ng-if="login_form.email.$dirty && login_form.email.$error.email">Email is required</div>
+											</div>
+											<div class="inputEntity">
+												<input type="password" placeholder="{{'password' | translate}}" ng-model="login.password" required name="password">
+												<div class="validation_message" ng-if="login_form.password.$dirty && login_form.password.$error.required">Password is required</div>
+											</div>
+											<div class="formLink inputEntity"><a href="javascript:;">{{'forgot_password' | translate}}</a></div>
+											<div class="formButtons"><input type="submit" ng-click="do_login()" class="primaryBtn" value="Sign in"></div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="blockMain">
+								<div class="blockHead">
+									<h3 class="blockTitle">{{'not_yet_a_member' | translate}}</h3>
+								</div>
+								<div class="blockBody">
+									<div class="normalForm">
+										<p class="margBot20">{{'register_text' | translate}}</p>
+										<div class="formButtons inputEntity"><a class="primaryBtn" href="#/register"><span>{{'register' | translate}}</span></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6 centerAligned" ng-if="cookie_session"><a class="primaryBtn" href="#/checkout1"><span>{{'checkout' | translate}}</span></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

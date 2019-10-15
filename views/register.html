@@ -1,0 +1,139 @@
+<div class="pageBody">
+  <div class="container-fluid">
+    <div class="registerForm">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+						<form name="register_info" ng-submit="submit_registration(register_info.$valid)" novalidate>
+							<div class="formsBorder">
+								<div class="formSpace">
+									<div class="col-sm-12">
+										<h4 class="blueTitle">{{'personal_info' | translate}}</h4>
+									</div>
+									<div class="col-sm-12">
+										<div class="row biggerRowSpace">
+											<div class="col-sm-6">
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.Name.$dirty && register_info.Name.$invalid">{{'required_field' | translate}}</span>
+													<input type="text" placeholder="{{'name' | translate}}" class="normalInput" ng-model="page_values.name" name="Name" required>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.family_name.$dirty && register_info.family_name.$invalid">{{'required_field' | translate}}</span>
+													<input type="text" class="normalInput" placeholder="{{'family_name' | translate}}" ng-model="page_values.family_name" name="family_name" required>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.email.$dirty && register_info.email.$invalid">{{'required_field' | translate}}</span>
+													<input type="email" class="normalInput" placeholder="{{'email' | translate}}" ng-model="page_values.email" name="email" required>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.password.$dirty && register_info.password.$invalid">{{'required_field' | translate}}</span>
+													<input type="password" class="normalInput" placeholder="{{'password' | translate}}" ng-model="page_values.password" name="password" required id="password">
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.middle_name.$dirty && register_info.middle_name.$invalid">{{'required_field' | translate}}</span>
+													<input type="text" class="normalInput" placeholder="{{'middle_name' | translate}}" ng-model="page_values.middle_name" name="middle_name" required>
+												</div>
+												<div class="inputEntity" ng-class="{emptyGender: page_values.gender == 0}">
+													<div dropdown-select="ddGenderSelector" dropdown-model="page_values.gender" dropdown-onchange="setGenderDirty(selected)" class="normalInput">{{'gender' | translate}}</div>
+													<div class="validation_message" ng-if="dirtyGender == true && page_values.gender == 0">This field is required</div>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.username.$dirty && register_info.username.$invalid">{{'required_field' | translate}}</span>
+													<input type="text" class="normalInput" placeholder="{{'username' | translate}}" ng-model="page_values.username" name="username" required>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.match_password.$error.pwmatch && register_info.match_password.$dirty">{{'required_field' | translate}} {{'same_as_password' | translate}}</span>
+													<input type="password" class="normalInput" placeholder="{{'confirm_password' | translate}}" ng-required pw-check="password" ng-model="page_values.match_password" name="match_password" required id="match_password">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="formSpace">
+									<div class="col-sm-12">
+										<h4 class="blueTitle">{{'billing_info' | translate}}</h4>
+									</div>
+									<div class="col-sm-12">
+										<div class="row biggerRowSpace">
+											<div class="col-sm-6">
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.bill_address.$dirty && register_info.bill_address.$invalid">{{'required_field' | translate}}</span>
+													<input type="text" class="normalInput" placeholder="{{'address' | translate}}" ng-model="billing_info.Address" name="bill_address" required>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.bill_city.$dirty && register_info.bill_city.$invalid">{{'required_field' | translate}}</span>
+													 <input type="text" class="normalInput" placeholder="{{'city' | translate}}" ng-model="billing_info.City" name="bill_city" required>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.bill_name.$dirty && register_info.bill_name.$invalid">{{'required_field' | translate}}</span>
+													 <input type="text" class="normalInput" placeholder="{{'address_name' | translate}}" ng-model="billing_info.Name" name="bill_name" required>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.bill_street.$dirty && register_info.bill_street.$invalid">{{'required_field' | translate}}</span>
+													 <input type="text" class="normalInput" placeholder="{{'street' | translate}}" ng-model="billing_info.Street" name="bill_street" required>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.bill_building.$dirty && register_info.bill_building.$invalid">{{'required_field' | translate}}</span>
+													<input type="text" class="normalInput" placeholder="{{'building' | translate}}" ng-model="billing_info.Building" name="bill_building" required>
+												</div>
+												<div class="inputEntity"><span class="requiredField">{{'required_field' | translate}}</span>
+													<div class="inputEntity" ng-class="{emptyCountry: billing_info.CountryID == 0}">
+														<div dropdown-select="countries" dropdown-model="billing_info.CountryID" dropdown-item-label="Title" class="normalInput"></div>
+													</div>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.bill_phone.$dirty && register_info.bill_phone.$invalid">{{'required_field' | translate}}</span>
+													 <input type="text" class="normalInput" placeholder="{{'phone' | translate}}" ng-model="billing_info.Phone" name="bill_phone" required>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="formSpace">
+									<div class="col-sm-12">
+										<div class="floatRight">
+											<input type="checkbox" id="sameBilling" ng-model="same_as_billing" ng-change="matchBilling()">
+											<label for="sameBilling"><span class="checkBoxLike"></span><span class="checkBoxText">Use as billing address</span></label>
+										</div>
+										<h4 class="blueTitle">{{'delivery_info' | translate}}</h4>
+									</div>
+									<div class="col-sm-12">
+										<div class="row biggerRowSpace">
+											<div class="col-sm-6">
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.deli_address.$dirty && register_info.deli_address.$invalid">{{'required_field' | translate}}</span>
+													<input type="text" class="normalInput" placeholder="{{'address' | translate}}" ng-model="delivery_info.Address" name="deli_address" required ng-disabled="same_as_billing">
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.deli_city.$dirty && register_info.deli_city.$invalid">{{'required_field' | translate}}</span>
+													 <input type="text" class="normalInput" placeholder="{{'city' | translate}}" ng-model="delivery_info.City" name="deli_city" required ng-disabled="same_as_billing">
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.deli_name.$dirty && register_info.deli_name.$invalid">{{'required_field' | translate}}</span>
+													 <input type="text" class="normalInput" placeholder="{{'address_name' | translate}}" ng-model="delivery_info.Name" name="deli_name" required ng-disabled="same_as_billing">
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.deli_street.$dirty && register_info.deli_street.$invalid">{{'required_field' | translate}}</span>
+													 <input type="text" class="normalInput" placeholder="{{'street' | translate}}" ng-model="delivery_info.Street" name="deli_street" required ng-disabled="same_as_billing">
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.deli_building.$dirty && register_info.deli_building.$invalid">{{'required_field' | translate}}</span>
+													<input type="text" class="normalInput" placeholder="{{'building' | translate}}" ng-model="delivery_info.Building" name="deli_building" required ng-disabled="same_as_billing">
+												</div>
+												<div class="inputEntity"><span class="requiredField">{{'required_field' | translate}}</span>
+													<div class="inputEntity" ng-class="{emptyCountry: delivery_info.CountryID == 0, disabled: same_as_billing}">
+														<div dropdown-select="countries" dropdown-model="delivery_info.CountryID" dropdown-item-label="Title" class="normalInput"></div>
+													</div>
+												</div>
+												<div class="inputEntity"><span class="requiredField" ng-if="register_info.deli_phone.$dirty && register_info.deli_phone.$invalid">{{'required_field' | translate}}</span>
+													 <input type="text" class="normalInput" placeholder="{{'phone' | translate}}" ng-model="delivery_info.Phone" name="deli_phone" required ng-disabled="same_as_billing">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="rightAlign">
+									<div class="floatLeft">
+										<input type="checkbox" id="c1">
+										<label for="c1"><span class="checkBoxLike"></span><span class="checkBoxText">{{'subscribe_newsletter' | translate}}</span></label>
+									</div>
+									<input type="submit" class="secondaryBtn" value="{{'register' | translate}}">
+								</div>
+							</div>
+						</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
