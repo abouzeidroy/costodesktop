@@ -1,6 +1,6 @@
 (function (){
 	'use strict';
-	ohmybox_app.directive('isAge', function() {
+	costo_app.directive('isAge', function() {
 		return {
 			require: 'ngModel',
 			link: function(scope, element, attr, mCtrl) {

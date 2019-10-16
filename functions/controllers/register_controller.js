@@ -1,7 +1,7 @@
 (function (){
 	'use strict';
-	ohmybox_app.controller('register_controller', ['$scope','$timeout','$q','omb_services','$filter','storage_services','$cookies','$location','Notification',
-		function($scope, $timeout, $q, omb_services, $filter, storage_services, $cookies, $location, Notification) {
+	costo_app.controller('register_controller', ['$scope','$timeout','$q','costo_services','$filter','storage_services','$cookies','$location','Notification',
+		function($scope, $timeout, $q, costo_services, $filter, storage_services, $cookies, $location, Notification) {
 			if($cookies.getObject('personal_info')){
 				console.log($cookies.getObject('personal_info'));
 				$scope.page_values = $cookies.getObject('personal_info');
@@ -120,7 +120,7 @@
 			
 			function get_countries(){
 				var deferred = $q.defer();
-				omb_services.get_countries().then(function(response){
+				costo_services.get_countries().then(function(response){
 					$scope.countries = response.Data.Countries;
 					console.log($scope.countries);
 					angular.forEach($scope.countries, function(value, key){
@@ -226,7 +226,7 @@
 			$scope.submit_registration = function(value){
 				console.log($scope.all_inputs);
 				if(value){
-					omb_services.register_user(
+					costo_services.register_user(
 						$scope.billing_info.City,
 						1,
 						$scope.billing_info.CountryID.ID,
@@ -277,7 +277,7 @@
 										"UserAgent": navigator.userAgent
 									}
 								}
-								omb_services.put_address(address_object).then(function(response){
+								costo_services.put_address(address_object).then(function(response){
 									if(response.Status == 1){
 										Notification.success(response.Message);
 										$timeout(function(){
@@ -289,7 +289,7 @@
 									}
 								});
 							};
-							//omb_services.put_address
+							//costo_services.put_address
 						}else{
 						}
 					});

@@ -1,8 +1,15 @@
 (function (){
 	'use strict';
-	ohmybox_app.controller('homepage_controller', ['$scope','$timeout','$q','omb_services',
-		function($scope, $timeout, $q, omb_services) {
+	costo_app.controller('homepage_controller', ['$scope','$timeout','$q','costo_services',
+		function($scope, $timeout, $q, costo_services) {
 			$scope.page_loading = true;
+
+			$scope.products_params = {
+				product_cat:'',
+				page:1,
+				per_page:40
+			}
+
 			function init(){
 				var deferred = $q.defer();
 				// Get Categories
@@ -19,14 +26,17 @@
 			$scope.filters = {
 				category_id:0
 			}
+			$scope.products = [];
 			
 			function get_homepage_products(){
 				var deferred = $q.defer();
-				omb_services.get_products().then(function(response){
-					$scope.products = response;
-					console.log($scope.products)
+				$scope.products_loading = true;
+				costo_services.get_products($scope.products_params).then(function(response){
+					$scope.products = $scope.products.concat(response);
+					$scope.products_loading = false;
 					deferred.resolve();
 				}, function(){
+					$scope.products_loading = false;
 					deferred.reject();
 				});
 				return deferred.promise;
@@ -34,7 +44,7 @@
 
 			function get_homepage_categories(){
 				var deferred = $q.defer();
-				omb_services.get_categories().then(function(response){
+				costo_services.get_categories().then(function(response){
 					$scope.categories = response;
 					console.log($scope.homepage_data)
 					deferred.resolve();
@@ -47,7 +57,11 @@
 			init();
 			
 			$scope.filter_by_category = function(category_id){
-				$scope.filters.category_id = category_id;
+				$scope.products_params.product_cat = category_id;
+				$scope.products_params.page = 1;
+				$scope.products = [];
+				get_homepage_products()
+				//$scope.filters.category_id = category_id;
 			}
 
 			$scope.product_filters = function(item){
@@ -57,6 +71,12 @@
 				}
 				return product_found;
 			};
+
+			$scope.next_page_load = function(){
+				$scope.products_params.page += 1;
+				get_homepage_products();
+			}
+
 		}
 	]);
 })();

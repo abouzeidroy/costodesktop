@@ -1,7 +1,7 @@
 (function (){
 	'use strict';
-	ohmybox_app.controller('main_controller', ['$scope','$timeout','$q','omb_services','$location', '$rootScope','$routeParams','$cookies','$translate',
-		function($scope, $timeout, $q, omb_services, $location, $rootScope, $routeParams, $cookies, $translate) {
+	costo_app.controller('main_controller', ['$scope','$timeout','$q','costo_services','$location', '$rootScope','$routeParams','$cookies','$translate',
+		function($scope, $timeout, $q, costo_services, $location, $rootScope, $routeParams, $cookies, $translate) {
 			$scope.iframeHeight = window.innerHeight;
 			$scope.page_loading = true;
 			

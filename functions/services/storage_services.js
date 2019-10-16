@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	ohmybox_app.factory('storage_services', ['$cookies',
+	costo_app.factory('storage_services', ['$cookies',
 		function($cookies) {
 			return {
 				set_object_cookie:function(key, value){

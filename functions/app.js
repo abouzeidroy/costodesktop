@@ -1,4 +1,4 @@
-var ohmybox_app = angular.module('ohmybox_app', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ngCookies', 'ngDropdowns', 'ui-notification', 'pascalprecht.translate'])
+var costo_app = angular.module('costo_app', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ngCookies', 'ngDropdowns', 'ui-notification', 'pascalprecht.translate', 'infinite-scroll'])
 	.config(function($routeProvider, $locationProvider, $httpProvider, NotificationProvider) {
 		//$httpProvider.defaults.withCredentials = true;
 		'use strict';

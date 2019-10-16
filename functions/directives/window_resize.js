@@ -1,6 +1,6 @@
 (function (){
 	'use strict';
-	ohmybox_app.directive('resize', function ($window) {
+	costo_app.directive('resize', function ($window) {
 			return function (scope, element) {
 					var w = angular.element($window);
 					var slider_buttons_element = document.getElementsByClassName("sliderButtons");

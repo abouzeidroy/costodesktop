@@ -1,4 +1,4 @@
-ohmybox_app
+costo_app
   .directive('pwCheck', [function () {
     return {
       require: 'ngModel',

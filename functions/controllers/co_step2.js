@@ -1,7 +1,7 @@
 (function (){
 	'use strict';
-	ohmybox_app.controller('co_step2', ['$scope','$timeout','$q','omb_services','$filter','storage_services','$cookies','$location','Notification',
-		function($scope, $timeout, $q, omb_services, $filter, storage_services, $cookies, $location, Notification) {
+	costo_app.controller('co_step2', ['$scope','$timeout','$q','costo_services','$filter','storage_services','$cookies','$location','Notification',
+		function($scope, $timeout, $q, costo_services, $filter, storage_services, $cookies, $location, Notification) {
 			$scope.cookie_session = $cookies.get('session_id');
 			if($cookies.getObject('personal_info')){
 				$scope.page_values = $cookies.getObject('personal_info');
@@ -44,7 +44,7 @@
 			
 			function get_addresses(){
 				var deferred = $q.defer();
-				omb_services.get_addresses().then(function(response){
+				costo_services.get_addresses().then(function(response){
 					$scope.addresses = response.Data.Addresses;
 					$scope.addresses.unshift({'Name':'Add new address', 'ID':0})
 					deferred.resolve();
@@ -56,7 +56,7 @@
 			
 			function get_countries(){
 				var deferred = $q.defer();
-				omb_services.get_countries().then(function(response){
+				costo_services.get_countries().then(function(response){
 					$scope.countries = response.Data.Countries;
 					angular.forEach($scope.countries, function(value, key){
 						//value.text = value.Title;
@@ -174,7 +174,7 @@
 						}
 						angular.forEach($scope.addresses_object, function(address_object){
 							console.log(value)
-							omb_services.put_address(address_object).then(function(response){
+							costo_services.put_address(address_object).then(function(response){
 								if(response.Status == 1){
 									Notification.success(response.Message);
 									if(address_object.type==1){
@@ -215,7 +215,7 @@
 			
 			
 			$scope.create_order = function(){
-				omb_services.create_order($scope.page_values.cardId, $scope.page_values.name, $scope.page_values.ShippingAddressID, $scope.page_values.BillingAddressID)
+				costo_services.create_order($scope.page_values.cardId, $scope.page_values.name, $scope.page_values.ShippingAddressID, $scope.page_values.BillingAddressID)
 			}
 			
 			init();

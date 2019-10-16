@@ -1,7 +1,7 @@
 (function (){
 	'use strict';
-	ohmybox_app.controller('gift_form_controller', ['$scope','$timeout','$q','omb_services','$filter','storage_services','$cookies','$location','Notification',
-		function($scope, $timeout, $q, omb_services, $filter, storage_services, $cookies, $location, Notification) {
+	costo_app.controller('gift_form_controller', ['$scope','$timeout','$q','costo_services','$filter','storage_services','$cookies','$location','Notification',
+		function($scope, $timeout, $q, costo_services, $filter, storage_services, $cookies, $location, Notification) {
 			$scope.cookie_session = $cookies.get('session_id');
 			if($cookies.getObject('personal_info')){
 				$scope.page_values = $cookies.getObject('personal_info');
@@ -80,7 +80,7 @@
 			
 			function get_categories(){
 				var deferred = $q.defer();
-				omb_services.get_categories().then(function(response){
+				costo_services.get_categories().then(function(response){
 					$scope.categories = response.Data.Categories;
 					deferred.resolve();
 				}, function(){
@@ -195,13 +195,13 @@
 				console.log($scope.invalid_budget);
 				console.log($scope.choose_cats_required);
 				if($scope.form1_valid == true && !$scope.invalid_budget && !$scope.choose_cats_required){
-					omb_services.do_login($scope.login.email, $scope.login.password).then(function(response){
+					costo_services.do_login($scope.login.email, $scope.login.password).then(function(response){
 						$cookies.putObject('box_options', $scope.page_values);
 						$cookies.put('session_id', response.Session);
 						if(response.Status == 1){
 							Notification.success(response.Message);
 							$scope.build_categories_array()
-							omb_services.create_shopping_cart($scope.page_values.budget, 1, $scope.page_values.age, $scope.page_values.city, $scope.page_values.gender.value, $scope.page_values.preferences, $scope.page_values.occasion, $scope.cats_array).then(function(response){
+							costo_services.create_shopping_cart($scope.page_values.budget, 1, $scope.page_values.age, $scope.page_values.city, $scope.page_values.gender.value, $scope.page_values.preferences, $scope.page_values.occasion, $scope.cats_array).then(function(response){
 								if(response.Status == 1){
 									Notification.success(response.Message);
 									$scope.page_values.cardId = response.AddedItemID;
