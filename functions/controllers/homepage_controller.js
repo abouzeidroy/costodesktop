@@ -9,6 +9,7 @@
 				page:1,
 				per_page:40
 			}
+			$scope.reached_end = false;
 
 			function init(){
 				var deferred = $q.defer();
@@ -37,6 +38,8 @@
 					deferred.resolve();
 				}, function(){
 					$scope.products_loading = false;
+					$scope.reached_end = true;
+					alert('No more products to load');
 					deferred.reject();
 				});
 				return deferred.promise;
@@ -73,8 +76,10 @@
 			};
 
 			$scope.next_page_load = function(){
-				$scope.products_params.page += 1;
-				get_homepage_products();
+				if(!$scope.reached_end){
+					$scope.products_params.page += 1;
+					get_homepage_products();
+				}
 			}
 
 		}

@@ -84,6 +84,7 @@
 						}
 					}
 				}, function(response) {
+					console.log(response.message);
 					if(return_response == 1){
 						deferred.resolve(response.data);
 					} else {
