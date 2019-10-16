@@ -14,7 +14,7 @@
         <div class="productsBlock">
           <div class="productsList">
             <div class="listingItem col-md-2 col-sm-6 halfHeight"
-              ng-repeat="product in filtered_products = (products | filter:product_filters)">
+              ng-repeat="product in products">
               <div class="listingImage"><a href="javascript:;"><img ng-src="{{product.better_featured_image.source_url}}" alt="{{product.title.rendered}}" title="{{product.title.rendered}}"></a></div>
               <div class="listingInfos">
                 <h3 class="listingTitle floatleft"><a href="javscript:;">{{product.title.rendered}}</a></h3>
