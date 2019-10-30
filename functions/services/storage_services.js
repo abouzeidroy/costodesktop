@@ -9,15 +9,18 @@
 					console.log($cookies.getObject(key));
 				},
 				set_cookie:function(key, value){
-					//console.log(value);
 					$cookies.put(key, value);
-					console.log($cookies.get(key));
 				},
 				get_cookie:function(key){
 					console.log($cookies.get(key));
+					if($cookies.get(key)){
+						return JSON.parse($cookies.get(key));
+					}else{
+						return '';
+					}
 				},
 				get_object_cookie:function(key){
-					console.log($cookies.getObject(key));
+					return $cookies.getObject(key);
 				}
 			};
 		}

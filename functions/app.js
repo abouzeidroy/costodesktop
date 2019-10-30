@@ -5,11 +5,16 @@ var costo_app = angular.module('costo_app', ['ngRoute', 'ngSanitize', 'ngAnimate
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/home_page.html',
-				controller: 'homepage_controller'
+				controller: 'homepage_controller',
+				reloadOnSearch:false
 			})
 			.when('/gift_form', {
 				templateUrl: 'views/gift_form.html',
 				controller: 'gift_form_controller'
+			})
+			.when('/cart', {
+				templateUrl: 'views/cart.html',
+				controller: 'cart_controller'
 			})
 			.when('/register', {
 				templateUrl: 'views/register.html',

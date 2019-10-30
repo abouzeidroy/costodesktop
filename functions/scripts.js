@@ -51,3 +51,23 @@ function handle_error(data, status, headers, config) {
 function is_in_array(value, array) {
     return array.indexOf(value) > -1;
 }
+
+/**
+ * get the row id of the attribute with the specific value
+ * @param  {array} array The array to search in
+ * @param  {string} attr The attribute to search for
+ * @param  {string} value The value of the attr to search for
+ * @return {int} i The row index
+ */
+function get_row_id(array, attr, value) {
+    if(array){
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] && array[i].hasOwnProperty(attr)) {
+                if (array[i][attr] == value) {
+                    return i;
+                }
+            }
+        }
+    }
+    return -1;
+}

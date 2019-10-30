@@ -1,26 +1,31 @@
 <div class="section">
   <div class="fullHeight" infinite-scroll="next_page_load()">
-    <h2 class="blockTitle">Energy Drinks</h2>
     <div class="main_row_display">
       <div class="left_column">
         <div>
-          <div ng-repeat="category in categories" ng-click="filter_by_category(category.id)"
-            ng-if="category.product_count_product_cat > 0">
-            {{category.name}} {{category.id}}
+          <div ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.product_count_product_cat > 0 && category.parent == 0">
+            {{category.name}}
           </div>
         </div>
       </div>
       <div class="right_column">
+        <div class="sub_cats">
+          <div class="all_categories" ng-click="filter_by_category(parent_category)" ng-if="parent_category" ng-class="{active:parent_category && parent_category.id == parent_cat_id}">All</div>
+          <div ng-repeat="sub_category in categories | filter: parent_category_filter" ng-click="filter_by_category(sub_category)" ng-if="sub_category.product_count_product_cat > 0" ng-class="{active:products_params.product_cat == sub_category.id}">
+            {{sub_category.name}} {{sub_category.id}}
+          </div>
+        </div>
+  
         <div class="productsBlock">
           <div class="productsList">
-            <div class="listingItem col-md-2 col-sm-6 halfHeight"
-              ng-repeat="product in products">
-              <div class="listingImage"><a href="javascript:;"><img ng-src="{{product.better_featured_image.source_url}}" alt="{{product.title.rendered}}" title="{{product.title.rendered}}"></a></div>
-              <div class="listingInfos">
+            <div class="listingItem col-md-2 col-sm-6 halfHeight" ng-repeat="product in products">
+              <div class="listingImage" ng-click="add_to_cart(product, 1);"><a href="javascript:;"><img ng-src="{{product.better_featured_image.source_url}}" alt="{{product.title.rendered}}" title="{{product.title.rendered}}"></a></div>
+              <div class="listingInfos" ng-click="add_to_cart(product, 1);">
+                <div class="itemPrice"><span class="newPrice" ng-if="product._sale_price">{{product._sale_price}} LBP</span><span class="oldPrice">{{product._regular_price}} LBP</span></div>
                 <h3 class="listingTitle floatleft"><a href="javscript:;">{{product.title.rendered}}</a></h3>
-                <div class="itemPrice"><span class="oldPrice">{{product._regular_price}} LBP</span><span
-                    class="newPrice" ng-if="product._sale_price">{{product._sale_price}} LBP</span></div>
               </div>
+              <div class="remove_from_cart" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)"></div>
+              <div class="quantity_holder" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)"><span>x{{product_quantity(product.id)}}</span></div>
             </div>
           </div>
         </div>
@@ -28,4 +33,4 @@
     </div>
   </div>
 </div>
-<div class="blockAbsLink"><a href="cart.html" class="primaryBtn"><span>View Your Trolley</span></a></div>
+<div class="blockAbsLink"><a href="#/cart" class="primaryBtn"><span>View Your Trolley</span><span class="price_bottom_total">Total: {{cart.price}}</span></a></div>

@@ -1,0 +1,44 @@
+<div class="pageBody">
+        <div class="container-fluid">
+            <div class="registerForm">
+            <div class="row">
+              <div class="formsBorder">
+                <div class="col-md-12">
+                  <div class="cartTable">
+                    <table width="100%" cellspacing="0" class="display">
+                      <tbody>
+                        <tr ng-repeat="item in cart.items">
+                          <td class="productCol">
+                            <div class="lisViewDisplay">
+                              <div class="listingItem">
+                                <div class="listingImage"><a href="javascript:;"><img src="{{item.image}}" alt="{{item.name}}" title="{{item.name}}"></a></div>
+                                <div class="listingInfos">
+                                  <h3 class="listingTitle"><a href="javscript:;">{{item.name}}</a></h3>
+                                  <div class="listingDescription">1 kg</div>
+                                  <div class="itemcalculation">{{item.quantity}} units x {{item.price}} LL = {{item.quantity * item.price}}</div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="colActions"><ul class="actionsList"><li><a href="javascript:;" ng-click="add_to_cart(item, -1);" class="deleteIcon">-</a></li><li><a href="javascript:;" ng-click="add_to_cart(item, 1);" class="deleteIcon">+</a></li></ul></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <td>{{cart.price}}</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="rightAlign">
+                  <input type="submit" value="Order Now" class="primaryBtn floatLeft">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
