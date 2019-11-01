@@ -1,6 +1,19 @@
-<div class="pageBody">
+
+      <div class="coloredHeader lightBlueHead">
         <div class="container-fluid">
-            <div class="registerForm">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pageHead"> 
+                <h1 class="pageTitle"><span class="catName">Your Basket</span></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pageBody">
+        <div class="container-fluid">
+          <div class="registerForm">
             <div class="row">
               <div class="formsBorder">
                 <div class="col-md-12">
@@ -11,34 +24,36 @@
                           <td class="productCol">
                             <div class="lisViewDisplay">
                               <div class="listingItem">
-                                <div class="listingImage"><a href="javascript:;"><img src="{{item.image}}" alt="{{item.name}}" title="{{item.name}}"></a></div>
-                                <div class="listingInfos">
-                                  <h3 class="listingTitle"><a href="javscript:;">{{item.name}}</a></h3>
-                                  <div class="listingDescription">1 kg</div>
-                                  <div class="itemcalculation">{{item.quantity}} units x {{item.price}} LL = {{item.quantity * item.price}}</div>
+                                <div class="listingImage"><img src="{{item.image}}"
+                                      title="{{item.name}}"></div>
+                                <div class="cartItemList">
+                                  <h3 class="listingTitle">{{item.name}}</h3>
+                                  <div class="itemcalculation">
+                                    <span>{{item.price}} LL x {{item.quantity}} units </span>
+                                    {{item.quantity * item.price}} LL
+                                  </div>
                                 </div>
+                                              <div class="remove_from_cart" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)"></div>
+                                              <div class="quantity_holder" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)">
+                                                <span>x{{product_quantity(product.id)}}</span></div>
                               </div>
                             </div>
                           </td>
-                          <td class="colActions"><ul class="actionsList"><li><a href="javascript:;" ng-click="add_to_cart(item, -1);" class="deleteIcon">-</a></li><li><a href="javascript:;" ng-click="add_to_cart(item, 1);" class="deleteIcon">+</a></li></ul></td>
+                          <td class="colActions">
+                            <ul class="actionsList">
+                              <li><a href="javascript:;" ng-click="add_to_cart(item, -1);" class="deleteIcon">-</a></li>
+                              <li><a href="javascript:;" ng-click="add_to_cart(item, 1);" class="deleteIcon">+</a></li>
+                            </ul>
+                          </td>
                         </tr>
                       </tbody>
-                      <tfoot>
-                        <tr>
-                          <td>{{cart.price}}</td>
-                        </tr>
-                      </tfoot>
                     </table>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-12">
-                <div class="rightAlign">
-                  <input type="submit" value="Order Now" class="primaryBtn floatLeft">
-                </div>
-              </div>
+<div class="blockAbsLink"><a href="#/cart" class="primaryBtn"><span>Order Now</span><span
+      class="price_bottom_total">{{cart.price}} LL</span></a></div>
             </div>
           </div>
         </div>
       </div>
-      
