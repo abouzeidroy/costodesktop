@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,700,400Italic);
 body, button, input {
-	font-family: 'Poppins', sans-serif;
+	font-family: lato;
 }
 body {
 	padding-left: 0;
@@ -93,7 +93,7 @@ h2.blockTitle {
 }
 .productsList .listingTitle {
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 17px;
 	margin-bottom: 5px;
 	line-height: 21px;
 	height: 42px;
@@ -2506,7 +2506,7 @@ display:block;
 .listingItem{
 width:calc(100% / 6);
 }
-.listingTitle a{text-transform:lowercase;}
+.listingTitle a{text-transform:uppercase;}
 .listingTitle a:first-letter{text-transform:uppercase}
 .remove_from_cart{
 	position: absolute;
@@ -2558,14 +2558,16 @@ width:calc(100% / 6);
 	display: inline-block;
 	margin: 0;
 	padding: 5px 10px;
-	font-size: 13px;
+	font-size: 15px;
 }
 .newPrice{
-	background-color: #058ea7;
+	background-color: #172022;
 	color: #fff;
+	font-weight: bold;
 }
 .oldPrice{
 	color: #2c1f19;
+	font-weight: bold;
 }
 .productsList .listingTitle a{
 	color: #171313;
@@ -2589,9 +2591,11 @@ body{
 	position: relative;
 }
 .listingImage img{
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50% , -50%);
+	left: 50%;
+	max-width: 100%;
 }
 .lisViewDisplay .listingImage img{
 	position: static;
@@ -2634,4 +2638,61 @@ vertical-align: middle;
 text-align: left;
 padding-top: 0;
 padding-left: 15px;
+}
+
+@media all and (max-width:1440px){
+	.listingItem {
+		width:20%
+	}
+}
+@media all and (max-width:1200px){
+	.listingItem {
+		width:25%
+	}
+}
+@media all and (max-width:992px){
+	.listingItem {
+		width:33.3333%
+	}
+}
+@media all and (max-width:767px){
+	.listingItem {
+		width:50%
+	}
+	.productsList .listingItem{
+		float:left;
+	}
+	.listingImage{
+		min-height:150px
+	}
+	
+	.right_column , .left_column{
+		width:100%
+	}
+	.listingImage img{
+		max-height: 100%;
+	}
+	.logoHolder a {display:block;width:50px;overflow: hidden;}
+	.productsList .listingTitle{
+		font-size:13px;line-height:16px;
+	}
+}
+.cartHeader .btn{
+	background-color:#585e63;
+	font-size:16px;
+	color:#fff;
+	padding:10px 20px;
+	border-radius:5px;
+	text-transform:uppercase;
+	width:200px;
+float:left;	vertical-align: middle;
+}
+.cartHeader .catName{
+	width:calc(100% - 400px);
+	text-align: center;
+	float:left;
+}
+.cartHeader{
+	padding:0 13px;
+	margin:20px 0;
 }
