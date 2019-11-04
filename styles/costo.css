@@ -514,7 +514,7 @@ h3.blockTitle:after, .withSmallBottLine:after {
 	width: 227px;
 	display: block;
 	float:left;
-	margin:15px 20px;
+	margin:15px 10px;
 }
 .menuInner {
 	left: 140px;
@@ -1319,15 +1319,6 @@ input.secondaryBtn {
 .formsBorder {
 	position: relative;
 }
-.formsBorder:before {
-	border-bottom: 1px solid #d0d0d0;
-	display: block;
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 20px;
-	right: 20px;
-}
 .registerForm input.secondaryBtn, .registerForm a.secondaryBtn {
 	font-size: 18px;
 }
@@ -2094,7 +2085,7 @@ td.statusCol {
 }
 .topRightSection{
 	float:right;
-	padding-right:20px;
+	padding-right:10px;
 	position: relative;
 	z-index:5;
 	}
@@ -2712,7 +2703,7 @@ float:left;	vertical-align: middle;
 	bottom:5px;
 	right: 5px;
 	z-index: 2;
-	background-color: rgba(255,255,255,0.4);
+	/*background-color: rgba(255,255,255,0.4);*/
 }
 .actionsList li{
 	position: relative;
@@ -2748,12 +2739,12 @@ float:left;	vertical-align: middle;
 	transform: translateX(-50%) translateY(-50%);
 	background-color: #fff;
 }
-.delete_icon:after{
+.add_icon:after{
 	mask: url(../images/plus.svg) center center no-repeat;
 	mask-size: 100% auto;
 	-webkit-mask: url(../images/plus.svg) center center no-repeat;
 }
-.add_icon:after{
+.delete_icon:after{
 	mask: url(../images/minus.svg) center center no-repeat;
 	mask-size: 100% auto;
 	-webkit-mask: url(../images/minus.svg) center center no-repeat;
@@ -2763,6 +2754,9 @@ table.display tbody td.colActions{
 }
 .topRightSection .topMenuNav > li.mobile_menu{
 	display: none;
+}
+.cartMainPage{
+	min-height: calc(100vh - 200px);		
 }
 @media all and (max-width:768px){
 	.topRightSection .topMenuNav > li{
@@ -2798,5 +2792,16 @@ table.display tbody td.colActions{
 	}
 	.catName{
 		font-size: 13px;
+	}
+	.lisViewDisplay .listingImage{
+		width: 80px;
+		height: 80px;
+	}
+	.pageHead{
+		margin: 0;
+		padding: 10px 0;
+	}
+	.cartMainPage{
+		min-height: calc(100vh - 150px);		
 	}
 }
