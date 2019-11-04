@@ -34,4 +34,4 @@
     </div>
   </div>
 </div>
-<div class="blockAbsLink"><a href="#/cart" class="primaryBtn"><span>View Your Trolley</span><span class="price_bottom_total">{{cart.price}} LL</span></a></div>
+<div class="blockAbsLink" ng-if="cart.items.length>0"><a href="#/cart" class="primaryBtn"><span>View Your Trolley</span><span class="price_bottom_total">{{cart.price}} LL</span></a></div>

@@ -225,6 +225,8 @@
 				get_products: function(params){
 					var endpoint = '/wp/v2/product';
 					//var endpoint = '/wc/v2/orders';
+					params.order = 'asc';
+					params.orderby = 'menu_order';
 					var options = { 'method': 'GET', 'endpoint': endpoint, 'return_result': '1', 'return_response': '1', 'params': params};
 					return http_call(options);
 				},
