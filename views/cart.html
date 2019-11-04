@@ -4,9 +4,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="pageHead cartHeader"> 
-                <a href="javascript:;" class="btn">back to products</a>
+                <a href="#/" class="btn">back to products</a>
                 <h1 class="pageTitle"><span class="catName">Your Basket</span></h1>
-                <a href="javascript:;" class="btn">Remove all</a>
+                <a href="javascript:;" class="btn" ng-click="remove_all_items()">Remove all</a>
                 <div class="clearBoth"></div>
               </div>
             </div>
@@ -21,7 +21,7 @@
               <div class="formsBorder">
                 <div class="col-md-12">
                   <div class="cartTable">
-                    <table width="100%" cellspacing="0" class="display">
+                    <table width="100%" cellspacing="0" cellpadding="0" class="display">
                       <tbody>
                         <tr ng-repeat="item in cart.items">
                           <td class="productCol">
@@ -44,8 +44,8 @@
                           </td>
                           <td class="colActions">
                             <ul class="actionsList">
-                              <li><a href="javascript:;" ng-click="add_to_cart(item, -1);" class="deleteIcon">-</a></li>
-                              <li><a href="javascript:;" ng-click="add_to_cart(item, 1);" class="deleteIcon">+</a></li>
+                              <li><div class="loader_parent" ng-if="item.loading"></div><a href="javascript:;" ng-click="add_to_cart(item, -1);" class="delete_icon"></a></li>
+                              <li><div class="loader_parent" ng-if="item.loading"></div><a href="javascript:;" ng-click="add_to_cart(item, 1);" class="add_icon"></a></li>
                             </ul>
                           </td>
                         </tr>

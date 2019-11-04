@@ -68,7 +68,7 @@ a, .itemActions, .productsList .listingImage img, .productsList .listingInfos, .
 }
 .fullHeight {
 	position: relative;
-	height: 100%;
+	height: 100vh;
 }
 .fullFrame {
 	position: absolute;
@@ -129,7 +129,7 @@ h2.blockTitle {
 	/*height: 150px;*/
 	padding: 0 15px 15px 15px;
 }
-.productsList .listingImage, .tableDisplay, .tableCell {
+.tableDisplay, .tableCell {
 	display: table;
 	height: 100%;
 	width: 100%;
@@ -139,7 +139,6 @@ h2.blockTitle {
 	vertical-align: middle;
 }
 .productsList .listingImage a {
-	display: table-cell;
 	width: 100%;
 	height: 100%;
 	vertical-align: middle;
@@ -167,6 +166,7 @@ h2.blockTitle {
 	right: 0;
 	padding: 15px;
 	background-color: #000;
+	z-index:3;
 }
 .blockAbsLink .primaryBtn{
 	background-color: #258f34;
@@ -514,7 +514,7 @@ h3.blockTitle:after, .withSmallBottLine:after {
 	width: 227px;
 	display: block;
 	float:left;
-	margin:15px 10px;
+	margin:15px 20px;
 }
 .menuInner {
 	left: 140px;
@@ -1243,6 +1243,7 @@ input.secondaryBtn {
 	width: 120px;
 	text-align: center;
 	border-radius: 15px;
+	height: 120px;
 }
 .lisViewDisplay .listingImage a {
 	padding: 0 !important;
@@ -1450,9 +1451,6 @@ table.display .listingTitle a {
 table.display td {
 	vertical-align: middle;
 }
-table.display {
-	border: 6px solid #33373a;
-}
 table.display thead th, .coloredBlockTitle {
 	background: #e8e8e8;
 	font-weight: 300;
@@ -1489,10 +1487,14 @@ table.display tbody tr:last-child td {
 }
 .actionsList {
 	text-align: right;
+	float: right;
 }
 .actionsList li {
-	display: inline-block;
-	margin: 0 10px;
+	display: block;
+	margin: 0 0 10px 0;
+}
+.actionsList li:last-child{
+	margin-bottom: 0;
 }
 .actionsList a.editIcon {
 	background-position: 0 -1099px;
@@ -1522,8 +1524,7 @@ table.display thead th, table.display tbody td {
 table.display thead th:first-child, table.display tbody td:first-child {
 	width: auto;
 	text-align: left;
-		border-top: 1px solid #ffffff;
-	padding: 5px 0 5px 0;
+padding: 5px 0 5px 0;
 }
 .promotionCode {
 	font-size: 16px;
@@ -2094,9 +2095,11 @@ td.statusCol {
 .topRightSection{
 	float:right;
 	padding-right:20px;
+	position: relative;
+	z-index:5;
 	}
 .topRightSection .topMenuNav{
-	padding-top:20px;
+	padding-top:25px;
 	}
 .topRightSection .topMenuNav > li{
 	margin-left:40px;
@@ -2693,7 +2696,6 @@ float:left;	vertical-align: middle;
 	float:left;
 }
 .cartHeader{
-	padding:0 13px;
 	margin:20px 0;
 }
 .catmando{
@@ -2702,4 +2704,99 @@ float:left;	vertical-align: middle;
 	margin-bottom: 10px;
 	color: #ffffff;
 	padding: 10px;
+}
+.loader_parent{
+	position: absolute;
+	left:5px;
+	top: 5px;
+	bottom:5px;
+	right: 5px;
+	z-index: 2;
+	background-color: rgba(255,255,255,0.4);
+}
+.actionsList li{
+	position: relative;
+}
+.registerForm, .coloredHeader{
+	padding: 0 10px
+}
+.registerForm > .row, .coloredHeader .container-fluid > .row{
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.productsBlock{
+	padding-bottom: 90px;
+}
+.active_main_cat{
+	background-color: red;
+}
+.delete_icon, .add_icon{
+	background-color: #585e63;
+	position: relative;
+	width: 33px;
+	height: 33px;
+	border-radius: 3px;
+}
+.delete_icon:after, .add_icon:after{
+	width: 12px;
+	position: absolute;
+	display: block;
+	content: '';
+	height: 12px;
+	left: 50%;
+	top:50%;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: #fff;
+}
+.delete_icon:after{
+	mask: url(../images/plus.svg) center center no-repeat;
+	mask-size: 100% auto;
+	-webkit-mask: url(../images/plus.svg) center center no-repeat;
+}
+.add_icon:after{
+	mask: url(../images/minus.svg) center center no-repeat;
+	mask-size: 100% auto;
+	-webkit-mask: url(../images/minus.svg) center center no-repeat;
+}
+table.display tbody td.colActions{
+	width: 30px;
+}
+.topRightSection .topMenuNav > li.mobile_menu{
+	display: none;
+}
+@media all and (max-width:768px){
+	.topRightSection .topMenuNav > li{
+		display: none;
+	}
+	.topRightSection .topMenuNav > li.mobile_menu{
+		display: block;
+	}
+	.topRightSection .topMenuNav > li.mobile_menu a{
+		color: red;
+		font-size: 20px;
+	}
+	.topRightSection .topMenuNav > li.mobile_menu a:hover{
+		background-color: blue;
+	}
+	.menuDropDown{
+		width: 100vw;
+		right: -20px;
+		margin-top: 15px;
+		height: calc(100vh - 65px);
+		padding-top: 20px;
+	}
+	.topRightSection .topMenuNav{
+		padding-top: 20px;
+	}
+	.cartHeader .btn{
+		font-size: 11px;
+		width: 120px;
+		padding: 10px 0 ;
+	}
+	.cartHeader .catName{
+		width: calc(100% - 240px)
+	}
+	.catName{
+		font-size: 13px;
+	}
 }

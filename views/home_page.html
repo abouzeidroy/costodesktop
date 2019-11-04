@@ -3,7 +3,7 @@
     <div class="main_row_display">
       <div class="left_column">
         <div>
-          <div class="catmando" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.product_count_product_cat > 0 && category.parent == 0">
+          <div class="catmando" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.product_count_product_cat > 0 && category.parent == 0" ng-class="{active_main_cat:parent_category.id == category.id}">
             {{category.name}}
           </div>
         </div>
@@ -19,6 +19,7 @@
         <div class="productsBlock">
           <div class="productsList">
             <div class="listingItem col-md-2 col-sm-6 halfHeight" ng-repeat="product in products">
+              <div class="loader_parent" ng-if="product.loading"></div>
               <div class="listingImage" ng-click="add_to_cart(product, 1);"><img ng-src="{{product.better_featured_image.source_url}}"></div>
               <div class="listingInfos" ng-click="add_to_cart(product, 1);">
                 <div class="itemPrice"><span class="newPrice" ng-if="product._sale_price">{{product._sale_price}} LL</span><span class="oldPrice">{{product._regular_price}} LL</span></div>
