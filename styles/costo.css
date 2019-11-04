@@ -2804,4 +2804,7 @@ table.display tbody td.colActions{
 	.cartMainPage{
 		min-height: calc(100vh - 150px);		
 	}
+	.blockAbsLink .primaryBtn{
+		text-align: left;
+	}
 }

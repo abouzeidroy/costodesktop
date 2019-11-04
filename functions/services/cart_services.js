@@ -10,6 +10,7 @@
 			return {
 				add_to_cart:function(item, quantity){
                     var get_row_index = get_row_id(cart.items, 'id', item.id);
+                    cart.price += item.price*quantity;
                     if(get_row_index != '-1'){
                         cart.items[get_row_index].quantity += quantity
                         if(cart.items[get_row_index].quantity == 0){
@@ -19,7 +20,6 @@
                         item.quantity = quantity;
                         cart.items.unshift(item);
                     };
-                    cart.price += item.price*quantity
                     storage_services.set_object_cookie('cart', cart);
 				},
 				remove_from_cart:function(item_id){
