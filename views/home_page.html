@@ -3,7 +3,7 @@
     <div class="main_row_display">
       <div class="left_column">
         <div>
-          <div ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.product_count_product_cat > 0 && category.parent == 0">
+          <div class="catmando" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.product_count_product_cat > 0 && category.parent == 0">
             {{category.name}}
           </div>
         </div>
