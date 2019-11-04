@@ -2703,7 +2703,7 @@ float:left;	vertical-align: middle;
 	bottom:5px;
 	right: 5px;
 	z-index: 2;
-	/*background-color: rgba(255,255,255,0.4);*/
+	background-color: rgba(255,255,255,0.4);
 }
 .actionsList li{
 	position: relative;
