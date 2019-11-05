@@ -60,7 +60,7 @@ a, .itemActions, .productsList .listingImage img, .productsList .listingInfos, .
 	height: 70px;
 }
 .catName {
-	font-size: 21px;
+	font-size: 16px;
 	line-height: 30px;
 	font-weight: 300;
 	text-transform: uppercase;
@@ -1131,7 +1131,7 @@ h3.bigBottomMargin {
 }
 .pageBody {
 	/* padding: 20px 0; */
-	background-color: #33373a ;
+	background-color: #212b33 ;
 }
 .relatedBlock h2.blockTitle {
 	padding: 0;
@@ -1542,7 +1542,7 @@ padding: 5px 0 5px 0;
 	background-position: 0 -1229px;
 }
 .lightBlueHead {
-	background: #33373a;
+	background: #212b33;
 }
 .smallerSizeInput {
 	width: 330px;
@@ -2076,7 +2076,7 @@ td.statusCol {
 	z-index:1;
 	}
 .topMainNav{
-	background:#058ea7;
+	background:#0b5a95;
 }
 .topMainNav:after{
 	clear: both;
@@ -2528,7 +2528,7 @@ width:calc(100% / 6);
 	right: 15px;
 	top: 15px;
 	color: #fff;
-	background-color: #058ea7;
+	background-color: #0b5a95;
 	width: 28px;
 	height: 28px;
 	border-radius: 4px;
@@ -2611,7 +2611,7 @@ body{
 	cursor: pointer;
 }
 .sub_cats div.active, .sub_cats div:hover{
-	background-color: #058ea7;
+	background-color: #0b5a95;
 	color: #fff;
 }
 .orderBtn {
@@ -2672,8 +2672,8 @@ padding-left: 15px;
 	}
 }
 .cartHeader .btn{
-	background-color:#585e63;
-	font-size:16px;
+	background-color:#2d3b46;
+	font-size:13px;
 	color:#fff;
 	padding:10px 20px;
 	border-radius:5px;
@@ -2691,7 +2691,7 @@ float:left;	vertical-align: middle;
 }
 .catmando{
 	font-size: 16px;
-	background-color: #058ea7;
+	background-color: #0b5a95;
 	margin-bottom: 10px;
 	color: #ffffff;
 	padding: 10px;
