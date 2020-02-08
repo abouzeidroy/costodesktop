@@ -75,7 +75,7 @@
 					$scope.parent_cat_id = category.id;
 					$scope.parent_category = category;
 					var get_sub_cats = sub_cats();
-					var get_sub_cats_ids = get_sub_cats.ids.join();
+					var get_sub_cats_ids = get_sub_cats.ids[0];
 					$scope.products_params.product_cat = get_sub_cats_ids;
 				}else{
 					$scope.parent_cat_id = category.id;
@@ -137,8 +137,12 @@
 			}
 
 			$scope.product_quantity = function(product_id){
-				var get_row_item_id = get_row_id($scope.cart.items, 'id', product_id);
-				return $scope.cart.items[get_row_item_id].quantity;
+				if($scope.cart && $scope.cart.items && $scope.cart.items.length > 0){
+					var get_row_item_id = get_row_id($scope.cart.items, 'id', product_id);
+					if(get_row_item_id != '-1'){
+						return $scope.cart.items[get_row_item_id].quantity;
+					}
+				}
 			}
 
 		}

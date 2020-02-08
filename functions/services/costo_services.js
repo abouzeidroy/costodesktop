@@ -234,7 +234,7 @@
 					var params = {
 						per_page: 100
 					}
-					var endpoint = '/wp/v2/product_cat';
+					var endpoint = '/wc/v4/products/categories';
 					var options = { 'method': 'GET', 'endpoint': endpoint, 'return_result': '1', 'return_response': '1', 'params': params};
 					return http_call(options);
 				}
@@ -242,4 +242,3 @@
 		}
 	]);
 })();
-

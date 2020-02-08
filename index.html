@@ -12,8 +12,8 @@
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="styles/plugins.css" />
 <link rel="stylesheet" type="text/css" href="styles/grid-reset.css" />
-<link rel="stylesheet" type="text/css" href="styles/costo.css" />
-<link rel="stylesheet" type="text/css" href="styles/costo-responsive.css" />
+<link rel="stylesheet" type="text/css" href="styles/mv.css" />
+<link rel="stylesheet" type="text/css" href="styles/mv-responsive.css" />
 <!--- Responsive Stuff -->
 <link rel="apple-touch-icon" href="images/mobileicon.png">
 <meta name="HandheldFriendly" content="True">
@@ -27,26 +27,6 @@
 <![endif]-->
 </head>
 <body ng-controller="main_controller">
-<nav class="topMainNav">
-	<div class="logoHolder"><a href="#/"><img src="images/logocosto.png"></a></div>
-	<div class="topRightSection">
-		<ul class="topMenuNav">
-			<li><a href="javascript:;" class="sendABox"><span class="icon"></span>Contact Us</a></li>
-			<li><a href="javascript:;" class="sendABox"><span class="icon"></span>Contact Us 22</a></li>
-				<li class="hasSubmenu mobile_menu"><button type="button" class="tcon tcon-menu--xcross" aria-label="toggle menu"
-					data-target="menuHolder"><span class="tcon-menu__lines" aria-hidden="true"></span><span
-						class="tcon-visuallyhidden">toggle menu</span></button>
-				<ul class="menuDropDown">
-					<li><a href="javascript:;">Create your own box</a></li>
-					<li><a href="javascript:;">Choose a predefined box</a></li>
-					<li><a href="javascript:;">About Us</a></li>
-					<li><a href="javascript:;">Contact Us</a></li>
-					<li><a href="javascript:;">Follow us on facebook</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-</nav>
 <ng-view></ng-view>
 <!-- <div class="footer">
 	<div class="row">

@@ -1,24 +1,212 @@
-<div class="section">
+<div ng-class="{no_subcats: !parent_category}">
+  <div class="fixedBody">
+    <header>
+        <div class="container flex">
+            <div class="flex">
+                <a href="javascript:;" class="menuToggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35.456" height="27.735"
+                        viewBox="0 0 35.456 27.735">
+                        <defs>
+                            <style>
+                                .menuToggle .a {
+                                    fill: none;
+                                    stroke: #f8f7f8;
+                                    stroke-linecap: square;
+                                    stroke-width: 2px;
+                                }
+                            </style>
+                        </defs>
+                        <g transform="translate(-36 -28)">
+                            <line class="a" x2="20.588" transform="translate(43.434 29)" />
+                            <line class="a" x2="33.456" transform="translate(37 41.868)" />
+                            <line class="a" x2="20.588" transform="translate(43.434 54.735)" />
+                        </g>
+                    </svg>
+                </a>
+
+            </div>
+            <a href="index.html" class="logo">
+
+                <h1>MATHIEU VIN</h1>
+            </a>
+            <div class="flex right">
+                <div class="cartToggle">
+                    <div class="iconHolder"><img src="images/shopping-bag.svg" alt=""></div>
+                    <div class="totalPrice">
+                        <span class="price">{{cart.price}}</span>
+                        <span class="currency">LL</span>
+                    </div>
+                </div>
+                <a href="javascript:;" class="login"><svg xmlns="http://www.w3.org/2000/svg" width="14.642"
+                        height="14.642" viewBox="0 0 14.642 14.642">
+                        <defs>
+                            <style>
+                                .a {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <path class="a"
+                            d="M7.321,8.236A4.118,4.118,0,1,0,3.2,4.118,4.119,4.119,0,0,0,7.321,8.236Zm3.661.915H9.406a4.978,4.978,0,0,1-4.17,0H3.661A3.66,3.66,0,0,0,0,12.812v.458a1.373,1.373,0,0,0,1.373,1.373h11.9a1.373,1.373,0,0,0,1.373-1.373v-.458A3.66,3.66,0,0,0,10.982,9.151Z" />
+                    </svg></a>
+                <div class="language">FR</div>
+            </div>
+        </div>
+        <div class="searchParent">
+            <div class="container">
+                <input type="text" placeholder="Search for a product ...">
+                <a href="javascript:;" class="search"><svg xmlns="http://www.w3.org/2000/svg" width="14.64"
+                        height="14.642" viewBox="0 0 14.64 14.642">
+                        <defs>
+                            <style>
+                                .a {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <path class="a"
+                            d="M14.441,12.659,11.59,9.808a.686.686,0,0,0-.486-.2h-.466a5.945,5.945,0,1,0-1.029,1.029V11.1a.686.686,0,0,0,.2.486l2.851,2.851a.683.683,0,0,0,.969,0l.809-.809a.69.69,0,0,0,0-.972ZM5.948,9.608a3.66,3.66,0,1,1,3.66-3.66A3.658,3.658,0,0,1,5.948,9.608Z" />
+                    </svg></a>
+
+            </div>
+        </div>
+    </header>
+    <aside>
+        <div class="categories">
+            <div class="holder clearAfter">
+                <a href="javascript:;" class="item" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.count > 0 && category.parent == 0" ng-class="{active_main_cat:parent_category.id == category.id}">
+                    <img ng-src="{{category.image.src}}" alt="">
+                    <span class="catTitle">{{category.name}}</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <div class="titleCat" ng-if="parent_category">
+        <h1 class="pageTitle">Alcohol {{page_params.selected_category}}</h1>
+        <div class="categories subCat">
+            <div class="holder clearAfter">
+                <a href="javascript:;" class="item" ng-repeat="sub_category in categories | filter: parent_category_filter" ng-click="filter_by_category(sub_category)" ng-if="sub_category.count > 0" ng-class="{active:products_params.product_cat == sub_category.id}">
+                    <img ng-src="{{sub_category.image.src}}" alt="">
+                    <span class="catTitle">{{sub_category.name}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="container clearAfter">
+  </div>
+  <main>
+    <a href="javascript:;" class="filterButton showMob">
+        <img src="images/filter.svg" alt=""> FILTER
+    </a>
+    <section class="productListing">
+        <div class="row clearAfter">
+          <div class="listingItem" ng-repeat="product in products">
+            <div class="itemParent">
+                <a href="javascript:;" class="addToCart" ng-click="add_to_cart(product, 1);"></a>
+                <a href="javascript:;" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)" class="minus"> - </a>
+                <span class="counter" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)">{{product_quantity(product.id)}}</span>
+                <img ng-src="{{product.better_featured_image.source_url}}" alt="">
+                <div class="listingInfos">
+                    <div class="price">
+                        <span class="discounted">{{product._sale_price}} LL</span>
+                        <span class="main">{{product._regular_price}} LL</span>
+                    </div>
+                    <h2 class="name">{{product.title.rendered}}</h2>
+                    <div class="size">
+                      {{product_quantity(product.id)}} x 330ml
+                    </div>
+                </div>
+
+            </div>
+          </div>
+      </div>
+    </section>
+    <section class="cart">
+        <div class="cart_buttons_holder">
+            <a href="javascript:;" class="minibuttons left_float">Back To Products</a>
+            <a href="javascript:;" class="minibuttons right_float">Remove All</a>
+        </div>
+        <div class="total flex">
+            <span>Total</span>
+            <div class="totalPrice">
+                <span class="price">{{cart.price}}</span>
+                <span class="currency">LL</span>
+            </div>
+        </div>
+        <button>Finish Shopping</button>
+        <div class="listingHolder cart_list">
+            <div class="listingItem clearAfter" ng-repeat="cart_item in cart.items">
+                <div class="listing_image"><img ng-src="{{cart_item.image}}" alt=""><span class="quantity_holder">X{{cart_item.quantity}}</span></div>
+                <div class="listing_info_main">
+                    <div class="listingInfos">
+                        <h2 class="name">{{cart_item.name}}</h2>
+                        <div class="calculatedprice">
+                            <span>{{cart_item.price}} LL x {{cart_item.quantity}} units</span>
+                        </div>
+                        <div class="total_price">{{cart_item.price*cart_item.quantity}}LL</div>
+                    </div>
+                </div>
+                <div class="listing_actions"><a href="javascript:;"><i class="fas fa-plus"></i></a><a href="javascript:;"><i class="fas fa-minus"></i></a></div>
+            </div>
+        </div>
+
+
+
+    </section>
+  </main>
+</div>
+<!--<div class="section">
   <div class="fullHeight" infinite-scroll="next_page_load()">
     <div class="main_row_display">
       <div class="left_column">
-        <div>
-          <div class="catmando" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.product_count_product_cat > 0 && category.parent == 0" ng-class="{active_main_cat:parent_category.id == category.id}">
-            {{category.name}}
+         <aside>
+          <div class="categories">
+              <div class="holder clearAfter">
+                  <a href="javascript:;" class="item" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.count > 0 && category.parent == 0" ng-class="{active_main_cat:parent_category.id == category.id}">
+                      <img ng-src="{{category.image.src}}" alt="">
+                      <span class="catTitle">{{category.name}}</span>
+                  </a>
+              </div>
           </div>
-        </div>
+        </aside>
+
+        <div>
+          <div class="catmando" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.count > 0 && category.parent == 0" ng-class="{active_main_cat:parent_category.id == category.id}">
+            {{category.name}}<img ng-src="{{category.image.src}}" />
+          </div>
+        </div> 
       </div>
       <div class="right_column">
         <div class="sub_cats">
           <div class="all_categories" ng-click="filter_by_category(parent_category)" ng-if="parent_category" ng-class="{active:parent_category && parent_category.id == parent_cat_id}">All Products</div>
-          <div ng-repeat="sub_category in categories | filter: parent_category_filter" ng-click="filter_by_category(sub_category)" ng-if="sub_category.product_count_product_cat > 0" ng-class="{active:products_params.product_cat == sub_category.id}">
-            {{sub_category.name}}
+          <div ng-repeat="sub_category in categories | filter: parent_category_filter" ng-click="filter_by_category(sub_category)" ng-if="sub_category.count > 0" ng-class="{active:products_params.product_cat == sub_category.id}">
+            {{sub_category.name}}<img ng-src="{{category.image.src}}" />
           </div>
         </div>
   
-        <div class="productsBlock">
-          <div class="productsList">
-            <div class="listingItem col-md-2 col-sm-6 halfHeight" ng-repeat="product in products">
+        <section class="productListing">
+          <div class="row clearAfter">
+              <div class="listingItem" ng-repeat="product in products">
+              <div class="itemParent">
+                  <a href="javascript:;" class="addToCart" ng-click="add_to_cart(product, 1);"></a>
+                  <a href="javascript:;" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)" class="minus"> - </a>
+                  <span class="counter" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)">{{product_quantity(product.id)}}</span>
+                  <img ng-src="{{product.better_featured_image.source_url}}" alt="">
+                  <div class="listingInfos">
+                      <div class="price">
+                          <span class="discounted">{{product._sale_price}} LL</span>
+                          <span class="main">{{product._regular_price}} LL</span>
+                      </div>
+                      <h2 class="name">{{product.title.rendered}}</h2>
+                      <div class="size">
+                        {{product_quantity(product.id)}} x 330ml
+                      </div>
+                  </div>
+
+              </div>
+            </div>
+           <div class="listingItem col-md-2 col-sm-6 halfHeight" ng-repeat="product in products">
               <div class="loader_parent" ng-if="product.loading"></div>
               <div class="listingImage" ng-click="add_to_cart(product, 1);"><img ng-src="{{product.better_featured_image.source_url}}"></div>
               <div class="listingInfos" ng-click="add_to_cart(product, 1);">
@@ -27,11 +215,11 @@
               </div>
               <div class="remove_from_cart" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)"></div>
               <div class="quantity_holder" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)"><span>x{{product_quantity(product.id)}}</span></div>
-            </div>
+            </div> 
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </div>
-</div>
+</div>-->
 <div class="blockAbsLink" ng-if="cart.items.length>0"><a href="#/cart" class="primaryBtn"><span>View Your Trolley</span><span class="price_bottom_total">{{cart.price}} LL</span></a></div>
