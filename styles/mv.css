@@ -687,7 +687,7 @@ body:not(.homepage) header .container {
 }
 
 aside {
-    width: 220px;
+    width: 300px;
     float: left;
 }
 
@@ -1483,7 +1483,7 @@ aside + main .fixedHeader {
 
 main {
     padding-top: 310px;
-    padding-left: 250px;
+    padding-left: 330px;
     clear: both;
     padding-right: 15px;
 }

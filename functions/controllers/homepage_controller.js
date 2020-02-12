@@ -7,7 +7,7 @@
 			$scope.products_params = {
 				product_cat:'',
 				page:1,
-				per_page:40
+				per_page:50
 			}
 			$scope.reached_end = false;
 
