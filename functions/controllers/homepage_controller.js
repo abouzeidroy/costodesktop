@@ -81,7 +81,7 @@
 					$scope.parent_cat_id = category.id;
 					$scope.products_params.product_cat = category.id;
 				};
-				$location.search('category', encodeURI(category.name));
+				$location.search('category', encodeURI(category.slug));
 				$scope.products_params.page = 1;
 				$scope.products = [];
 				$scope.reached_end = false;
@@ -110,13 +110,23 @@
 			}
 
 			$scope.cart = storage_services.get_object_cookie('cart');
-			$scope.add_to_cart = function(product, quantity){
+			
+			$scope.add_to_cart = function(product, quantity, from_cart){
 				product.loading = true;
-				var item_object = {
-					name: product.title.rendered,
-					price: product._price,
-					image: '',
-					id: product.id
+				if(from_cart){
+					var item_object = {
+						name: product.name,
+						price: product.price,
+						image: '',
+						id: product.id
+					}
+				}else{
+					var item_object = {
+						name: product.title.rendered,
+						price: product._price,
+						image: '',
+						id: product.id
+					}
 				}
 				if(product.better_featured_image && product.better_featured_image.source_url){
 					item_object.image = product.better_featured_image.source_url;

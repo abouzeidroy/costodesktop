@@ -869,7 +869,7 @@ aside + main .fixedHeader {
 .productListing img {
     margin: 0 auto;
     margin-bottom: 5px;
-    max-height: 305px;
+    max-height: 240px;
 }
 
 .productListing .domain {
@@ -1197,10 +1197,11 @@ aside + main .fixedHeader {
 }
 
 .cart h2 {
-    color: #0493c3;
-    font-size: 23px;
+    color: #fff;
+    font-size: 26px;
     text-align: left;
     margin-bottom: 25px;
+    font-weight: normal;
 }
 
 .cart h2 span {
@@ -1486,6 +1487,7 @@ main {
     padding-left: 330px;
     clear: both;
     padding-right: 15px;
+    padding-bottom: 60px;
 }
 
 .fixedBody {
@@ -1604,3 +1606,58 @@ aside {
     height: 140px;
 }
 /*# sourceMappingURL=mv.css.map */
+
+
+.productListing .item_image_main{
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup_form{
+    position: absolute;
+    height: 100vh;
+    transform: translate3d(0, -100vh, 0);
+    transition: transform linear 400ms;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    background-color: #2d363c;
+    width: 100%;
+}
+.signup_form.visible_signup{
+    transform: translate3d(0, 0, 0);
+}
+.signup_form .inputField label{
+    color: #fff;
+}
+.signup_form .inputField{
+    margin-bottom: 15px;
+}
+.bottom_buttons{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background-color: #000;
+    padding: 10px;
+}
+.bottom_buttons a{
+    background-color: #0493c3;
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+.total_cart_bottom{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}

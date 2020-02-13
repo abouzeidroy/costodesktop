@@ -2814,3 +2814,11 @@ table.display tbody td.colActions{
 		text-align: left;
 	}
 }
+
+
+
+
+main{
+    height: 100vh;
+    overflow: auto;
+}

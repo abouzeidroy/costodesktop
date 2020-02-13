@@ -10,7 +10,7 @@
 			return {
 				add_to_cart:function(item, quantity){
                     var get_row_index = get_row_id(cart.items, 'id', item.id);
-                    cart.price += item.price*quantity;
+                    cart.price += parseInt(item.price)*quantity;
                     if(get_row_index != '-1'){
                         cart.items[get_row_index].quantity += quantity
                         if(cart.items[get_row_index].quantity == 0){
