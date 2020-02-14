@@ -4,15 +4,12 @@
 		function($cookies) {
 			return {
 				set_object_cookie:function(key, value){
-					//console.log(value);
 					$cookies.putObject(key, value);
-					console.log($cookies.getObject(key));
 				},
 				set_cookie:function(key, value){
 					$cookies.put(key, value);
 				},
 				get_cookie:function(key){
-					console.log($cookies.get(key));
 					if($cookies.get(key)){
 						return JSON.parse($cookies.get(key));
 					}else{

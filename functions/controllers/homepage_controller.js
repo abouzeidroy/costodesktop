@@ -1,7 +1,7 @@
 (function (){
 	'use strict';
-	costo_app.controller('homepage_controller', ['$scope','$timeout','$q','costo_services', '$location','cart_services', 'storage_services',
-		function($scope, $timeout, $q, costo_services, $location, cart_services, storage_services) {
+	costo_app.controller('homepage_controller', ['$scope','$timeout','$debounce','$q','costo_services', '$location','cart_services', 'storage_services',
+		function($scope, $timeout, $debounce, $q, costo_services, $location, cart_services, storage_services) {
 			$scope.page_loading = true;
 
 			$scope.products_params = {
@@ -109,7 +109,23 @@
 				}
 			}
 
+
 			$scope.cart = storage_services.get_object_cookie('cart');
+			if(!$scope.cart){
+				$scope.cart = {
+					items: [],
+					price:0
+				}
+			};
+
+
+			$scope.store_cart_trigger = function(){
+				$debounce(store_cart, 1000);
+			}
+
+			var store_cart = function() {
+				storage_services.set_object_cookie('cart', $scope.cart);
+			};
 			
 			$scope.add_to_cart = function(product, quantity, from_cart){
 				product.loading = true;
@@ -131,11 +147,18 @@
 				if(product.better_featured_image && product.better_featured_image.source_url){
 					item_object.image = product.better_featured_image.source_url;
 				}
-				cart_services.add_to_cart(item_object, quantity);
-				$timeout(function(){
-					$scope.cart = storage_services.get_object_cookie('cart');
-					product.loading = false;
-				}, 200)
+				var get_row_index = get_row_id($scope.cart.items, 'id', item_object.id);
+				$scope.cart.price += parseInt(item_object.price)*quantity;
+				if(get_row_index != '-1'){
+					$scope.cart.items[get_row_index].quantity += quantity
+					if($scope.cart.items[get_row_index].quantity == 0){
+						$scope.cart.items.splice(get_row_index, 1);
+					}
+				}else{
+					item_object.quantity = quantity;
+					$scope.cart.items.unshift(item_object);
+				};
+				$scope.store_cart_trigger();
 			}
 
 			$scope.available_in_cart = function(product_id){

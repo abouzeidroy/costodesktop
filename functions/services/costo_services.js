@@ -74,7 +74,6 @@
 					data: JSON.stringify(params)
 				}).then(function(response) {
 					// Success
-					console.log('success');
 					if(return_response == 1){
 						deferred.resolve(response.data);
 					} else {
@@ -95,14 +94,10 @@
 								deferred.resolve(response.data);
 							}
 						} else {
-							console.log(response);
 							deferred.reject(response.data);
 						}
 					}
 				}, function(response) {
-					console.log(params);
-					console.log('failure');
-					console.log(response.message);
 					deferred.reject(response.status);
 				});
 				return deferred.promise;
