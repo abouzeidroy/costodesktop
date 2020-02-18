@@ -1413,7 +1413,7 @@ aside + main .fixedHeader {
 }
 
 .categories span {
-    font-size: 14px;
+    font-size: 13.5px;
     background-color: #fff;
     text-align: center;
     display: block;
@@ -1500,7 +1500,7 @@ main {
 }
 
 aside {
-    padding-left: 20px;
+    padding-left: 5px;
 }
 
 .titleCat {
