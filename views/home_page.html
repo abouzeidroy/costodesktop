@@ -139,15 +139,15 @@
         <form class="signup_form" ng-class="{'visible_signup': show_form}">
             <a href="javascript:;" class="closeIcon" ng-click="show_form = false"><svg xmlns="http://www.w3.org/2000/svg" width="13.426" height="13.423" viewBox="0 0 13.426 13.423"><path d="M19.589,18l4.8-4.8A1.124,1.124,0,0,0,22.8,11.616l-4.8,4.8-4.8-4.8A1.124,1.124,0,1,0,11.616,13.2l4.8,4.8-4.8,4.8A1.124,1.124,0,0,0,13.2,24.384l4.8-4.8,4.8,4.8A1.124,1.124,0,1,0,24.384,22.8Z" transform="translate(-11.285 -11.289)" fill="#585858"/></svg></a>
             <h2 class="blockTitle">
-                Checkout
+                Finish Shopping 
             </h2>
             <div class="formBody clearAfter">
                 <div class="inputField">
-                    <label>Nom *</label>
+                    <label>Your Name</label>
                     <input type="text">
                 </div>
                 <div class="inputField phoneNumber">
-                    <label>Telephonne *</label>
+                    <label>Your Phone Number</label>
                     <input type="tel" id="phone">
                 </div>
                 <div class="inputField">
@@ -226,4 +226,3 @@
     </div>
   </div>
 </div>-->
-<div class="blockAbsLink" ng-if="cart.items.length>0"><a href="#/cart" class="primaryBtn"><span>View Your Trolley</span><span class="price_bottom_total">{{cart.price}} LL</span></a></div>
