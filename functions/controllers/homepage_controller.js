@@ -207,6 +207,14 @@
 				}
 			}
 
+			$scope.empty_cart = function(){
+				$scope.cart = {
+					items: [],
+					price:0
+				}
+				store_cart();
+			}
+
 		}
 	]);
 })();
