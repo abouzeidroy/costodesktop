@@ -450,6 +450,28 @@
       .categories:not(.subCat){
         max-height: none;
       }
+      main.products_list_parent {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-right: 0;
+        padding-left: 0;
+        padding-top: 20px;
+      }
+      aside{
+        padding-left: 20px;
+      }
+      .products_list_parent{
+        display: none;
+      }
+      .parent_category_filtered{
+        display: block;
+      }
+      .catgories_main_holder.filtered_category{
+        display: none;
+      }
+      .productListing .item_image_main{
+        height: 150px;
+      }
   }
 
       

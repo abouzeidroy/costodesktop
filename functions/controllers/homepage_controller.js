@@ -7,9 +7,14 @@
 			$scope.products_params = {
 				product_cat:'',
 				page:1,
-				per_page:50
+				per_page:50,
+				search: ''
 			}
 			$scope.reached_end = false;
+
+			$scope.search = {
+				search_key : ''
+			}
 
 			function init(){
 				var deferred = $q.defer();
@@ -121,10 +126,34 @@
 
 			$scope.store_cart_trigger = function(){
 				$debounce(store_cart, 1000);
-			}
+			};
 
 			var store_cart = function() {
 				storage_services.set_object_cookie('cart', $scope.cart);
+			};
+
+			$scope.changed_search_input = function(){
+				console.log('changed_search_input');
+				$debounce(start_search, 400);
+			}
+
+			var start_search = function(){
+				console.log('start_search');
+				$scope.products_params.search = angular.copy($scope.search.search_key);
+				$scope.products_params.page = 1;
+				$scope.products = [];
+				$scope.reached_end = false;
+				$scope.reset_category_selection();
+				get_homepage_products();
+			};
+
+			$scope.$watch('search.search_key', function(){
+				$scope.changed_search_input();
+			})
+
+			$scope.reset_category_selection = function(){
+				$scope.parent_category = '';
+				$scope.products_params.product_cat = '';
 			};
 			
 			$scope.add_to_cart = function(product, quantity, from_cart){

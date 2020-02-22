@@ -41,7 +41,7 @@
         </div>
         <div class="searchParent">
             <div class="container">
-                <input type="text" placeholder="Search for a product ...">
+                <input type="text" ng-model="search.search_key" class="search_input" placeholder="Search for a product ...">
                 <a href="javascript:;" class="search"><svg xmlns="http://www.w3.org/2000/svg" width="14.64"
                         height="14.642" viewBox="0 0 14.64 14.642">
                         <defs>
@@ -58,7 +58,7 @@
             </div>
         </div>
     </header>
-    <aside>
+    <aside class="catgories_main_holder" ng-class="{filtered_category: parent_category || search.search_key != ''}">
         <div class="categories">
             <div class="holder clearAfter">
                 <a href="javascript:;" class="item" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.count > 0 && category.parent == 0" ng-class="{selected:parent_category.id == category.id}">
@@ -73,7 +73,7 @@
         <div class="categories subCat">
             <div class="holder clearAfter">
                 <a href="javascript:;" class="item" ng-repeat="sub_category in categories | filter: parent_category_filter" ng-click="filter_by_category(sub_category)" ng-if="sub_category.count > 0" ng-class="{selected:products_params.product_cat == sub_category.id}">
-                    <img ng-src="{{sub_category.image.src}}" alt="">
+                    <img ng-if="sub_category.image.src" ng-src="{{sub_category.image.src}}" alt="">
                     <span class="catTitle">{{sub_category.name}}</span>
                 </a>
             </div>
@@ -82,10 +82,7 @@
   </div>
   <div class="container clearAfter">
   </div>
-  <main infinite-scroll="next_page_load()">
-    <a href="javascript:;" class="filterButton showMob">
-        <img src="images/filter.svg" alt=""> FILTER
-    </a>
+  <main class="products_list_parent" infinite-scroll="next_page_load()" ng-class="{'parent_category_filtered':parent_category || search.search_key != ''}">
     <section class="productListing">
         <div class="row clearAfter">
           <div class="listingItem" ng-repeat="product in products">
@@ -106,6 +103,7 @@
                 </div>
             </div>
           </div>
+          <div class="lds-roller" ng-if="products_loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       </div>
     </section>
     <section class="cart" ng-class="{'visibleCart':visibleCart}">
