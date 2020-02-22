@@ -83,6 +83,9 @@
   .filterBlock {
     padding: 20px; } }
 @media all and (max-width: 767px) {
+  .all_categories_btn{
+    display: block;
+  }
   .mainBanner {
     height: 100vh; }
     .mainBanner .contentBlock {
@@ -349,14 +352,14 @@
     row-gap: 40px;
     margin-bottom: 60px; }
     .productListing img {
-      max-height: 180px; }
+      max-height: 150px; }
     .productListing .favorite {
       height: 14px;
       width: 14px; }
     .productListing .name {
-      font-size: 16px;
-      line-height: 23px;
-      margin-bottom: 10px; }
+      font-size: 13px;
+      line-height: auto;
+      margin-bottom: 0; }
     .productListing .domain {
       margin-bottom: 5px; }
     .productListing .totalPrice {
@@ -445,17 +448,17 @@
     .cart .unitPrice {
       margin-bottom: 15px; } 
       .fixedBody{
-        position: static;
+        /* position: static; */
       }
       .categories:not(.subCat){
         max-height: none;
       }
       main.products_list_parent {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 12px;
+        margin-right: 12px;
         padding-right: 0;
         padding-left: 0;
-        padding-top: 20px;
+        /* padding-top: 20px; */
       }
       aside{
         padding-left: 20px;
@@ -471,6 +474,58 @@
       }
       .productListing .item_image_main{
         height: 150px;
+      }
+      .productListing .listingItem{
+        padding: 0 1px;
+        flex-basis: 33.3333%;
+        width: auto;
+        float:none;
+      }
+      .productListing .row{
+        margin-left: -1px;
+        margin-right: -1px;
+      }
+      .titleCat{
+        padding-right: 12px;
+        padding-left: 12px;
+      }
+      .categories.subCat .holder{
+        display: flex;
+        margin: 0 -6px;
+      }
+      .productListing .row{
+        display: flex;
+        max-width: 100%;
+        flex-flow: row wrap;
+      }
+      .productListing .itemParent{
+        height: 100%;
+        padding: 5px;
+      }
+      .titleCat{
+        float: none;
+      }
+      .categories.subCat .item{
+        display: initial;
+        margin-right: 2px;
+      }
+      .categories.subCat .item{
+        width: 25%;
+        padding-left: 6px;
+        padding-right: 6px;
+      }
+      .categories.subCat .item img{
+        width: 100%;
+      }
+      .cart_list .listingItem .listing_image{
+        width: 60px;
+      }
+      .listing_actions a{
+        font-size: 12px;
+        line-height: 20px;
+      }
+      .cart_list .listing_actions{
+        width: 20px;
       }
   }
 

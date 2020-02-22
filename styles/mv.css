@@ -1669,6 +1669,20 @@ aside {
 .search_input{
     width: 100%;
 }
+.all_categories_btn{
+    position: fixed;
+    left: 10px;
+    bottom: 75px;
+    border-radius: 2px;
+    background-color: #0493c3;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    z-index: 101;
+    padding: 5px 10px;
+}
+
+
 
 
 .lds-roller{

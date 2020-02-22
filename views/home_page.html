@@ -73,7 +73,7 @@
         <div class="categories subCat">
             <div class="holder clearAfter">
                 <a href="javascript:;" class="item" ng-repeat="sub_category in categories | filter: parent_category_filter" ng-click="filter_by_category(sub_category)" ng-if="sub_category.count > 0" ng-class="{selected:products_params.product_cat == sub_category.id}">
-                    <img ng-if="sub_category.image.src" ng-src="{{sub_category.image.src}}" alt="">
+                    <img ng-src="{{sub_category.image.src}}" alt="">
                     <span class="catTitle">{{sub_category.name}}</span>
                 </a>
             </div>
@@ -131,7 +131,7 @@
                         <div class="total_price">{{cart_item.price*cart_item.quantity}}LL</div>
                     </div>
                 </div>
-                <div class="listing_actions"><a href="javascript:;" ng-click="add_to_cart(cart_item, 1, true);"><i class="fas fa-plus"></i></a><a href="javascript:;" ng-click="add_to_cart(cart_item, -1, true);"><i class="fas fa-minus"></i></a></div>
+                <div class="listing_actions"><a href="javascript:;" ng-click="add_to_cart(cart_item, 1, true);"><i class="fa fa-plus"></i></a><a href="javascript:;" ng-click="add_to_cart(cart_item, -1, true);"><i class="fa fa-minus"></i></a></div>
             </div>
         </div>
         <form class="signup_form" ng-class="{'visible_signup': show_form}">
@@ -155,6 +155,7 @@
 
         </form>
     </section>
+    <a href="javascript:;" class="all_categories_btn">All Categories</a>
     <div class="bottom_buttons"><a href="javascript:;" ng-click="visibleCart = true">View trolley<span class="total_cart_bottom" ng-if="cart.price">{{cart.price}}LL</span></a></div>
 </main>
 </div>
