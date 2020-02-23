@@ -1,3 +1,7 @@
+
+.all_categories_btn{
+  display: none;
+}
 @media all and (max-width: 1320px) {
   .container {
     width: auto;
@@ -17,6 +21,7 @@
     width: calc(100% / 4);
   }
 }
+
 @media all and (max-width: 1200px) {
   .logoSlider .listingItem {
     margin: 0 auto;
@@ -38,7 +43,13 @@
     padding-left: 30px; }
 
   .productListing .name br {
-    display: none; } }
+    display: none; } 
+  
+.all_categories_btn{
+  display: block;
+}
+
+  }
 @media all and (max-width: 992px) {
   .productListing .listingItem{
     width: calc(100% / 3);
@@ -97,6 +108,10 @@
 
         .bottom_buttons{
           display: none;
+        }
+
+        .discounted{
+          font-size: 8px;
         }
   .btn span {
     font-size: 11px;
