@@ -864,6 +864,7 @@ aside + main .fixedHeader {
 
 .productListing .listingInfos {
     text-align: left;
+    padding: 10px;
 }
 
 .productListing img {
@@ -905,14 +906,13 @@ aside + main .fixedHeader {
 .productListing .listingItem {
     position: relative;
     float: left;
-    padding: 0 12px;
+    padding: 0 3px;
     width: calc(100%/6);
-    margin-bottom: 25px;
+    margin-bottom: 3px;
 }
 
 .productListing .itemParent {
     background-color: #fff;
-    padding: 20px;
     position: relative;
 }
 
@@ -934,8 +934,8 @@ aside + main .fixedHeader {
     font-size: 25px;
     line-height: 14px;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 7px;
+    left: 7px;
     z-index: 2;
 }
 
@@ -948,8 +948,8 @@ aside + main .fixedHeader {
     color: #fff;
     display: block;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 7px;
+    top: 7px;
     border-radius: 5px;
 }
 
