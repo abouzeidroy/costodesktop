@@ -95,6 +95,9 @@
         font-size: 20px;
         line-height: 24px; }
 
+        .bottom_buttons{
+          display: none;
+        }
   .btn span {
     font-size: 11px;
     padding: 19px 18px; }
@@ -533,5 +536,6 @@
       }
   }
 
-      
+
+
 /*# sourceMappingURL=mv-responsive.css.map */

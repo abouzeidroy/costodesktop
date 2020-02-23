@@ -69,7 +69,7 @@
         </div>
     </aside>
     <div class="titleCat" ng-if="parent_category">
-        <h1 class="pageTitle">{{parent_category.name}}</h1>
+        <!-- <h1 class="pageTitle">{{parent_category.name}}</h1> -->
         <div class="categories subCat">
             <div class="holder clearAfter">
                 <a href="javascript:;" class="item" ng-repeat="sub_category in categories | filter: parent_category_filter" ng-click="filter_by_category(sub_category)" ng-if="sub_category.count > 0" ng-class="{selected:products_params.product_cat == sub_category.id}">
