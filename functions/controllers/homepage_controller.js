@@ -155,6 +155,13 @@
 				$scope.parent_category = '';
 				$scope.products_params.product_cat = '';
 			};
+
+			$scope.reset_search_criterias = function(){
+				$scope.products_params.page = 1;
+				$scope.products = [];
+				$scope.reached_end = false;
+				$scope.search.search_key = '';
+			}
 			
 			
 			$scope.add_to_cart = function(product, quantity, from_cart){
