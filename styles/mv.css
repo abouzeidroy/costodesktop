@@ -1396,7 +1396,7 @@ aside + main .fixedHeader {
 }
 
 .categories .item {
-    width: 50%;
+    width: 33.3%;
     float: left;
     padding: 0 3px;
     margin-bottom: 8px;
@@ -1488,7 +1488,7 @@ aside + main .fixedHeader {
 }
 
 main {
-    padding-top: 310px;
+    padding-top: 230px;
     padding-left: 330px;
     clear: both;
     padding-right: 15px;
@@ -1501,7 +1501,7 @@ main {
     z-index: 100;
     width: 100%;
     background: #eeeeee;
-    height: 300px;
+    height: 240px;
 }
 
 aside {
@@ -1614,7 +1614,6 @@ aside {
 
 
 .productListing .item_image_main{
-    height: 240px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1670,16 +1669,18 @@ aside {
     width: 100%;
 }
 .all_categories_btn{
-    position: fixed;
-    left: 10px;
-    bottom: 75px;
-    border-radius: 2px;
-    background-color: #0493c3;
-    color: #fff;
-    font-size: 18px;
-    display: block;
-    z-index: 101;
-    padding: 5px 10px;
+position: fixed;
+left: 10px;
+bottom: 10px;
+border-radius: 2px;
+background-color:
+#21bb2b;
+color:
+#fff;
+font-size: 14px;
+display: block;
+z-index: 101;
+padding: 7px 15px;
 }
 
 
