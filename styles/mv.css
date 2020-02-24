@@ -1425,7 +1425,7 @@ aside + main .fixedHeader {
 }
 
 .categories.subCat .item {
-    min-width: 65px;
+    max-width: 19%;
     box-sizing: unset;
     padding: 0;
     text-align: center;
@@ -1488,8 +1488,8 @@ aside + main .fixedHeader {
 }
 
 main {
-    padding-top: 230px;
-    padding-left: 330px;
+    padding-top: 260px;
+    padding-left: 350px;
     clear: both;
     padding-right: 15px;
     padding-bottom: 60px;
@@ -1510,7 +1510,7 @@ aside {
 
 .titleCat {
     float: left;
-    padding-left: 12px;
+    padding-left: 25px;
 }
 
 .discounted {
