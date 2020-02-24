@@ -1426,8 +1426,8 @@ aside + main .fixedHeader {
 }
 
 .categories.subCat .item {
-    /* max-width: 19%; */
-    box-sizing: unset;
+    /* max-width: 19%; 
+    box-sizing: unset;*/
     padding: 0;
     text-align: center;
     display: inline-block;
@@ -1773,11 +1773,16 @@ padding: 7px 15px;
   }
   
 
-  .productListing, .productListing .row{
+  .productListing, .productListing .row, .categories .holder{
     display: flex;
     flex-flow: row wrap;
   }
   .productListing .itemParent{
     height: 100%;
     padding: 5px;
+  }
+  .inner_category{
+      height: 100%;
+      border-radius: 0 0 6px 6px;
+      background-color: #fff;
   }

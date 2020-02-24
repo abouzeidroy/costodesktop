@@ -467,6 +467,7 @@
       margin-bottom: 15px; } 
       .fixedBody{
         /* position: static; */
+        height: 260px;
       }
       .categories:not(.subCat){
         max-height: none;
@@ -524,13 +525,14 @@
         float: none;
       }
       .categories.subCat .item{
-        display: initial;
-        margin-right: 2px;
+        margin-right: 0;
       }
       .categories.subCat .item{
         width: 25%;
         padding-left: 1px;
         padding-right: 1px;
+        display: block;
+        float: left;
       }
       .categories.subCat .item img{
         width: 100%;
