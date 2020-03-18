@@ -222,6 +222,25 @@
 				}
 				store_cart();
 			}
+			$scope.guest = {
+				phone_number:'',
+				name:''
+			}
+
+			$scope.create_order = function(){
+				var cart_items = [];
+				angular.forEach($scope.cart.items, function(item){
+					var order_item = {
+						product_id: item.id,
+						quantity: item.quantity
+					}
+					cart_items.push(order_item)
+				})
+				costo_services.post_order(cart_items, $scope.guest).then(function(data){
+					console.log(data);
+				});
+				console.log($scope.cart.items);
+			};
 
 		}
 	]);
