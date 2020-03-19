@@ -66,13 +66,19 @@
 						});
 					}
 				}
-				$http({
+				var request_options = {
 					method: method,
 					url: url,
 					//params: params,
 					headers: headers,
-					data: params
-				}).then(function(response) {
+					//data: params
+				}
+				if(request_options.method == 'GET'){
+					request_options.params = params
+				}else{
+					request_options.data = params;
+				}
+				$http(request_options).then(function(response) {
 					// Success
 					if(return_response == 1){
 						deferred.resolve(response.data);
@@ -104,119 +110,6 @@
 			}
 
 			return {
-				get_categories: function() {
-					var endpoint = '/GetCategories/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'return_result' : '1', 'return_response' : '1'};
-					return http_call(options);
-				},
-				get_menus: function() {
-					var endpoint = '/GetMenu/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'return_result' : '1', 'return_response' : '1'};
-					return http_call(options);
-				},
-				get_homepage_data: function() {
-					var endpoint = '/gethomepagedata/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'return_result' : '1', 'return_response' : '1'};
-					return http_call(options);
-				},
-				do_login: function(email, password) {
-					var params = {'Email' : email, 'Password':password,'Longtitude':0.0, 'Latitude':0.0, 'UserAgent':navigator.userAgent};
-					var endpoint = '/login/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'params' : params, 'return_response' : '1'};
-					return http_call(options);
-				},
-				get_addresses: function(email, password) {
-					var params = {'Session' : $cookies.get('session_id'), 'UserAgent':navigator.userAgent};
-					//var params = {'Session' : 'b9358d80-f738-4c0a-8125-0882be67f028', 'UserAgent':navigator.userAgent};
-					var endpoint = '/GetAddresses/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'params' : params, 'return_response' : '1'};
-					return http_call(options);
-				},
-				register_user: function(City, CityID, CountryID, DateOfBirth, Email, FirstName, Gender, LastName, MiddleName, Password, Phone, UserAgent, Latitude, Longtitude, n_Address, n_Building, n_City, n_CityID, n_CountryID, n_Email, n_ID, n_Name, n_Phone, n_Street, n_UserAgent){
-					var params = {
-						"City": City,
-						"CityID": CityID,
-						"CountryID": CountryID,
-						"DateOfBirth": DateOfBirth,
-						"Email": Email,
-						"FirstName": FirstName,
-						"Gender": Gender,
-						"LastName": LastName,
-						"MiddleName": MiddleName,
-						"Password":	Password,
-						"Phone": Phone,
-						"UserAgent": UserAgent,
-						"Latitude": Latitude,
-						"Longtitude": Longtitude,
-						"NewAddress": {
-							"Address": n_Address,
-							"Building": n_Building,
-							"City": n_City,
-							"CityID": n_CityID,
-							"CountryID": n_CountryID,
-							"Email": n_Email,
-							"ID": n_ID,
-							"Name": n_Name,
-							"Phone": n_Phone,
-							"Street": n_Street,
-							"UserAgent": n_UserAgent
-						}
-					};
-					
-					//var params = 
-					//var params = registration_values;
-					var endpoint = '/Register/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'params' : params, 'return_response' : '1'};
-					return http_call(options);
-				},
-				put_address: function(address_object){
-					//address_object.Session = 'b9358d80-f738-4c0a-8125-0882be67f028';
-					var params = address_object;
-					var endpoint = '/AddEditAddress/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'params' : params, 'return_response' : '1'};
-					return http_call(options);
-				},
-				create_shopping_cart: function(Budget, CurrencyID, RecepientAge, RecepientCity, RecepientGender, RecepientPrefernces, Occassion, CategoryIDs) {
-					var params = {
-						'Session' : $cookies.get('session_id'),
-						//'Session' : 'b9358d80-f738-4c0a-8125-0882be67f028',
-						'UserAgent':navigator.userAgent,
-						'ShoppingCart':{
-							"Budget":Budget,
-							"CurrencyID":CurrencyID,
-							"RecepientAge":RecepientAge,
-							"RecepientCity":RecepientCity,
-							"RecepientGender":RecepientGender,
-							"RecepientPrefernces":RecepientPrefernces,
-							"Occassion":Occassion,
-							"CategoryIDs":CategoryIDs
-						}
-					};
-					var endpoint = '/CreateShoppingCart/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'params' : params, 'return_response' : '1'};
-					return http_call(options);
-				},
-				create_order: function(ID, Name, ShippingAddressID, BillingAddressID){
-					var params = {
-						//'Session' : $cookies.get('session_id'),
-						'Session' : 'b9358d80-f738-4c0a-8125-0882be67f028',
-						'UserAgent':navigator.userAgent,
-						"ShoppingCart": {
-							"ID": ID,
-							"Name": "Name",
-							"ShippingAddressID": ShippingAddressID,
-							"BillingAddressID": BillingAddressID
-						}
-					};
-					var endpoint = '/CreateOrder/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'params' : params, 'return_response' : '1'};
-					return http_call(options);
-				},
-				get_countries: function(){
-					var endpoint = '/GetCountries/en';
-					var options = {'method' : 'POST', 'endpoint' : endpoint, 'return_result' : '1', 'return_response' : '1'};
-					return http_call(options);
-				},
 				get_products: function(params){
 					var endpoint = '/wp/v2/product';
 					//var endpoint = '/wc/v2/orders';
