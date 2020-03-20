@@ -52,8 +52,10 @@
 
 			function get_homepage_categories(){
 				var deferred = $q.defer();
+				$scope.categories_loading = true;
 				costo_services.get_categories().then(function(response){
 					$scope.categories = response;
+					$scope.categories_loading = false;
 					deferred.resolve();
 				}, function(){
 					deferred.reject();
@@ -236,8 +238,14 @@
 					}
 					cart_items.push(order_item)
 				})
+				$scope.submitting_order = true;
 				costo_services.post_order(cart_items, $scope.guest).then(function(data){
 					console.log(data);
+					$scope.order_message = 'Your order has been successfully placed, please contact us on 70593163 for any inquiries'
+					$scope.submitting_order = false;
+				}, function(){
+					$scope.order_message = 'Something went wrong'
+					$scope.submitting_order = false;
 				});
 				console.log($scope.cart.items);
 			};

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Tajawal&display=swap");
 html,
 body,
 div,
@@ -85,7 +85,7 @@ textarea,
 select,
 body {
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Tajawal', sans-serif;
     color: #24292F;
     background-color: #eeeeee;
 }
@@ -281,8 +281,8 @@ header .onlineBoutique:hover {
 
 header .logo {
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 300px;
+    height: 36px;
     background-image: url(../images/logo.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -333,12 +333,12 @@ header .cartToggle .iconHolder img {
 }
 
 header .cartToggle .totalPrice {
-    padding: 12px 15px;
+    padding: 14px 15px;
     border-radius: 14px;
     padding-left: 37px;
     font-weight: 700;
     background: #fff;
-    color: #0493c3;
+    color: #141111;
 }
 
 header .search,
@@ -378,14 +378,14 @@ header .language {
 }
 
 button {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Tajawal', sans-serif;
     font-weight: 400;
     border-radius: 7px;
     font-size: 18px;
     background-color: #0493c3;
     border: 1px solid #0493c3;
     color: #fff;
-    padding: 16px 20px;
+    padding: 16px 20px 12px 0;
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -926,14 +926,14 @@ aside + main .fixedHeader {
 }
 
 .productListing .minus {
-    background-color: #ff5858;
+    background-color: #0493c3;
     height: 22px;
     width: 22px;
     display: block;
     border-radius: 5px;
     color: #fff;
     font-size: 25px;
-    line-height: 14px;
+    line-height: 25px;
     position: absolute;
     top: 7px;
     left: 7px;
@@ -941,11 +941,11 @@ aside + main .fixedHeader {
 }
 
 .productListing .counter {
-    background-color: #0493c3;
+    background-color: #21bb2b;
     height: 22px;
     min-width: 22px;
     font-size: 15px;
-    line-height: 20px;
+    line-height: 25px;
     color: #fff;
     display: block;
     position: absolute;
@@ -1238,7 +1238,7 @@ aside + main .fixedHeader {
 }
 
 .cart .total .totalPrice {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Tajawal', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #ffffff;
@@ -1397,7 +1397,7 @@ aside + main .fixedHeader {
 }
 
 .categories .item {
-    width: 33.3%;
+    width: 50%;
     float: left;
     padding: 0 3px;
     margin-bottom: 8px;
@@ -1446,7 +1446,7 @@ aside + main .fixedHeader {
 
 .searchParent {
     margin-bottom: 25px;
-    background-color: #03a7de;
+    background-color: #04a2d6;
 }
 
 .searchParent .container {
@@ -1459,7 +1459,8 @@ aside + main .fixedHeader {
     color: #fff;
     border: none;
     font-size: 14px;
-    padding: 10px 0 14px 0;
+    padding: 12px 0 10px 0;
+    font-weight: bold;
 }
 
 .searchParent input::-webkit-input-placeholder {
@@ -1515,14 +1516,16 @@ aside {
 }
 
 .discounted {
-    color: #0493c3;
+    color: #141111;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .main {
     text-decoration: line-through;
     font-size: 16px;
     color: #a29e9d;
+    font-weight: bold;
 }
 
 .size {
@@ -1630,8 +1633,15 @@ aside {
     background-color: #2d363c;
     width: 100%;
 }
+.cart_list{
+    transition: all linear 400ms;
+}
 .signup_form.visible_signup{
     transform: translate3d(0, 0, 0);
+}
+.cart_list.visible_signup{
+    opacity:0;
+    visibility: hidden;
 }
 .signup_form .inputField label{
     color: #fff;
@@ -1649,22 +1659,22 @@ aside {
     z-index: 3;
 }
 .bottom_buttons a{
-    background-color: #0493c3;
+    background-color: #21bb2b;
     display: block;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px 0 10px 0;
     text-align: center;
     position: relative;
 }
 .total_cart_bottom{
     position: absolute;
-    right: 10px;
-    top: 50%;
+    right: 20px;
+    top: 55%;
     transform: translateY(-50%);
-    font-size: 14px;
+    font-size: 18px;
 }
 .search_input{
     width: 100%;
@@ -1785,4 +1795,16 @@ padding: 7px 15px;
       height: 100%;
       border-radius: 0 0 6px 6px;
       background-color: #fff;
+  }
+  .catgories_main_holder{
+      position: relative;
+  }
+  .catgories_main_holder .lds-roller, .signup_form .lds-roller{
+      position: absolute;
+      transform: scale(0.5) translate3d(-100%, -100%, 0);
+      top: 50%;
+      left: 50%;
+  }
+  .order_message{
+      color: #fff;
   }

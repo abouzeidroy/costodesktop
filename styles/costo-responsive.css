@@ -111,7 +111,13 @@
         }
 
         .discounted{
-          font-size: 8px;
+          font-size: 12px;
+        }
+
+        .main {
+        text-decoration: line-through;
+        font-size: 12px;
+        color: #a29e9d;
         }
   .btn span {
     font-size: 11px;
@@ -491,9 +497,9 @@
       .catgories_main_holder.filtered_category{
         display: none;
       }
-      .productListing .item_image_main{
+      /* .productListing .item_image_main{
         height: 150px;
-      }
+      } */
       .productListing .listingItem{
         padding: 0 1px;
         flex-basis: 33.3333%;
@@ -549,7 +555,7 @@
       }
       .categories:not(.subCat){
         max-height: calc(100vh - 125px);
-        padding-bottom: 20px;
+        padding-bottom: 70px;
       }
   }
 
