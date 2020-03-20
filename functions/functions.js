@@ -115,7 +115,6 @@ function applySameHeights() {
 
 $(document).ready(function(e) {
 	
-	
 	$('.fullLinkVideo').click(function(e){
 		e.preventDefault()
 		var getHref = $(this).attr('href')

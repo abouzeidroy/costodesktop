@@ -94,6 +94,7 @@
   .filterBlock {
     padding: 20px; } }
 @media all and (max-width: 767px) {
+
   .all_categories_btn{
     display: block;
   }
@@ -129,8 +130,9 @@
   header {
     padding-top: 20px; }
     header .logo {
-      width: 41px;
-      height: 41px; }
+width: 130px;
+height: 30px;
+text-align: left; }
     header .menuToggle {
       width: 21px;
       margin-left: 20px; }
@@ -558,8 +560,19 @@ padding-top: 3px; }
         max-height: calc(100vh - 125px);
         padding-bottom: 70px;
       }
+        header .cartToggle .totalPrice{
+            padding: 4px 13px;
+    padding-left:35px;
+  
+  }
+  header .cartToggle .totalPrice span {
+    display:inline-block;
+    padding-top:5px;
+  }
+  header .cartToggle .iconHolder{
+    top:-2px;
   }
 
-
+  }
 
 /*# sourceMappingURL=mv-responsive.css.map */

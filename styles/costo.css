@@ -153,7 +153,7 @@ img {
 }
 
 .blockTitle span {
-    color: #0493c3;
+    color: #e14646;
 }
 
 .clearAfter:after {
@@ -180,7 +180,7 @@ nav h2 {
 }
 
 nav span {
-    color: #0493c3;
+    color: #e14646;
 }
 
 nav a {
@@ -252,7 +252,7 @@ header {
     padding-top: 30px;
     position: absolute;
     z-index: 1;
-    background-color: #0493c3;
+    background-color: #e14646;
     width: 100%;
 }
 
@@ -281,12 +281,12 @@ header .onlineBoutique:hover {
 
 header .logo {
     display: block;
-    width: 300px;
-    height: 36px;
+    width: 130px;
+    height: 30px;
     background-image: url(../images/logo.png);
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
+    position: static;
     left: calc(50% - 30px);
 }
 
@@ -382,8 +382,8 @@ button {
     font-weight: 400;
     border-radius: 7px;
     font-size: 18px;
-    background-color: #0493c3;
-    border: 1px solid #0493c3;
+    background-color: #e14646;
+    border: 1px solid #e14646;
     color: #fff;
     padding: 16px 20px 12px 0;
     cursor: pointer;
@@ -396,7 +396,7 @@ button {
 
 button:hover {
     background-color: #fff;
-    color: #0493c3;
+    color: #e14646;
 }
 
 .mainSlider {
@@ -440,7 +440,7 @@ button:hover {
 }
 
 .mainSlider h2 span {
-    color: #0493c3;
+    color: #e14646;
 }
 
 .mainSlider span {
@@ -455,7 +455,7 @@ button:hover {
 .mainSlider .year {
     font-size: 31px;
     font-weight: normal;
-    background-color: #0493c3;
+    background-color: #e14646;
     padding: 1px 20px 7px;
     display: inline-block;
     line-height: 31px;
@@ -563,7 +563,7 @@ button:hover {
     position: absolute;
     top: -65px;
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 .imagesListing {
@@ -887,7 +887,7 @@ aside + main .fixedHeader {
 
 .productListing .totalPrice {
     font-size: 25px;
-    color: #0493c3;
+    color: #e14646;
 }
 
 .productListing .favorite {
@@ -926,7 +926,7 @@ aside + main .fixedHeader {
 }
 
 .productListing .minus {
-    background-color: #0493c3;
+    background-color: #e14646;
     height: 22px;
     width: 22px;
     display: block;
@@ -935,8 +935,8 @@ aside + main .fixedHeader {
     font-size: 25px;
     line-height: 25px;
     position: absolute;
-    top: 7px;
-    left: 7px;
+    top: 11px;
+    left: 9px;
     z-index: 2;
 }
 
@@ -949,8 +949,8 @@ aside + main .fixedHeader {
     color: #fff;
     display: block;
     position: absolute;
-    right: 7px;
-    top: 7px;
+    right: 9px;
+    top: 11px;
     border-radius: 5px;
 }
 
@@ -1075,7 +1075,7 @@ aside + main .fixedHeader {
 }
 
 .signupForm .closeIcon svg path {
-    fill: #0493c3;
+    fill: #e14646;
 }
 
 .signupForm .closeIcon svg {
@@ -1084,7 +1084,7 @@ aside + main .fixedHeader {
 }
 
 .signupForm .closeIcon svg path {
-    fill: #0493c3;
+    fill: #e14646;
 }
 
 .signupForm .dk-selected:not([aria-activedescendant]) {
@@ -1222,7 +1222,7 @@ aside + main .fixedHeader {
 }
 
 .cart .closeIcon svg path {
-    fill: #0493c3;
+    fill: #e14646;
 }
 
 .cart .total {
@@ -1308,7 +1308,7 @@ aside + main .fixedHeader {
 
 .cart .qtty {
     box-sizing: border-box;
-    border: 1px solid #0493c3;
+    border: 1px solid #e14646;
     padding: 16px 24px;
     display: block;
     width: 160px;
@@ -1338,7 +1338,7 @@ aside + main .fixedHeader {
 }
 
 .cart .totalPrice {
-    color: #0493c3;
+    color: #e14646;
     font-size: 18px;
     font-family: 'Exodus Demo Sa';
 }
@@ -1366,9 +1366,10 @@ aside + main .fixedHeader {
     background-color: #454f55;
     margin-right: 25px;
     color: #ffffff;
-    font-size: 12px;
-    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+    padding: 8px 10px 5px 10px;
     border-radius: 5px;
+    font-weight: bold;
 }
 .cart .minibuttons:last-child{
     margin-right: 0;
@@ -1405,7 +1406,7 @@ aside + main .fixedHeader {
     color: #100f0f;
 }
 .categories .item.selected .catTitle, .categories .item:hover .catTitle{
-    background-color: #0493c3;
+    background-color: #e14646;
     color: #fff;
 }
 
@@ -1420,7 +1421,7 @@ aside + main .fixedHeader {
     display: block;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-    padding: 6px 5px;
+    padding: 9px 5px 6px 5px;
     font-weight: bold;
     color: #544444;
 }
@@ -1446,7 +1447,7 @@ aside + main .fixedHeader {
 
 .searchParent {
     margin-bottom: 25px;
-    background-color: #04a2d6;
+    background-color: #ed5858;
 }
 
 .searchParent .container {
@@ -1596,7 +1597,7 @@ aside {
     position: absolute;
     right: 5px;
     bottom: 5px;
-    background-color: #0493c3;
+    background-color: #e14646;
     width: 26px;
     line-height: 26px;
     text-align: center;
@@ -1719,7 +1720,7 @@ text-align: center;
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #0493c3;
+    background: #e14646;
     margin: -4px 0 0 -4px;
   }
   .lds-roller div:nth-child(1) {
@@ -1812,4 +1813,27 @@ text-align: center;
   }
   .order_message{
       color: #fff;
+  }
+
+  *{
+  -webkit-tap-highlight-color: transparent;  
+  }
+
+
+  .categories:not(.subCat){
+      max-height: calc(100vh - 235px);
+  }
+
+
+/*************Without Sub *************/
+
+main{
+  padding-top:145px;
+}
+.fixedBody{
+  height:135px
+}
+  
+  .titleCat{
+    display:none;
   }
