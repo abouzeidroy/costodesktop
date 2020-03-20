@@ -938,6 +938,7 @@ aside + main .fixedHeader {
     top: 11px;
     left: 9px;
     z-index: 2;
+    font-weight: bold;
 }
 
 .productListing .counter {
