@@ -506,8 +506,11 @@ padding-top: 3px; }
       .productListing .listingItem{
         padding: 0 1px;
         flex-basis: 33.3333%;
-        width: auto;
-        float:none;
+        width: 33.3333%;
+        float:left;
+      }
+      .productListing .row{
+        display: block;
       }
       .productListing .row{
         margin-left: -1px;
@@ -574,5 +577,14 @@ padding-top: 3px; }
   }
 
   }
+  /*************Without Sub *************/
 
+ @media all and (max-width:767px){
+      .fixedBody{
+          height:120px
+      }
+      main{
+          padding-top:125px;
+      }
+  }
 /*# sourceMappingURL=mv-responsive.css.map */
