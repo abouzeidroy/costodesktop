@@ -952,6 +952,7 @@ aside + main .fixedHeader {
     right: 9px;
     top: 11px;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .signupForm {
