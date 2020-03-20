@@ -315,7 +315,7 @@ header .cartToggle {
 header .cartToggle .iconHolder {
     height: 38px;
     width: 38px;
-    border-radius: 50%;
+    border-radius: 30%;
     position: absolute;
     top: 2px;
     left: 2px;
@@ -945,7 +945,7 @@ aside + main .fixedHeader {
     height: 22px;
     min-width: 22px;
     font-size: 15px;
-    line-height: 25px;
+    line-height: 27px;
     color: #fff;
     display: block;
     position: absolute;
