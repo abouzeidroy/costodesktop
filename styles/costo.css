@@ -1607,6 +1607,7 @@ aside {
 .productListing .row{
     margin-left: -12px;
     margin-right: -12px;
+    min-width: 100%;
 }
 .no_subcats main{
     padding-top: 140px;

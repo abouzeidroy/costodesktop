@@ -243,6 +243,7 @@
 					console.log(data);
 					$scope.order_message = 'Your order has been successfully placed, please contact us on 70593163 for any inquiries'
 					$scope.submitting_order = false;
+					$scope.empty_cart();
 				}, function(){
 					$scope.order_message = 'Something went wrong'
 					$scope.submitting_order = false;
