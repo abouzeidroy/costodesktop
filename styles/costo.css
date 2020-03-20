@@ -882,7 +882,7 @@ aside + main .fixedHeader {
 
 .productListing .name {
     color: #141111;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .productListing .totalPrice {
@@ -1414,7 +1414,7 @@ aside + main .fixedHeader {
 }
 
 .categories span {
-    font-size: 13.5px;
+    font-size: 15px;
     background-color: #fff;
     text-align: center;
     display: block;
@@ -1663,7 +1663,7 @@ aside {
     background-color: #21bb2b;
     display: block;
     color: #fff;
-    font-size: 18px;
+    font-size: 21px;
     text-transform: uppercase;
     font-weight: bold;
     padding: 20px 0 10px 0;
