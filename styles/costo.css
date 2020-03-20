@@ -1522,9 +1522,8 @@ aside {
 }
 
 .main {
-    text-decoration: line-through;
     font-size: 16px;
-    color: #a29e9d;
+    color: #141111;
     font-weight: bold;
 }
 
@@ -1689,10 +1688,11 @@ background-color:
 #21bb2b;
 color:
 #fff;
-font-size: 14px;
+font-size: 15px;
 display: block;
 z-index: 101;
 padding: 7px 15px;
+font-weight: bold;
 }
 
 
