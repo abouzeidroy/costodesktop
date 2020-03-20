@@ -115,9 +115,8 @@
         }
 
         .main {
-        text-decoration: line-through;
-        font-size: 12px;
-        color: #a29e9d;
+        font-size: 14px;
+        color: #141111;
         }
   .btn span {
     font-size: 11px;
@@ -381,9 +380,11 @@
       height: 14px;
       width: 14px; }
     .productListing .name {
-      font-size: 13px;
-      line-height: auto;
-      margin-bottom: 0; }
+font-size: 13px;
+line-height: auto;
+margin-bottom: 0;
+line-height: 13px;
+padding-top: 3px; }
     .productListing .domain {
       margin-bottom: 5px; }
     .productListing .totalPrice {
