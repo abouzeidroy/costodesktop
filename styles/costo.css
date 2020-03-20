@@ -1681,7 +1681,7 @@ aside {
 }
 .all_categories_btn{
 position: fixed;
-left: 10px;
+left: 7px;
 bottom: 10px;
 border-radius: 2px;
 background-color:
@@ -1693,9 +1693,13 @@ display: block;
 z-index: 101;
 padding: 10px 15px 6px 15px;
 font-weight: bold;
+text-align: center;
 }
 
-
+.all_categories_btn.right{
+    left: auto;
+    right: 7px;
+}
 
 
 .lds-roller{
