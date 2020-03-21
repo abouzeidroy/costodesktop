@@ -381,22 +381,24 @@ button {
     font-family: 'Tajawal', sans-serif;
     font-weight: 400;
     border-radius: 7px;
-    font-size: 18px;
-    background-color: #e14646;
-    border: 1px solid #e14646;
+    font-size: 16px;
+    background-color: #21bb2b;
+    border: 1px solid #21bb2b;
     color: #fff;
-    padding: 16px 20px 12px 0;
+    padding: 19px 20px 17px 0;
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #fff;
-    color: #e14646;
+    background-color: #1ca525;
+    color: #ffffff;
 }
 
 .mainSlider {
