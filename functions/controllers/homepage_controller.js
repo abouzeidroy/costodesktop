@@ -78,16 +78,16 @@
 			}
 			
 			$scope.filter_by_category = function(category){
-				if(category.parent == 0){
+				//if(category.parent == 0){
 					$scope.parent_cat_id = category.id;
 					$scope.parent_category = category;
-					var get_sub_cats = sub_cats();
-					var get_sub_cats_ids = get_sub_cats.ids[0];
-					$scope.products_params.product_cat = get_sub_cats_ids;
-				}else{
-					$scope.parent_cat_id = category.id;
-					$scope.products_params.product_cat = category.id;
-				};
+					//var get_sub_cats = sub_cats();
+					//var get_sub_cats_ids = get_sub_cats.ids[0];
+					$scope.products_params.product_cat = $scope.parent_cat_id;
+				// }else{
+				// 	$scope.parent_cat_id = category.id;
+				// 	$scope.products_params.product_cat = category.id;
+				// };
 				$location.search('category', encodeURI(category.slug));
 				$scope.products_params.page = 1;
 				$scope.products = [];
