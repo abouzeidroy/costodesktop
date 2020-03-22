@@ -90,7 +90,7 @@ body {
     background-color: #eeeeee;
 }
 
-body:before {
+.backdrop {
     opacity: 0;
     visibility: hidden;
     content: '';
@@ -108,12 +108,9 @@ body:before {
     transition: all 0.5s ease;
 }
 
-body.withOverlay {
-    overflow: hidden;
-    position: relative;
-}
 
-body.withOverlay:before {
+
+.backdrop.visible_backdrop {
     opacity: 1;
     visibility: visible;
 }
@@ -689,7 +686,7 @@ body:not(.homepage) header .container {
 }
 
 aside {
-    width: 320px;
+    width: 450px;
     float: left;
 }
 
@@ -910,7 +907,7 @@ aside + main .fixedHeader {
     float: none;
     padding: 0 3px;
     width: auto;
-    flex-basis: calc(100%/6);
+    flex-basis: calc(100%/5);
     margin-bottom: 3px;
 }
 
@@ -1183,7 +1180,6 @@ aside + main .fixedHeader {
     width: 490px;
     max-width: 100%;
     top: 0;
-    z-index: 10;
     background: #2d363c;
     display: block;
     padding: 30px;
@@ -1193,7 +1189,7 @@ aside + main .fixedHeader {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    z-index: 200;
+    z-index: 201;
 }
 
 .cart.visibleCart {
@@ -1496,7 +1492,7 @@ aside + main .fixedHeader {
 
 main {
     padding-top: 260px;
-    padding-left: 350px;
+    padding-left: 480px;
     clear: both;
     padding-right: 15px;
     padding-bottom: 60px;
@@ -1711,7 +1707,11 @@ text-align: center;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
+    margin-left: -20px;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
 }
 .lds-roller div {
     animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -1811,7 +1811,7 @@ text-align: center;
   }
   .catgories_main_holder .lds-roller, .signup_form .lds-roller{
       position: absolute;
-      transform: scale(0.5) translate3d(-100%, -100%, 0);
+      transform: scale(0.5) translate3d(-50%, -50%, 0);
       top: 50%;
       left: 50%;
   }

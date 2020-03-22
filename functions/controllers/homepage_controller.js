@@ -88,7 +88,7 @@
 				// 	$scope.parent_cat_id = category.id;
 				// 	$scope.products_params.product_cat = category.id;
 				// };
-				$location.search('category', encodeURI(category.slug));
+				//$location.search('category', encodeURI(category.slug));
 				$scope.products_params.page = 1;
 				$scope.products = [];
 				$scope.reached_end = false;
@@ -169,16 +169,18 @@
 			$scope.add_to_cart = function(product, quantity, from_cart){
 				product.loading = true;
 				if(from_cart){
+					console.log(product);
 					var item_object = {
 						name: product.name,
-						price: product.price,
+						price: product._regular_price,
 						image: '',
 						id: product.id
 					}
 				}else{
+					console.log(product);
 					var item_object = {
 						name: product.title.rendered,
-						price: product._price,
+						price: product._regular_price,
 						image: '',
 						id: product.id
 					}
@@ -244,6 +246,13 @@
 					$scope.order_message = 'Your order has been successfully placed, please contact us on 70593163 for any inquiries'
 					$scope.submitting_order = false;
 					$scope.empty_cart();
+					$timeout(function(){
+						$scope.order_message = '';
+						$scope.visibleCart = false;
+						$timeout(function(){
+							$scope.show_form = false;
+						}, 2000)
+					}, 4000)
 				}, function(){
 					$scope.order_message = 'Something went wrong'
 					$scope.submitting_order = false;

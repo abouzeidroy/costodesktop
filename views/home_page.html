@@ -111,6 +111,7 @@
         <div class="listingHolder cart_list" ng-class="{'visible_signup':show_form}">
             <div class="listingItem clearAfter" ng-repeat="cart_item in cart.items">
                 <div class="listing_image" ng-if="cart_item.image"><img ng-src="{{cart_item.image}}" alt=""><span class="quantity_holder">X{{cart_item.quantity}}</span></div>
+                <div class="listing_image" ng-if="!cart_item.image"><img src="https://via.placeholder.com/250x250.jpg" alt=""><span class="quantity_holder">X{{cart_item.quantity}}</span></div>
                 <div class="listing_info_main">
                     <div class="listingInfos">
                         <h2 class="name">{{cart_item.name}}</h2>
@@ -148,3 +149,4 @@
         </form>
     </section>
 </div>
+<div class="backdrop" ng-class="{visible_backdrop:visibleCart}"></div>
