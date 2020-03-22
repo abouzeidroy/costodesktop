@@ -41,7 +41,7 @@
                 <a href="javascript:;" class="item" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.count > 0 && category.parent == 0" ng-class="{selected:parent_category.id == category.id}">
                     <div class="inner_category">
                         <div ng-if="category.image.src"><img ng-src="{{category.image.src}}" alt=""></div>
-                        <div ng-if="!category.image.src"><img src="https://via.placeholder.com/370x220.jpg" alt=""></div>
+                        <div ng-if="!category.image.src"><img src="https://via.placeholder.com/370x130.jpg" alt=""></div>
                         <span class="catTitle">{{category.name}}</span>
                     </div>
                 </a>
