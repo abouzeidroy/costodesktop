@@ -172,7 +172,7 @@
 					console.log(product);
 					var item_object = {
 						name: product.name,
-						price: product._regular_price,
+						price: product.price,
 						image: '',
 						id: product.id
 					}
@@ -189,6 +189,9 @@
 					item_object.image = product.better_featured_image.source_url;
 				}
 				var get_row_index = get_row_id($scope.cart.items, 'id', item_object.id);
+				console.log(item_object.price);
+				console.log(quantity);
+				console.log(parseInt(item_object.price)*quantity);
 				$scope.cart.price += parseInt(item_object.price)*quantity;
 				if(get_row_index != '-1'){
 					$scope.cart.items[get_row_index].quantity += quantity
@@ -249,8 +252,11 @@
 					$timeout(function(){
 						$scope.order_message = '';
 						$scope.visibleCart = false;
+						$scope.reset_category_selection();
+						$scope.reset_search_criterias();
 						$timeout(function(){
 							$scope.show_form = false;
+
 						}, 2000)
 					}, 4000)
 				}, function(){
