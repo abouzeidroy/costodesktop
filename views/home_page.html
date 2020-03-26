@@ -42,7 +42,7 @@
                     <div class="inner_category">
                         <div ng-if="category.image.src"><img ng-src="{{category.image.src}}" alt=""></div>
                         <div ng-if="!category.image.src"><img src="https://via.placeholder.com/370x130.jpg" alt=""></div>
-                        <span class="catTitle">{{category.name}}</span>
+                        <span class="catTitle" ng-html="{{category.name}}"></span>
                     </div>
                 </a>
             </div>
@@ -96,18 +96,20 @@
     <div class="bottom_buttons"><a href="javascript:;" ng-click="visibleCart = true">View trolley - رؤية السلة<span class="total_cart_bottom" ng-if="cart.price">{{cart.price}}LL</span></a></div>
 </main>
     <section class="cart" ng-class="{'visibleCart':visibleCart}">
-        <div class="cart_buttons_holder">
-            <a href="javascript:;" class="minibuttons left_float" ng-click="visibleCart = false">Back To Products</a>
-            <a href="javascript:;" class="minibuttons right_float" ng-click="empty_cart()">Remove All</a>
-        </div>
-        <div class="total flex">
-            <span>Total</span>
-            <div class="totalPrice">
-                <span class="price">{{cart.price}}</span>
-                <span class="currency">LL</span>
+        <div class="fixed_cart_part">
+            <div class="cart_buttons_holder">
+                <a href="javascript:;" class="minibuttons left_float" ng-click="visibleCart = false">Back To Products</a>
+                <a href="javascript:;" class="minibuttons right_float" ng-click="reset_screen_and_empty_cart()">Remove All</a>
             </div>
+            <div class="total flex">
+                <span>Total</span>
+                <div class="totalPrice">
+                    <span class="price">{{cart.price}}</span>
+                    <span class="currency">LL</span>
+                </div>
+            </div>
+            <button ng-click="show_form = true">Finish Shopping</button>
         </div>
-        <button ng-click="show_form = true">Finish Shopping</button>
         <div class="listingHolder cart_list" ng-class="{'visible_signup':show_form}">
             <div class="listingItem clearAfter" ng-repeat="cart_item in cart.items">
                 <div class="listing_image" ng-if="cart_item.image"><img ng-src="{{cart_item.image}}" alt=""><span class="quantity_holder">X{{cart_item.quantity}}</span></div>
@@ -149,4 +151,4 @@
         </form>
     </section>
 </div>
-<div class="backdrop" ng-class="{visible_backdrop:visibleCart}"></div>
+<div class="backdrop" ng-click="visibleCart = false" ng-class="{visible_backdrop:visibleCart}"></div>

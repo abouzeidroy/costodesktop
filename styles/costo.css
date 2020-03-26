@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Tajawal&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Tajawal&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Roboto:wght@400;500;700&display=swap');
 html,
 body,
 div,
@@ -85,7 +86,7 @@ textarea,
 select,
 body {
     font-size: 14px;
-    font-family: 'Tajawal', sans-serif;
+    font-family: 'Roboto', 'Cairo', sans-serif;
     color: #24292F;
     background-color: #eeeeee;
 }
@@ -96,7 +97,7 @@ body {
     content: '';
     height: 100vh;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
@@ -932,7 +933,7 @@ aside + main .fixedHeader {
     border-radius: 5px;
     color: #fff;
     font-size: 25px;
-    line-height: 25px;
+    line-height: 21px;
     position: absolute;
     top: 11px;
     left: 9px;
@@ -945,7 +946,7 @@ aside + main .fixedHeader {
     height: 22px;
     min-width: 22px;
     font-size: 15px;
-    line-height: 27px;
+    line-height: 21px;
     color: #fff;
     display: block;
     position: absolute;
@@ -1416,12 +1417,13 @@ aside + main .fixedHeader {
 
 .categories span {
     font-size: 15px;
+    line-height: 18px;
     background-color: #fff;
     text-align: center;
     display: block;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-    padding: 9px 5px 6px 5px;
+    padding: 10px 5px 10px 5px;
     font-weight: bold;
     color: #000000;
 }
@@ -1526,6 +1528,7 @@ aside {
     font-size: 16px;
     color: #141111;
     font-weight: bold;
+    line-height: 18px;
 }
 
 .size {
@@ -1664,9 +1667,10 @@ aside {
     display: block;
     color: #fff;
     font-size: 21px;
+    line-height: 24px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 20px 0 10px 0;
+    padding: 10px 0 10px 0;
     text-align: center;
     position: relative;
 }
@@ -1842,4 +1846,63 @@ main{
     display:none;
   }
 
- 
+ .fixed_cart_part{
+     /* position: absolute;
+     top: 30px;
+     left: 30px;
+     right: 30px; */
+ }
+ .cart .listingHolder{
+    height: calc(100% - 220px);
+    overflow: auto;
+    /* padding-top: 220px; */
+    /* padding-right: 5px; */
+    background-color: transparent;
+    padding-right: 10px;
+ }
+ .cart .listingHolder::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 2px;
+  }
+  
+  /* Track */
+  .cart .listingHolder::-webkit-scrollbar-track{
+    background: #f1f1f1;
+    opacity: 0;
+    transition: all linear 300ms;
+  }
+  .cart .listingHolder:hover::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    opacity: 1;
+  }
+  
+  /* Handle */
+  .cart .listingHolder::-webkit-scrollbar-thumb{
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  .cart .listingHolder::-webkit-scrollbar-thumb:hover{
+    background: #555;
+  }
+
+
+  
+
+  .categories:not(.subCat)::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 2px;
+  }
+  
+  /* Track */
+  .categories:not(.subCat)::-webkit-scrollbar-track{
+    background: #ed5858;
+    transition: all linear 300ms;
+  }
+  .categories:not(.subCat){
+      padding-right: 5px;
+  }
+  /* Handle */
+  .categories:not(.subCat)::-webkit-scrollbar-thumb{
+    background: #21bb2b;
+  }

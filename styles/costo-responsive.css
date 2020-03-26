@@ -94,7 +94,7 @@
   .filterBlock {
     padding: 20px; } }
 @media all and (max-width: 768px) {
-body{
+body, .cart{
   overflow:auto;
 -webkit-overflow-scrolling:touch;
 }

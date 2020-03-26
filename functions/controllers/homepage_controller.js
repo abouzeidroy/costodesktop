@@ -1,7 +1,7 @@
 (function (){
 	'use strict';
-	costo_app.controller('homepage_controller', ['$scope','$timeout','$debounce','$q','costo_services', '$location','cart_services', 'storage_services',
-		function($scope, $timeout, $debounce, $q, costo_services, $location, cart_services, storage_services) {
+	costo_app.controller('homepage_controller', ['$scope','$timeout','$debounce','$q','costo_services', '$location','cart_services', 'storage_services', 'Notification',
+		function($scope, $timeout, $debounce, $q, costo_services, $location, cart_services, storage_services, Notification) {
 			$scope.page_loading = true;
 
 			$scope.products_params = {
@@ -234,7 +234,29 @@
 				name:''
 			}
 
+			$scope.reset_screen_and_empty_cart = function(){
+				$scope.show_form = false;
+				//$scope.order_message = '';
+				$scope.visibleCart = false;
+				//$scope.reset_category_selection();
+				//$scope.reset_search_criterias();
+				//get_homepage_products();
+				$timeout(function(){
+					$scope.empty_cart();
+				}, 2000)
+			}
+			$scope.form_valid = function(){
+				var valid = true;
+				if($scope.guest.phone_number == '' || $scope.guest.name == ''){
+					valid = false;
+				}
+				return valid;
+			}
 			$scope.create_order = function(){
+				if(!$scope.form_valid()){
+					Notification.error('Fields are required')
+					return false;
+				}
 				var cart_items = [];
 				angular.forEach($scope.cart.items, function(item){
 					var order_item = {
