@@ -78,6 +78,8 @@
 			}
 			
 			$scope.filter_by_category = function(category){
+				$scope.search.search_key = '';
+				$scope.products_params.search = '';
 				//if(category.parent == 0){
 					$scope.parent_cat_id = category.id;
 					$scope.parent_category = category;
@@ -238,9 +240,9 @@
 				$scope.show_form = false;
 				//$scope.order_message = '';
 				$scope.visibleCart = false;
-				//$scope.reset_category_selection();
-				//$scope.reset_search_criterias();
-				//get_homepage_products();
+				$scope.reset_category_selection();
+				$scope.reset_search_criterias();
+				get_homepage_products();
 				$timeout(function(){
 					$scope.empty_cart();
 				}, 2000)

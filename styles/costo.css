@@ -1636,6 +1636,7 @@ aside {
     padding: 30px;
     background-color: #2d363c;
     width: 100%;
+    z-index: 3;
 }
 .cart_list{
     transition: all linear 400ms;
