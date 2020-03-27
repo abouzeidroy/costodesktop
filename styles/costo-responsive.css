@@ -448,7 +448,12 @@ padding-top: 3px; }
   button {
     width: 100%;
     font-size: 15px; }
-
+    .fixed_cart_part{
+      padding:10px 10px 0 10px
+    }
+    .cart .listingHolder{
+      padding: 180px 15px 15px 15px
+    }
   /* .cart {
     padding: 10px; } */
     .cart h2 {
