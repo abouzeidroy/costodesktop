@@ -44,8 +44,8 @@
 				// Online woocommerce.dekkanjeh.com credentiasl
 				var domain = 'https://woocommerce.dekkanjeh.com/wp-json';
 				var json_params = {
-					consumer_key:'ck_88ef47c27b0c4bb988a2216cc5a5924c3599c98b',
-					consumer_secret:'cs_348fe0b1cd6eba0ba31ed486d18e2415654f9475'
+					consumer_key:'ck_f828e5305ebbef419a1880b65585f2216479b84c',
+					consumer_secret:'cs_ef4bb1450c68bddb2395fff14bfa513c1ecbc3e5'
 					//'format' : get_config_data('default_api_format')
 				};
 				var endpoint_url = domain + endpoint;
