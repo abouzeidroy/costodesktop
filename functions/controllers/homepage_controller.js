@@ -5,7 +5,7 @@
 			$scope.page_loading = true;
 
 			$scope.products_params = {
-				product_cat:'',
+				category:'',
 				page:1,
 				per_page:50,
 				search: ''
@@ -19,12 +19,15 @@
 			function init(){
 				var deferred = $q.defer();
 				// Get Categories
-				var promise1 = get_homepage_products();
-				var promise2 = get_homepage_categories();
+				var promise1 = get_homepage_featured();
+				var promise2 = get_homepage_products();
+				var promise3 = get_homepage_categories();
 				// Return a promise
-				$q.all([promise1, promise2]).then(function(){
-					// All promises are loaded 
-					deferred.resolve();
+				$q.all([promise1]).then(function(){
+					$q.all([promise2, promise3]).then(function(){
+						// All promises are loaded 
+						deferred.resolve();
+					})
 				});
 				return deferred.promise;
 			}
@@ -40,6 +43,9 @@
 				costo_services.get_products($scope.products_params).then(function(response){
 					$scope.products = $scope.products.concat(response);
 					$scope.products_loading = false;
+					if(response.length == 0){
+						$scope.reached_end = true;
+					}
 					deferred.resolve();
 				}, function(){
 					$scope.products_loading = false;
@@ -63,6 +69,28 @@
 				return deferred.promise;
 			}
 			
+			function get_homepage_featured(){
+				var deferred = $q.defer();
+				$scope.products_loading = true;
+				var by_cats = angular.copy($scope.products_params);
+				by_cats.tag = 69;
+				costo_services.get_products(by_cats).then(function(response){
+					$scope.products = $scope.products.concat(response);
+					$scope.products_loading = false;
+					// if(response.length == 0){
+					// 	$scope.reached_end = true;
+					// }
+					deferred.resolve();
+				}, function(){
+					$scope.products_loading = false;
+					//$scope.reached_end = true;
+					//alert('No more products to load');
+					deferred.reject();
+				});
+				return deferred.promise;
+				
+			}
+
 			init();
 
 			function sub_cats(){
@@ -85,7 +113,7 @@
 					$scope.parent_category = category;
 					//var get_sub_cats = sub_cats();
 					//var get_sub_cats_ids = get_sub_cats.ids[0];
-					$scope.products_params.product_cat = $scope.parent_cat_id;
+					$scope.products_params.category = $scope.parent_cat_id;
 				// }else{
 				// 	$scope.parent_cat_id = category.id;
 				// 	$scope.products_params.product_cat = category.id;
@@ -99,7 +127,7 @@
 
 			$scope.product_filters = function(item){
 				var product_found = false;
-				if(is_in_array($scope.filters.category_id, item.product_cat) || $scope.filters.category_id == 0){
+				if(is_in_array($scope.filters.category_id, item.category) || $scope.filters.category_id == 0){
 					product_found = true;
 				}
 				return product_found;
@@ -157,7 +185,7 @@
 
 			$scope.reset_category_selection = function(){
 				$scope.parent_category = '';
-				$scope.products_params.product_cat = '';
+				$scope.products_params.category = '';
 			};
 
 			$scope.reset_search_criterias = function(){
@@ -174,27 +202,27 @@
 					console.log(product);
 					var item_object = {
 						name: product.name,
-						price: product.price,
+						regular_price: product.regular_price,
 						image: '',
 						id: product.id
 					}
 				}else{
 					console.log(product);
 					var item_object = {
-						name: product.title.rendered,
-						price: product._regular_price,
+						name: product.name,
+						regular_price: product.regular_price,
 						image: '',
 						id: product.id
 					}
 				}
-				if(product.better_featured_image && product.better_featured_image.source_url){
-					item_object.image = product.better_featured_image.source_url;
+				if(product.images && product.images[0].src){
+					item_object.image = product.images[0].src;
 				}
 				var get_row_index = get_row_id($scope.cart.items, 'id', item_object.id);
-				console.log(item_object.price);
+				console.log(item_object.regular_price);
 				console.log(quantity);
-				console.log(parseInt(item_object.price)*quantity);
-				$scope.cart.price += parseInt(item_object.price)*quantity;
+				console.log(parseInt(item_object.regular_price)*quantity);
+				$scope.cart.price += parseInt(item_object.regular_price)*quantity;
 				if(get_row_index != '-1'){
 					$scope.cart.items[get_row_index].quantity += quantity
 					if($scope.cart.items[get_row_index].quantity == 0){

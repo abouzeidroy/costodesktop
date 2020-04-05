@@ -40,6 +40,12 @@
 				// 	//'format' : get_config_data('default_api_format')
 				// };
 
+				var domain = 'https://192.168.1.5/raz/discountedgrocerybackendwoocommerce/wp-json';
+				var json_params = {
+					consumer_key:'ck_479bfb6e3b4746b9c9874c6019f8bcc76152e510',
+					consumer_secret:'cs_65fec7964a8e6689d7009b8aaea9f19ff4b6d64b'
+					//'format' : get_config_data('default_api_format')
+				};
 
 				// Online woocommerce.dekkanjeh.com credentiasl
 				var domain = 'https://woocommerce.dekkanjeh.com/wp-json';
@@ -111,10 +117,18 @@
 
 			return {
 				get_products: function(params){
-					var endpoint = '/wp/v2/product';
+					var endpoint = '/wc/v2/products';
 					//var endpoint = '/wc/v2/orders';
 					params.order = 'asc';
 					params.orderby = 'menu_order';
+					// params.orderby = [{
+					// 	'menu_order':'DESC',
+					// 	'tags': {
+					// 		'key' : 'tags',
+					// 		'value' : 'Featured',
+					// 		'compare' : '='
+					// 	}
+					// }]
 					var options = { 'method': 'GET', 'endpoint': endpoint, 'return_result': '1', 'return_response': '1', 'params': params};
 					return http_call(options);
 				},
@@ -122,7 +136,7 @@
 					var params = {
 						per_page: 100
 					}
-					var endpoint = '/wc/v4/products/categories';
+					var endpoint = '/wc/v2/products/categories';
 					var options = { 'method': 'GET', 'endpoint': endpoint, 'return_result': '1', 'return_response': '1', 'params': params};
 					return http_call(options);
 				},
