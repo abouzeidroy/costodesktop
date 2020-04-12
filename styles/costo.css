@@ -151,7 +151,7 @@ img {
 }
 
 .blockTitle span {
-    color: #e14646;
+    color: #3178ff;
 }
 
 .clearAfter:after {
@@ -178,7 +178,7 @@ nav h2 {
 }
 
 nav span {
-    color: #e14646;
+    color: #3178ff;
 }
 
 nav a {
@@ -250,7 +250,7 @@ header {
     padding-top: 30px;
     position: absolute;
     z-index: 1;
-    background-color: #e14646;
+    background-color: #3178ff;
     width: 100%;
 }
 
@@ -331,7 +331,7 @@ header .cartToggle .iconHolder img {
 }
 
 header .cartToggle .totalPrice {
-    padding: 14px 15px;
+    padding: 11px 15px;
     border-radius: 14px;
     padding-left: 37px;
     font-weight: 700;
@@ -440,7 +440,7 @@ button:hover {
 }
 
 .mainSlider h2 span {
-    color: #e14646;
+    color: #3178ff;
 }
 
 .mainSlider span {
@@ -455,7 +455,7 @@ button:hover {
 .mainSlider .year {
     font-size: 31px;
     font-weight: normal;
-    background-color: #e14646;
+    background-color: #3178ff;
     padding: 1px 20px 7px;
     display: inline-block;
     line-height: 31px;
@@ -887,7 +887,7 @@ aside + main .fixedHeader {
 
 .productListing .totalPrice {
     font-size: 25px;
-    color: #e14646;
+    color: #3178ff;
 }
 
 .productListing .favorite {
@@ -926,14 +926,14 @@ aside + main .fixedHeader {
 }
 
 .productListing .minus {
-    background-color: #e14646;
+    background-color: #f23737;
     height: 22px;
     width: 22px;
     display: block;
     border-radius: 5px;
     color: #fff;
     font-size: 25px;
-    line-height: 21px;
+    line-height: 18px;
     position: absolute;
     top: 11px;
     left: 9px;
@@ -942,7 +942,7 @@ aside + main .fixedHeader {
 }
 
 .productListing .counter {
-    background-color: #21bb2b;
+    background-color: #3178ff;
     height: 22px;
     min-width: 22px;
     font-size: 15px;
@@ -1077,7 +1077,7 @@ aside + main .fixedHeader {
 }
 
 .signupForm .closeIcon svg path {
-    fill: #e14646;
+    fill: #3178ff;
 }
 
 .signupForm .closeIcon svg {
@@ -1086,7 +1086,7 @@ aside + main .fixedHeader {
 }
 
 .signupForm .closeIcon svg path {
-    fill: #e14646;
+    fill: #3178ff;
 }
 
 .signupForm .dk-selected:not([aria-activedescendant]) {
@@ -1223,7 +1223,7 @@ aside + main .fixedHeader {
 }
 
 .cart .closeIcon svg path {
-    fill: #e14646;
+    fill: #3178ff;
 }
 
 .cart .total {
@@ -1309,7 +1309,7 @@ aside + main .fixedHeader {
 
 .cart .qtty {
     box-sizing: border-box;
-    border: 1px solid #e14646;
+    border: 1px solid #3178ff;
     padding: 16px 24px;
     display: block;
     width: 160px;
@@ -1339,7 +1339,7 @@ aside + main .fixedHeader {
 }
 
 .cart .totalPrice {
-    color: #e14646;
+    color: #3178ff;
     font-size: 18px;
     font-family: 'Exodus Demo Sa';
 }
@@ -1407,7 +1407,7 @@ aside + main .fixedHeader {
     color: #100f0f;
 }
 .categories .item.selected .catTitle, .categories .item:hover .catTitle{
-    background-color: #e14646;
+    background-color: #3178ff;
     color: #fff;
 }
 
@@ -1449,7 +1449,7 @@ aside + main .fixedHeader {
 
 .searchParent {
     margin-bottom: 25px;
-    background-color: #ed5858;
+    background-color: #4b84f0;
 }
 
 .searchParent .container {
@@ -1463,7 +1463,6 @@ aside + main .fixedHeader {
     border: none;
     font-size: 14px;
     padding: 12px 0 10px 0;
-    font-weight: bold;
 }
 
 .searchParent input::-webkit-input-placeholder {
@@ -1600,7 +1599,7 @@ aside {
     position: absolute;
     right: 5px;
     bottom: 5px;
-    background-color: #e14646;
+    background-color: #3178ff;
     width: 26px;
     line-height: 26px;
     text-align: center;
@@ -1671,7 +1670,7 @@ aside {
     line-height: 24px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 10px 0 10px 0;
+    padding: 13px 0 17px 0;
     text-align: center;
     position: relative;
 }
@@ -1729,7 +1728,7 @@ text-align: center;
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #e14646;
+    background: #3178ff;
     margin: -4px 0 0 -4px;
   }
   .lds-roller div:nth-child(1) {
@@ -1901,7 +1900,7 @@ main{
   
   /* Track */
   .categories:not(.subCat)::-webkit-scrollbar-track{
-    background: #ed5858;
+    background: #4b84f0;
     transition: all linear 300ms;
   }
   .categories:not(.subCat){
