@@ -577,13 +577,13 @@ padding-top: 3px; }
         padding-bottom: 70px;
       }
         header .cartToggle .totalPrice{
-            padding: 4px 13px;
+            padding: 4px 13px 8px 13px;
     padding-left:35px;
   
   }
   header .cartToggle .totalPrice span {
     display:inline-block;
-    padding-top:5px;
+    padding-top:1px;
   }
   header .cartToggle .iconHolder{
     top:-2px;

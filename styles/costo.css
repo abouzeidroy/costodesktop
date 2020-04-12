@@ -250,7 +250,7 @@ header {
     padding-top: 30px;
     position: absolute;
     z-index: 1;
-    background-color: #3178ff;
+    background-color: #2d363c;
     width: 100%;
 }
 
@@ -281,7 +281,6 @@ header .logo {
     display: block;
     width: 145px;
     height: 40px;
-    background-image: url(../images/logo.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: static;
@@ -332,7 +331,7 @@ header .cartToggle .iconHolder img {
 
 header .cartToggle .totalPrice {
     padding: 14px 15px;
-    border-radius: 14px;
+    border-radius: 6px;
     padding-left: 37px;
     font-weight: 700;
     background: #fff;
@@ -417,7 +416,7 @@ button:hover {
     -o-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
-    background-image: url(../images/biglogo.png);
+    background-image: url(../images/logoprincemarket.png);
 }
 
 .mainSlider .sliderParent {
@@ -527,7 +526,7 @@ button:hover {
     content: '';
     height: 600px;
     width: 460px;
-    background-image: url(../images/wineglass.png);
+    background-image: url(../images/logoprincemarket.png);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -671,7 +670,7 @@ body:not(.homepage) header .menuToggle .a {
 }
 
 body:not(.homepage) header .logo {
-    background-image: url(../images/whiteLogo.png);
+    background-image: url(../images/logoprincemarket.png);
 }
 
 body:not(.homepage) header .container {
@@ -1449,7 +1448,7 @@ aside + main .fixedHeader {
 
 .searchParent {
     margin-bottom: 25px;
-    background-color: #4b84f0;
+    background-color: #3c4850;
 }
 
 .searchParent .container {
@@ -1658,7 +1657,7 @@ aside {
     position: fixed;
     width: 100%;
     left: 0;
-    background-color: #000;
+    background-color: #2d363c;
     padding: 10px;
     z-index: 3;
 }
@@ -1900,7 +1899,7 @@ main{
   
   /* Track */
   .categories:not(.subCat)::-webkit-scrollbar-track{
-    background: #4b84f0;
+    background: #efefef;
     transition: all linear 300ms;
   }
   .categories:not(.subCat){
@@ -1908,5 +1907,5 @@ main{
   }
   /* Handle */
   .categories:not(.subCat)::-webkit-scrollbar-thumb{
-    background: #21bb2b;
+    background: #dedede;
   }
