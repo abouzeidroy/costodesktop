@@ -5,7 +5,7 @@
 
             var cart = {
                 items:[] || storage_services.get_object_cookie('cart'),
-                price:0
+                regular_price:0
             };
 			return {
 				add_to_cart:function(item, quantity){
@@ -21,7 +21,7 @@
                 empty_cart: function(){
                     cart = {
                         items:[],
-                        price:0
+                        regular_price:0
                     };
                     storage_services.set_object_cookie('cart', cart);
                 }

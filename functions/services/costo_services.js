@@ -121,6 +121,7 @@
 					//var endpoint = '/wc/v2/orders';
 					params.order = 'asc';
 					params.orderby = 'menu_order';
+					params.status = "publish"
 					// params.orderby = [{
 					// 	'menu_order':'DESC',
 					// 	'tags': {

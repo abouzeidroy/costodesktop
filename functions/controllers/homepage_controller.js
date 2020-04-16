@@ -73,7 +73,7 @@
 				var deferred = $q.defer();
 				$scope.products_loading = true;
 				var by_cats = angular.copy($scope.products_params);
-				by_cats.tag = 69;
+				by_cats.tag = 114;
 				costo_services.get_products(by_cats).then(function(response){
 					$scope.products = $scope.products.concat(response);
 					$scope.products_loading = false;
@@ -122,7 +122,9 @@
 				$scope.products_params.page = 1;
 				$scope.products = [];
 				$scope.reached_end = false;
-				get_homepage_products()
+				get_homepage_featured().then(function(){
+					get_homepage_products()
+				})
 			}
 
 			$scope.product_filters = function(item){
@@ -151,7 +153,7 @@
 			if(!$scope.cart){
 				$scope.cart = {
 					items: [],
-					price:0
+					regular_price:0
 				}
 			};
 
@@ -222,7 +224,7 @@
 				console.log(item_object.regular_price);
 				console.log(quantity);
 				console.log(parseInt(item_object.regular_price)*quantity);
-				$scope.cart.price += parseInt(item_object.regular_price)*quantity;
+				$scope.cart.regular_price += parseInt(item_object.regular_price)*quantity;
 				if(get_row_index != '-1'){
 					$scope.cart.items[get_row_index].quantity += quantity
 					if($scope.cart.items[get_row_index].quantity == 0){
@@ -255,7 +257,7 @@
 			$scope.empty_cart = function(){
 				$scope.cart = {
 					items: [],
-					price:0
+					regular_price:0
 				}
 				store_cart();
 			}
