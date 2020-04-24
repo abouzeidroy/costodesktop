@@ -119,8 +119,8 @@
 				get_products: function(params){
 					var endpoint = '/wc/v3/products';
 					//var endpoint = '/wc/v2/orders';
-					params.order = 'desc';
-					params.orderby = 'id';
+					params.order = 'asc';
+					params.orderby = 'menu_order';
 					params.status = "publish"
 					// params.orderby = [{
 					// 	'menu_order':'DESC',
