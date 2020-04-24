@@ -117,27 +117,23 @@
 
 			return {
 				get_products: function(params){
-					var endpoint = '/wc/v2/products';
+					var endpoint = '/wc/v3/products';
 					//var endpoint = '/wc/v2/orders';
 					params.order = 'asc';
 					params.orderby = 'menu_order';
 					params.status = "publish"
 					// params.orderby = [{
 					// 	'menu_order':'DESC',
-					// 	'tags': {
-					// 		'key' : 'tags',
-					// 		'value' : 'Featured',
-					// 		'compare' : '='
-					// 	}
 					// }]
 					var options = { 'method': 'GET', 'endpoint': endpoint, 'return_result': '1', 'return_response': '1', 'params': params};
 					return http_call(options);
 				},
 				get_categories: function(){
 					var params = {
-						per_page: 100
+						per_page: 100,
+						orderby:'slug'
 					}
-					var endpoint = '/wc/v2/products/categories';
+					var endpoint = '/wc/v3/products/categories';
 					var options = { 'method': 'GET', 'endpoint': endpoint, 'return_result': '1', 'return_response': '1', 'params': params};
 					return http_call(options);
 				},

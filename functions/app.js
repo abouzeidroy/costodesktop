@@ -3,37 +3,32 @@ var costo_app = angular.module('costo_app', ['ngRoute', 'ngSanitize', 'ngAnimate
 		//$httpProvider.defaults.withCredentials = true;
 		'use strict';
 		$routeProvider
-			.when('/', {
+			.when('/:category', {
 				templateUrl: 'views/home_page.html',
 				controller: 'homepage_controller',
 				reloadOnSearch:false
 			})
-			.when('/gift_form', {
-				templateUrl: 'views/gift_form.html',
-				controller: 'gift_form_controller'
-			})
-			.when('/cart', {
-				templateUrl: 'views/cart.html',
-				controller: 'cart_controller'
-			})
-			.when('/register', {
-				templateUrl: 'views/register.html',
-				controller: 'register_controller'
-			})
-			.when('/checkout1', {
-				templateUrl: 'views/co_step1.html',
-				controller: 'co_step1'
-			})
-			.when('/checkout2', {
-				templateUrl: 'views/co_step2.html',
-				controller: 'co_step2'
-			})
 			.otherwise({
-				redirectTo: '/dashboard',
-				controller: 'dashboard_controller'
+				redirectTo: '/:category',
+				templateUrl: 'views/home_page.html',
+				controller: 'homepage_controller',
+				reloadOnSearch:false
 			});
 		//$locationProvider.html5Mode(true);
 	})
+	.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
+		var original = $location.path;
+		$location.path = function (path, reload) {
+			if (reload === false) {
+				var lastRoute = $route.current;
+				var un = $rootScope.$on('$locationChangeSuccess', function () {
+					$route.current = lastRoute;
+					un();
+				});
+			}
+			return original.apply($location, [path]);
+		};
+	}])
 	.config(function(NotificationProvider, $translateProvider) {
 		NotificationProvider.setOptions({
 			delay: 10000,

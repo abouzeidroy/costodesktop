@@ -1,7 +1,7 @@
 (function (){
 	'use strict';
-	costo_app.controller('homepage_controller', ['$scope','$timeout','$debounce','$q','costo_services', '$location','cart_services', 'storage_services', 'Notification',
-		function($scope, $timeout, $debounce, $q, costo_services, $location, cart_services, storage_services, Notification) {
+	costo_app.controller('homepage_controller', ['$scope','$timeout','$debounce','$q','costo_services', '$location','cart_services', 'storage_services', 'Notification','$routeParams', '$filter',
+		function($scope, $timeout, $debounce, $q, costo_services, $location, cart_services, storage_services, Notification, $routeParams, $filter) {
 			$scope.page_loading = true;
 
 			$scope.products_params = {
@@ -15,20 +15,38 @@
 			$scope.search = {
 				search_key : ''
 			}
-
+			$scope.controller_initiated = false;
 			function init(){
 				var deferred = $q.defer();
 				// Get Categories
-				var promise1 = get_homepage_featured();
-				var promise2 = get_homepage_products();
-				var promise3 = get_homepage_categories();
-				// Return a promise
-				$q.all([promise1]).then(function(){
-					$q.all([promise2, promise3]).then(function(){
-						// All promises are loaded 
-						deferred.resolve();
-					})
-				});
+				if($routeParams.category){
+					get_homepage_categories().then(function(){
+						var get_cat = $filter('filter')($scope.categories, function(item){
+							return $routeParams.category == item.slug.replace(/[0-9]/g, '').substring(1);
+						}, true)[0];
+						$scope.products_params.category = get_cat.id;
+						$scope.parent_cat_id = get_cat.id;
+						$scope.parent_category = get_cat;
+						get_homepage_featured().then(function(){
+							get_homepage_products().then(function(){
+								$scope.controller_initiated = true;
+								deferred.resolve();
+							})
+						})
+					});
+				}else{
+					var promise1 = get_homepage_featured();
+					var promise2 = get_homepage_products();
+					var promise3 = get_homepage_categories();
+					// Return a promise
+					$q.all([promise1]).then(function(){
+						$q.all([promise2, promise3]).then(function(){
+							$scope.controller_initiated = true;
+							// All promises are loaded 
+							deferred.resolve();
+						})
+					});
+				};
 				return deferred.promise;
 			}
 
@@ -38,12 +56,13 @@
 			$scope.products = [];
 			
 			function get_homepage_products(){
+				console.trace();
 				var deferred = $q.defer();
 				$scope.products_loading = true;
 				costo_services.get_products($scope.products_params).then(function(response){
 					$scope.products = $scope.products.concat(response);
 					$scope.products_loading = false;
-					if(response.length == 0){
+					if(response.length == 0 || response.length < $scope.products_params.per_page){
 						$scope.reached_end = true;
 					}
 					deferred.resolve();
@@ -108,23 +127,17 @@
 			$scope.filter_by_category = function(category){
 				$scope.search.search_key = '';
 				$scope.products_params.search = '';
-				//if(category.parent == 0){
-					$scope.parent_cat_id = category.id;
-					$scope.parent_category = category;
-					//var get_sub_cats = sub_cats();
-					//var get_sub_cats_ids = get_sub_cats.ids[0];
-					$scope.products_params.category = $scope.parent_cat_id;
-				// }else{
-				// 	$scope.parent_cat_id = category.id;
-				// 	$scope.products_params.product_cat = category.id;
-				// };
-				//$location.search('category', encodeURI(category.slug));
+				$scope.parent_cat_id = category.id;
+				$scope.parent_category = category;
+				$scope.products_params.category = $scope.parent_cat_id;
 				$scope.products_params.page = 1;
 				$scope.products = [];
 				$scope.reached_end = false;
 				get_homepage_featured().then(function(){
 					get_homepage_products()
 				})
+				var slug_trimmed = category.slug.replace(/[0-9]/g, '').substring(1);
+				$location.path('/' + slug_trimmed, false);
 			}
 
 			$scope.product_filters = function(item){
@@ -136,7 +149,7 @@
 			};
 
 			$scope.next_page_load = function(){
-				if(!$scope.reached_end && !$scope.products_loading){
+				if(!$scope.reached_end && !$scope.products_loading && $scope.controller_initiated){
 					$scope.products_params.page += 1;
 					get_homepage_products();
 				}
@@ -156,7 +169,12 @@
 					regular_price:0
 				}
 			};
-
+			function getUrlParameter(name) {
+				name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+				var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+				var results = regex.exec(location.search);
+				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+			};
 
 			$scope.store_cart_trigger = function(){
 				$debounce(store_cart, 1000);
@@ -186,6 +204,7 @@
 			})
 
 			$scope.reset_category_selection = function(){
+				$location.path('/', false);
 				$scope.parent_category = '';
 				$scope.products_params.category = '';
 			};
@@ -201,7 +220,6 @@
 			$scope.add_to_cart = function(product, quantity, from_cart){
 				product.loading = true;
 				if(from_cart){
-					console.log(product);
 					var item_object = {
 						name: product.name,
 						regular_price: product.regular_price,
@@ -209,7 +227,6 @@
 						id: product.id
 					}
 				}else{
-					console.log(product);
 					var item_object = {
 						name: product.name,
 						regular_price: product.regular_price,
@@ -221,9 +238,6 @@
 					item_object.image = product.images[0].src;
 				}
 				var get_row_index = get_row_id($scope.cart.items, 'id', item_object.id);
-				console.log(item_object.regular_price);
-				console.log(quantity);
-				console.log(parseInt(item_object.regular_price)*quantity);
 				$scope.cart.regular_price += parseInt(item_object.regular_price)*quantity;
 				if(get_row_index != '-1'){
 					$scope.cart.items[get_row_index].quantity += quantity
@@ -299,7 +313,6 @@
 				})
 				$scope.submitting_order = true;
 				costo_services.post_order(cart_items, $scope.guest).then(function(data){
-					console.log(data);
 					$scope.order_message = 'Your order has been successfully placed, please contact us on 70593163 for any inquiries'
 					$scope.submitting_order = false;
 					$scope.empty_cart();
@@ -317,7 +330,6 @@
 					$scope.order_message = 'Something went wrong'
 					$scope.submitting_order = false;
 				});
-				console.log($scope.cart.items);
 			};
 
 		}
