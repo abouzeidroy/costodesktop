@@ -35,16 +35,13 @@
 						})
 					});
 				}else{
-					var promise1 = get_homepage_featured();
-					var promise2 = get_homepage_products();
-					var promise3 = get_homepage_categories();
 					// Return a promise
-					$q.all([promise1]).then(function(){
-						$q.all([promise2, promise3]).then(function(){
+					get_homepage_featured().then(function(){
+						get_homepage_categories();
+						get_homepage_products().then(function(){
 							$scope.controller_initiated = true;
-							// All promises are loaded 
 							deferred.resolve();
-						})
+						});
 					});
 				};
 				return deferred.promise;
