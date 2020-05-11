@@ -653,7 +653,7 @@ input[type=number] {
 }
 
 body:not(.homepage) header {
-    padding-top: 17px;
+    padding-top: 10px;
     position: static;
 }
 
@@ -674,7 +674,7 @@ body:not(.homepage) header .logo {
 }
 
 body:not(.homepage) header .container {
-    padding-bottom: 17px;
+    padding-bottom: 10px;
 }
 
 .pageTitle {
