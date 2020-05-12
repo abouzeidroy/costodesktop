@@ -310,7 +310,7 @@
 				})
 				$scope.submitting_order = true;
 				costo_services.post_order(cart_items, $scope.guest).then(function(data){
-					$scope.order_message = 'Your order has been successfully placed, please contact us on 70593163 for any inquiries'
+					$scope.order_message = 'Your order has been successfully placed, please contact us on whatsapp on 0096171884898 for any inquiries'
 					$scope.submitting_order = false;
 					$scope.empty_cart();
 					$timeout(function(){
