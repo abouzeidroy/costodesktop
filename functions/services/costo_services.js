@@ -159,7 +159,7 @@
 						//   state: "CA",
 						//   postcode: "94103",
 						//   country: "US",
-							email: guest.email,
+							// email: guest.email,
 						//   phone: "(555) 555-5555"
 						},
 						shipping: {
@@ -173,6 +173,10 @@
 						//   country: "US"
 						},
 						line_items: cart_items
+					  }
+
+					  if(guest.email){
+						params.billing.email = guest.email
 					  }
 
 					var options = { 'method': 'POST', 'endpoint': endpoint, 'return_result': '1', 'return_response': '1', 'params': params};

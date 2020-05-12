@@ -197,9 +197,9 @@
 			};
 
 			$scope.$watch('search.search_key', function(){
-				if($scope.search.search_key != ''){
+				//if($scope.search.search_key != ''){
 					$scope.changed_search_input();
-				};
+				//};
 			})
 
 			$scope.reset_category_selection = function(){
