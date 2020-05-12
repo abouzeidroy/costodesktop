@@ -56,6 +56,7 @@
 				console.trace();
 				var deferred = $q.defer();
 				$scope.products_loading = true;
+				$scope.products_params.tag_exclude = 114;
 				costo_services.get_products($scope.products_params).then(function(response){
 					$scope.products = $scope.products.concat(response);
 					$scope.products_loading = false;
@@ -90,6 +91,7 @@
 				$scope.products_loading = true;
 				var by_cats = angular.copy($scope.products_params);
 				by_cats.tag = 114;
+				by_cats.tag_exclude = '';
 				costo_services.get_products(by_cats).then(function(response){
 					$scope.products = $scope.products.concat(response);
 					$scope.products_loading = false;
@@ -274,7 +276,8 @@
 			}
 			$scope.guest = {
 				phone_number:'',
-				name:''
+				name:'',
+				email: ''
 			}
 
 			$scope.reset_screen_and_empty_cart = function(){
@@ -290,7 +293,7 @@
 			}
 			$scope.form_valid = function(){
 				var valid = true;
-				if($scope.guest.phone_number == '' || $scope.guest.name == ''){
+				if($scope.guest.phone_number == ''){
 					valid = false;
 				}
 				return valid;
@@ -314,14 +317,14 @@
 					$scope.submitting_order = false;
 					$scope.empty_cart();
 					$timeout(function(){
-						$scope.order_message = '';
 						$scope.visibleCart = false;
 						$scope.reset_category_selection();
 						$scope.reset_search_criterias();
+						get_homepage_products();
 						$timeout(function(){
 							$scope.show_form = false;
-
-						}, 2000)
+							$scope.order_message = '';
+						}, 500)
 					}, 4000)
 				}, function(){
 					$scope.order_message = 'Something went wrong'

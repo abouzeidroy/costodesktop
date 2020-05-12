@@ -159,7 +159,7 @@
 						//   state: "CA",
 						//   postcode: "94103",
 						//   country: "US",
-						//   email: "john.doe@example.com",
+							email: guest.email,
 						//   phone: "(555) 555-5555"
 						},
 						shipping: {

@@ -305,7 +305,7 @@ header .menuToggle .a {
 
 header .cartToggle {
     cursor: pointer;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     position: relative;
 }
 
@@ -655,6 +655,7 @@ input[type=number] {
 body:not(.homepage) header {
     padding-top: 10px;
     position: static;
+    margin-bottom: 20px;
 }
 
 body:not(.homepage) header .language {
@@ -1183,7 +1184,7 @@ aside + main .fixedHeader {
     background: #2d363c;
     display: block;
     /* padding: 30px; */
-    visibility: hidden;
+    /* visibility: hidden; */
     -webkit-transition: right 0.5s ease;
     -moz-transition: right 0.5s ease;
     -ms-transition: right 0.5s ease;
@@ -1194,7 +1195,7 @@ aside + main .fixedHeader {
 
 .cart.visibleCart {
     right: 0;
-    visibility: visible;
+    /* visibility: visible; */
 }
 
 .cart h2 {
@@ -1495,7 +1496,7 @@ main {
     padding-left: 480px;
     clear: both;
     padding-right: 15px;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
 }
 
 .fixedBody {
@@ -1611,10 +1612,10 @@ aside {
     min-width: 100%;
 }
 .no_subcats main{
-    padding-top: 140px;
+    padding-top: 90px;
 }
 .no_subcats .fixedBody{
-    height: 140px;
+    height: 90px;
 }
 
 
@@ -1828,17 +1829,17 @@ text-align: center;
 
 
   .categories:not(.subCat){
-      max-height: calc(100vh - 235px);
+      max-height: calc(100vh - 190px);
   }
 
 
 /*************Without Sub *************/
 
 main{
-  padding-top:145px;
+  padding-top:90px;
 }
 .fixedBody{
-  height:135px
+  height:90px
 }
   
   .titleCat{
@@ -1909,3 +1910,19 @@ main{
   .categories:not(.subCat)::-webkit-scrollbar-thumb{
     background: #dedede;
   }
+  .mobile_search{
+      display: none;
+  }
+.searchParent.desktop_search{
+    margin-bottom: 0;
+    flex-grow: 1;
+    background-color: transparent;
+}
+.searchParent.desktop_search .container{
+    max-width: 70%;
+    background-color: red;
+    padding: 0 15px;
+}
+.searchParent.desktop_search .search{
+    right: 15px;
+}
