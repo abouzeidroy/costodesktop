@@ -1924,7 +1924,7 @@ main{
     padding: 0 15px;
 }
 .searchParent.desktop_search .container input, .searchParent.desktop_search .container a{
-    color: red;
+    color: #000000;
 }
 .searchParent.desktop_search .search{
     right: 15px;
