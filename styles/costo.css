@@ -1920,9 +1920,26 @@ main{
 }
 .searchParent.desktop_search .container{
     max-width: 70%;
-    background-color: red;
+    background-color: #fff;
     padding: 0 15px;
+}
+.searchParent.desktop_search .container input, .searchParent.desktop_search .container a{
+    color: red;
 }
 .searchParent.desktop_search .search{
     right: 15px;
+}
+.searchParent.desktop_search input::-webkit-input-placeholder {
+    color: red;
+    font-size: 14px;
+}
+
+.searchParent.desktop_search input::-moz-placeholder {
+    color: red;
+    font-size: 14px;
+}
+
+.searchParent.desktop_search input:-ms-input-placeholder {
+    color: red;
+    font-size: 14px;
 }
