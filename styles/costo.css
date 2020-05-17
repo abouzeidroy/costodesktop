@@ -867,7 +867,7 @@ aside + main .fixedHeader {
     padding: 10px; */
     text-align: left;
 padding: 12px;
-background: #efefef;
+background: #dfdede;
 margin-top: 20px;
 }
 
@@ -909,12 +909,12 @@ margin-top: 20px;
 }
 
 .productListing .listingItem {
-    position: relative;
-    float: none;
-    padding: 0 8px;
-    width: auto;
-    flex-basis: calc(100%/4);
-    margin-bottom: 15px;
+position: relative;
+float: none;
+padding: 0 3px;
+width: auto;
+flex-basis: calc(100%/4);
+margin-bottom: 8px;
 }
 
 .productListing .itemParent {
@@ -1821,7 +1821,7 @@ text-align: center;
   }
   .productListing .itemParent{
     height: 100%;
-    padding: 5px;
+    /* padding: 5px; */
   }
   .inner_category{
       height: 100%;

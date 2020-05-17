@@ -538,7 +538,7 @@ padding-top: 3px; }
         content: '';
       }
       .productListing .listingItem{
-        padding: 0 8px;
+        padding: 0 3px;
         flex-basis: calc(100% / 2);
         width: calc(100% / 3);
         /* float:left; 
