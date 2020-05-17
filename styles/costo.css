@@ -866,7 +866,7 @@ aside + main .fixedHeader {
     /* text-align: left;
     padding: 10px; */
     text-align: left;
-padding: 20px;
+padding: 12px;
 background: #efefef;
 margin-top: 20px;
 }
@@ -885,8 +885,9 @@ margin-top: 20px;
 }
 
 .productListing .name {
-    color: #141111;
-    font-size: 16px;
+    color: #403939;
+    font-size: 14px;
+    font-weight: 100;
 }
 
 .productListing .totalPrice {
@@ -1525,6 +1526,16 @@ aside {
     color: #141111;
     font-size: 16px;
     font-weight: bold;
+}
+
+.discount {
+    background-color: #ffffff;
+    color: red;
+    padding: 2px;
+    margin-bottom: 5px;
+    border: 1px dashed red;
+    Display: inline-block;
+    font-size: 12px;
 }
 
 .main {
