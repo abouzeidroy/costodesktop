@@ -97,14 +97,14 @@
                       
                 
                     <div class="price">
-                        <span class="discounted">{{product.sale_price}} LL</span>
-                        <span class="main">{{product.regular_price}} LL</span>
+                        <span class="discounted">{{product.sale_price | number: '2.'}} LL</span>
+                        <span class="main">{{product.regular_price | number: '2.'}} LL</span>
                     </div>
 
 
 <div ng-if="(product.regular_price - product.sale_price) >= 500">
         <span class="discount">Save
-            {{ (product.regular_price - product.sale_price) }} LL</span>
+            {{ (product.regular_price - product.sale_price) | number: '2.'}} LL</span>
 </div>
 <div ng-if="(product.regular_price - product.sale_price) < 500">
     <span class="discount">Save
