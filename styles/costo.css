@@ -1529,7 +1529,7 @@ aside {
     font-weight: bold;
 }
 
-.fixeddiscount {
+.discount {
 background-color: #ee0f0f;
 color: #fff;
 padding: 4px 7px 4px 7px;
@@ -1541,17 +1541,6 @@ border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 }
 
-.percentagediscount {
-background-color: #feee00;
-color: #000000;
-padding: 4px 7px 4px 7px;
-margin-bottom: 2px;
-Display: inline-block;
-font-size: 11px;
-margin-top: 3px;
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
-}
 
 .main {
 font-size: 14px;

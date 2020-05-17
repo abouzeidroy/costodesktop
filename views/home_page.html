@@ -96,12 +96,12 @@
            
                       
                     <div ng-if="(product.regular_price - product.sale_price) >= 500">
-                        <span class="fixeddiscount">You Save
+                        <span class="fdiscount">You Save
                             {{ (product.regular_price - product.sale_price) | number: '0'}} LL</span>
                     </div>
                     <div ng-if="(product.regular_price - product.sale_price) < 500">
-                        <span class="percentagediscount">You Save
-                            {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }} %</span>
+                        <span class="discount">
+                            {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }}% OFF</span>
                     </div>
 
                 <h2 class="name">{{product.name}}</h2>
