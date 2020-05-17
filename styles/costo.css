@@ -915,7 +915,7 @@ float: none;
 padding: 0 3px;
 width: auto;
 flex-basis: calc(100%/4);
-margin-bottom: 12px;
+margin-bottom: 17px;
 }
 
 .productListing .itemParent {
@@ -1530,9 +1530,9 @@ aside {
 }
 
 .discount {
-background-color: #ee0f0f;
+background-color: #075ca3;
 color: #fff;
-padding: 1px 5px 1px 5px;
+padding: 2px 7px 2px 7px;
 margin-bottom: 2px;
 border: 1px dashed red;
 Display: inline-block;
