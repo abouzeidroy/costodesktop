@@ -1529,20 +1529,21 @@ aside {
 }
 
 .discount {
-    background-color: #ffffff;
-    color: red;
-    padding: 2px;
-    margin-bottom: 5px;
-    border: 1px dashed red;
-    Display: inline-block;
-    font-size: 12px;
+background-color: #ffffff;
+color: red;
+padding: 1px 5px 1px 5px;
+margin-bottom: 5px;
+border: 1px dashed red;
+Display: inline-block;
+font-size: 12px;
 }
 
 .main {
-    font-size: 16px;
-    color: #141111;
-    font-weight: bold;
-    line-height: 18px;
+font-size: 14px;
+color: #5d598a;
+font-weight: bold;
+line-height: 18px;
+text-decoration: line-through;
 }
 
 .size {
