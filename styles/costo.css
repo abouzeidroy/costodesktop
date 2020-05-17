@@ -863,8 +863,12 @@ aside + main .fixedHeader {
 }
 
 .productListing .listingInfos {
+    /* text-align: left;
+    padding: 10px; */
     text-align: left;
-    padding: 10px;
+padding: 20px;
+background: #efefef;
+margin-top: 20px;
 }
 
 .productListing img {
