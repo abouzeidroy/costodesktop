@@ -136,13 +136,18 @@
           display: none;
         }
 
-        .discounted{
-          font-size: 12px;
-        }
+.discounted {
+    color: #141111;
+    font-size: 16px;
+    font-weight: bold;
+}
 
         .main {
-        font-size: 14px;
-        color: #141111;
+font-size: 14px;
+color: #727082;
+font-weight: bold;
+line-height: 18px;
+text-decoration: line-through;
         }
   .btn span {
     font-size: 11px;

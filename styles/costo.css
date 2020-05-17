@@ -865,8 +865,8 @@ aside + main .fixedHeader {
 .productListing .listingInfos {
     /* text-align: left;
     padding: 10px; */
-    text-align: left;
-padding: 12px;
+text-align: left;
+padding: 9px;
 background: #dfdede;
 margin-top: 20px;
 }
@@ -914,7 +914,7 @@ float: none;
 padding: 0 3px;
 width: auto;
 flex-basis: calc(100%/4);
-margin-bottom: 8px;
+margin-bottom: 12px;
 }
 
 .productListing .itemParent {
