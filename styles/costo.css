@@ -1640,6 +1640,7 @@ text-decoration: line-through;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 320px;
 }
 
 .signup_form{
@@ -2003,3 +2004,5 @@ main{
 .my-float{
 	margin-top:16px;
 }
+
+
