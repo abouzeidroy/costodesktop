@@ -874,7 +874,8 @@ margin-top: 20px;
 .productListing img {
     margin: 0 auto;
     margin-bottom: 5px;
-    max-height: 240px;
+    margin-top: 15px;
+    /* max-height: 240px; */
 }
 
 .productListing .domain {
