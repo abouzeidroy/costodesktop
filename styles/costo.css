@@ -250,7 +250,7 @@ header {
     padding-top: 30px;
     position: absolute;
     z-index: 1;
-    background-color: #ff3030;
+    background-color: #075ca3;
     width: 100%;
 }
 
@@ -687,7 +687,7 @@ body:not(.homepage) header .container {
 }
 
 aside {
-    width: 450px;
+    width: 350px;
     float: left;
 }
 
@@ -906,10 +906,10 @@ aside + main .fixedHeader {
 .productListing .listingItem {
     position: relative;
     float: none;
-    padding: 0 3px;
+    padding: 0 8px;
     width: auto;
-    flex-basis: calc(100%/5);
-    margin-bottom: 3px;
+    flex-basis: calc(100%/4);
+    margin-bottom: 15px;
 }
 
 .productListing .itemParent {
@@ -926,7 +926,7 @@ aside + main .fixedHeader {
 }
 
 .productListing .minus {
-    background-color: #ff3030;
+    background-color: #075ca3;
     height: 22px;
     width: 22px;
     display: block;
@@ -1399,7 +1399,7 @@ aside + main .fixedHeader {
 }
 
 .categories .item {
-    width: 50%;
+    width: 100%;
     float: left;
     padding: 0 3px;
     margin-bottom: 13px;
@@ -1407,7 +1407,7 @@ aside + main .fixedHeader {
     color: #100f0f;
 }
 .categories .item.selected .catTitle, .categories .item:hover .catTitle{
-    background-color: #ff3030;
+    background-color: #075ca3;
     color: #fff;
 }
 
@@ -1416,16 +1416,16 @@ aside + main .fixedHeader {
 }
 
 .categories span {
-    font-size: 15px;
-    line-height: 18px;
-    background-color: #fff;
-    text-align: center;
-    display: block;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    padding: 10px 5px 10px 5px;
-    font-weight: bold;
-    color: #000000;
+font-size: 16px;
+line-height: 18px;
+background-color: #fff;
+text-align: center;
+display: block;
+border-bottom-left-radius: 6px;
+border-bottom-right-radius: 6px;
+padding: 15px 5px 15px 5px;
+font-weight: bold;
+color: #000000;
 }
 
 .categories.subCat .item {
@@ -1493,7 +1493,7 @@ aside + main .fixedHeader {
 
 main {
     padding-top: 260px;
-    padding-left: 480px;
+    padding-left: 380px;
     clear: both;
     padding-right: 15px;
     padding-bottom: 80px;
