@@ -1686,8 +1686,10 @@ aside {
 }
 .all_categories_btn{
 position: fixed;
-left: 7px;
-bottom: 10px;
+/* left: 7px;
+bottom: 10px; */
+left: 0px;
+bottom: 0px;
 border-radius: 2px;
 background-color:
 #2dac13;
@@ -1703,7 +1705,8 @@ text-align: center;
 
 .all_categories_btn.right{
     left: auto;
-    right: 7px;
+    /* right: 7px; */
+        right: 0px;
 }
 
 
