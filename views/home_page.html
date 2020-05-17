@@ -95,6 +95,15 @@
                 <div class="listingInfos">
            
                       
+                    <div ng-if="(product.regular_price - product.sale_price) >= 500">
+                        <span class="fixeddiscount">You Save
+                            {{ (product.regular_price - product.sale_price) | number: '2.'}} LL</span>
+                    </div>
+                    <div ng-if="(product.regular_price - product.sale_price) < 500">
+                        <span class="percentagediscount">You Save
+                            {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }} %</span>
+                    </div>
+
                 <h2 class="name">{{product.name}}</h2>
                     <div class="price">
                         <span class="discounted">{{product.sale_price | number: '2.'}} LL</span>
@@ -102,14 +111,7 @@
                     </div>
 
 
-<div ng-if="(product.regular_price - product.sale_price) >= 500">
-        <span class="discount">Save
-            {{ (product.regular_price - product.sale_price) | number: '2.'}} LL</span>
-</div>
-<div ng-if="(product.regular_price - product.sale_price) < 500">
-    <span class="discount">Save
-        {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }} %</span>
-</div>
+
 
 
 
