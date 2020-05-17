@@ -1530,13 +1530,15 @@ aside {
 }
 
 .discount {
-background-color: #ffffff;
-color: red;
+background-color: #ee0f0f;
+color: #fff;
 padding: 1px 5px 1px 5px;
-margin-bottom: 5px;
+margin-bottom: 2px;
 border: 1px dashed red;
 Display: inline-block;
 font-size: 12px;
+margin-top: 3px;
+border-radius: 5px;
 }
 
 .main {
@@ -1640,7 +1642,6 @@ text-decoration: line-through;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 300px;
 }
 
 .signup_form{
