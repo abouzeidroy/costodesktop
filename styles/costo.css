@@ -1706,22 +1706,20 @@ text-decoration: line-through;
     width: 100%;
 }
 .all_categories_btn{
-position: fixed;
-/* left: 7px;
-bottom: 10px; */
-left: 0px;
-bottom: 0px;
-border-radius: 2px;
-background-color:
-#2dac13;
-color:
-#fff;
-font-size: 15px;
-display: block;
-z-index: 101;
-padding: 10px 15px 6px 15px;
-font-weight: bold;
-text-align: center;
+    position: fixed;
+    left: 7px;
+    bottom: 10px;
+    left: 0px;
+    bottom: 0px;
+    border-radius: 2px;
+    background-color: #ee0f0f;
+    color: #fff;
+    font-size: 15px;
+    display: block;
+    z-index: 101;
+    padding: 10px 15px 6px 15px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .all_categories_btn.right{
