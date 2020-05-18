@@ -380,6 +380,7 @@ button {
     border-radius: 7px;
     font-size: 16px;
     background-color: #2dac13;
+    border: 1px solid #2dac13;
     color: #fff;
     padding: 19px 20px 15px 0;
     cursor: pointer;
@@ -1652,7 +1653,7 @@ text-decoration: line-through;
     transition: transform linear 400ms;
     top: 0;
     left: 0;
-    padding: 10px;
+    padding: 20px;
     background-color: #2d363c;
     width: 100%;
     z-index: 3;
