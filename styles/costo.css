@@ -929,7 +929,7 @@ margin-bottom: 20px;
     left: 0;
     height: 100%;
     width: 100%;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
 }
 
 .productListing .minus {
@@ -1531,7 +1531,7 @@ aside {
 }
 
 .discount {
-background-color: #2dac12;
+background-color: #ee0f0f;
 color: #fff;
 margin-bottom: 2px;
 Display: inline-block;
@@ -1712,7 +1712,7 @@ text-decoration: line-through;
     left: 0px;
     bottom: 0px;
     border-radius: 2px;
-    background-color: #ee0f0f;
+    background-color: #2dac12;
     color: #fff;
     font-size: 14px;
     display: block;
