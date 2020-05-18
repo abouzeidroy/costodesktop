@@ -1533,7 +1533,6 @@ aside {
 .discount {
 background-color: #2dac12;
 color: #fff;
-padding-left: 9px;
 margin-bottom: 2px;
 Display: inline-block;
 font-size: 12px;
@@ -1541,7 +1540,7 @@ margin-top: 3px;
 font-weight: 700;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
-padding-right: 9px;
+padding: 0 9px 2px 9px;
 }
 
 
