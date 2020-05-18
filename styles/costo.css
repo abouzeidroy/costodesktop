@@ -1652,7 +1652,7 @@ text-decoration: line-through;
     transition: transform linear 400ms;
     top: 0;
     left: 0;
-    padding: 30px;
+    padding: 10px;
     background-color: #2d363c;
     width: 100%;
     z-index: 3;
