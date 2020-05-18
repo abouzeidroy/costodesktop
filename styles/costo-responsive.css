@@ -18,7 +18,7 @@
     right: 15px;
   }
   .productListing .listingItem{
-    width: calc(100% / 4);
+    width: calc(100% / 3);
   }
 }
 
