@@ -310,12 +310,12 @@ header .cartToggle {
 }
 
 header .cartToggle .iconHolder {
-    height: 38px;
-    width: 38px;
-    border-radius: 30%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
+height: 44px;
+width: 40px;
+border-radius: 30%;
+position: absolute;
+top: 2px;
+left: 2px;
 }
 
 header .cartToggle .iconHolder img {
