@@ -100,7 +100,7 @@
                       
                     <div ng-if="(product.regular_price - product.sale_price) >= 500">
                         <span class="discount">You Save
-                            {{ (product.regular_price - product.sale_price) | number: '0'}} LL توفير</span>
+                            {{ (product.regular_price - product.sale_price)}} LL توفير</span>
                     </div>
                     <div ng-if="(product.regular_price - product.sale_price) < 500">
                         <span class="discount">You Save 
@@ -132,7 +132,7 @@
     <a href="javascript:;" class="all_categories_btn" ng-click="reset_category_selection();reset_search_criterias()">All Categories<br> العودة للأقسام</a>
     <a href="javascript:;" class="all_categories_btn right" ng-click="visibleCart = true"">View Trolley<br> رؤية السلة</a>
   
-    <div class="bottom_buttons"><a href="javascript:;" ng-click="visibleCart = true">View trolley - رؤية السلة<span class="total_cart_bottom" ng-if="cart.regular_price">{{cart.regular_price | number: '0'}}LL</span></a></div>
+    <div class="bottom_buttons"><a href="javascript:;" ng-click="visibleCart = true">{{cart.regular_price | number: '0'}} | View trolley - رؤية السلة<span class="total_cart_bottom" ng-if="cart.regular_price">{{cart.regular_price | number: '0'}}LL</span></a></div>
 </main>
     <section class="cart" ng-class="{'visibleCart':visibleCart}">
         <div class="fixed_cart_part">
@@ -147,7 +147,7 @@
                     <span class="currency">LL</span>
                 </div>
             </div>
-            <button ng-click="show_form = true">Finish Shopping إنهاء التسوق</button>
+            <button ng-click="show_form = true">Finish Shopping - إنهاء التسوق</button>
         </div>
         <div class="listingHolder cart_list" ng-class="{'visible_signup':show_form}">
             <div class="listingItem clearAfter" ng-repeat="cart_item in cart.items">
