@@ -380,9 +380,8 @@ button {
     border-radius: 7px;
     font-size: 16px;
     background-color: #2dac13;
-    border: 1px solid #2dac13;
     color: #fff;
-    padding: 19px 20px 17px 0;
+    padding: 19px 20px 15px 0;
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
