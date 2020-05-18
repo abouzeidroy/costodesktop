@@ -866,7 +866,7 @@ aside + main .fixedHeader {
     /* text-align: left;
     padding: 10px; */
 text-align: left;
-padding: 9px;
+padding: 15px;
 background: #dfdede;
 margin-top: 20px;
 }
@@ -1525,26 +1525,26 @@ aside {
 
 .discounted {
     color: #141111;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
 }
 
 .discount {
-background-color: #ee0f0f;
-color: #fff;
-padding: 4px 7px 4px 7px;
-margin-bottom: 2px;
-Display: inline-block;
-font-size: 12px;
-margin-top: 3px;
-font-weight: 700;
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
+    background-color: #2dac12;
+    color: #fff;
+    padding: 6px 8px 6px 8px;
+    margin-bottom: 2px;
+    Display: inline-block;
+    font-size: 13px;
+    margin-top: 3px;
+    font-weight: 700;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 
 .main {
-font-size: 14px;
+font-size: 15px;
 color: #727082;
 font-weight: bold;
 line-height: 18px;
@@ -2009,3 +2009,11 @@ main{
 }
 
 
+@media all and (min-width: 1440px) {
+    .productListing .listingItem {
+        position: relative;
+        float: none;
+        padding: 0 3px;
+        width: auto;
+        flex-basis: calc(100%/3);
+        margin-bottom: 17px;
