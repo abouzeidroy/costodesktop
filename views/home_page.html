@@ -159,7 +159,7 @@
                         <div class="calculatedprice">
                             <span>{{cart_item.regular_price | number: '0'}} LL x {{cart_item.quantity}} units</span>
                         </div>
-                        <div class="total_price">{{ cart_item.regular_price * cart_item.quantity | number: '0'}}LL</div>
+                        <div class="total_price">{{ cart_item.regular_price * cart_item.quantity | number: '0'}} LL</div>
                     </div>
                 </div>
                 <div class="listing_actions"><a href="javascript:;" ng-click="add_to_cart(cart_item, 1, true);"><i class="fa fa-plus"></i></a><a href="javascript:;" ng-click="add_to_cart(cart_item, -1, true);"><i class="fa fa-minus"></i></a></div>
