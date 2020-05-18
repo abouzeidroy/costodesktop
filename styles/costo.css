@@ -929,6 +929,7 @@ margin-bottom: 17px;
     left: 0;
     height: 100%;
     width: 100%;
+    border: 1px solid #cacaca;
 }
 
 .productListing .minus {
