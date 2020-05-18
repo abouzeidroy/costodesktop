@@ -100,7 +100,7 @@
                       
                     <div ng-if="(product.regular_price - product.sale_price) >= 500">
                         <span class="discount">You Save
-                            {{ (product.regular_price - product.sale_price)}} LL توفير</span>
+                            {{ (product.regular_price - product.sale_price| number: '0')}} LL توفير</span>
                     </div>
                     <div ng-if="(product.regular_price - product.sale_price) < 500">
                         <span class="discount">You Save 
