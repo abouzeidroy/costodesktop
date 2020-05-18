@@ -1531,16 +1531,14 @@ aside {
 }
 
 .discount {
-    background-color: #2dac12;
-    color: #fff;
-    padding: 4px 8px 4px 8px;
-    margin-bottom: 2px;
-    Display: inline-block;
-    font-size: 13px;
-    margin-top: 3px;
-    font-weight: 700;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+background-color: #2dac12;
+color: #fff;
+padding: 4px 12px 4px 12px;
+margin-bottom: 2px;
+Display: inline-block;
+font-size: 12px;
+margin-top: 3px;
+border-radius: 15px;
 }
 
 
