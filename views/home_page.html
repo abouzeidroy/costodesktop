@@ -93,7 +93,10 @@
                 <div class="item_image_main" ng-if="product.images[0].src"><img ng-src="{{product.images[0].src}}" alt=""></div>
                 <div class="item_image_main" ng-if="!product.images[0].src"><img src="https://via.placeholder.com/250x250.jpg" alt=""></div>
                 <div class="listingInfos">
-           
+                    <div class="price">
+                        <span class="discounted">{{product.sale_price | number: '0'}} LL</span>
+                        <span class="main">{{product.regular_price | number: '0'}} LL</span>
+                    </div>
                       
                     <div ng-if="(product.regular_price - product.sale_price) >= 500">
                         <span class="discount">You Save
@@ -104,10 +107,7 @@
                             {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }}% OFF</span>
                     </div>
 
-                                        <div class="price">
-                                            <span class="discounted">{{product.sale_price | number: '0'}} LL</span>
-                                            <span class="main">{{product.regular_price | number: '0'}} LL</span>
-                                        </div>
+
 
 
                         <h2 class="name">{{product.name}}</h2>
