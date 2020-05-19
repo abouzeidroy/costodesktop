@@ -98,12 +98,15 @@
                         <span class="main">{{product.regular_price | number: '0'}} LL</span>
                     </div>
                       
-                    <div ng-if="(product.regular_price - product.sale_price) >= 500">
-                        <span class="discount">You Save
-                            {{ (product.regular_price - product.sale_price| number: '0')}} LL توفير</span>
-                    </div>
+
+                    <div ng-if="(product.regular_price - product.sale_price) >= 500 && product_quantity(product.id)>=1">
+                            <span class="discount">Save
+                                {{ (product.regular_price - product.sale_price)*product_quantity(product.id)}} LL وفر</span>
+                        </div>
+                    <div ng-if="product_quantity(product.id) == 0 || !product_quantity(product.id) && (product.regular_price - product.sale_price) >= 500"> <span class="discount">Save {{(product.regular_price - product.sale_price)}} LL وفر</span>
+</div>
                     <div ng-if="(product.regular_price - product.sale_price) < 500">
-                        <span class="discount">You Save 
+                        <span class="discount">Save 
                             {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }}% خصم</span>
                     </div>
 
