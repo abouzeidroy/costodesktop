@@ -221,14 +221,14 @@
 				if(from_cart){
 					var item_object = {
 						name: product.name,
-						regular_price: product.regular_price,
+						regular_price: product.sale_price || product.regular_price,
 						image: '',
 						id: product.id
 					}
 				}else{
 					var item_object = {
 						name: product.name,
-						regular_price: product.regular_price,
+						regular_price: product.sale_price || product.regular_price,
 						image: '',
 						id: product.id
 					}
@@ -237,7 +237,7 @@
 					item_object.image = product.images[0].src;
 				}
 				var get_row_index = get_row_id($scope.cart.items, 'id', item_object.id);
-				$scope.cart.regular_price += parseInt(item_object.regular_price)*quantity;
+				$scope.cart.regular_price += parseInt(item_object.regular_price) * quantity;
 				if(get_row_index != '-1'){
 					$scope.cart.items[get_row_index].quantity += quantity
 					if($scope.cart.items[get_row_index].quantity == 0){

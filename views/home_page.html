@@ -101,7 +101,7 @@
 
                     <div ng-if="(product.regular_price - product.sale_price) >= 500 && product_quantity(product.id)>=1">
                             <span class="discountgreen">You Saved
-                                {{ (product.regular_price - product.sale_price)*product_quantity(product.id)}} LL وفرت</span>
+                                {{ (product.regular_price - product.sale_price)*product_quantity(product.id)}} LL وفر</span>
                         </div>
                     <div ng-if="product_quantity(product.id) == 0 || !product_quantity(product.id) && (product.regular_price - product.sale_price) >= 500"> <span class="discount">Save {{(product.regular_price - product.sale_price)}} LL وفر</span>
 </div>
