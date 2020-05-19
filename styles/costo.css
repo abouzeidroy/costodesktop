@@ -1542,6 +1542,18 @@ border-bottom-right-radius: 10px;
 padding: 0 9px 2px 9px;
 }
 
+.discountgreen {
+background-color: #2dac13;
+color: #fff;
+margin-bottom: 2px;
+Display: inline-block;
+font-size: 12px;
+margin-top: 3px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+padding: 0 9px 2px 9px;
+}
+
 
 .main {
 font-size: 15px;
