@@ -1531,7 +1531,7 @@ aside {
 }
 
 .discount {
-background-color: #075ca3;
+background-color: #ee0f0f;
 color: #fff;
 margin-bottom: 2px;
 Display: inline-block;
@@ -1540,6 +1540,10 @@ margin-top: 3px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 padding: 0 9px 2px 9px;
+position: absolute;
+bottom: 70px;
+left: 9px;
+z-index: 2;
 }
 
 .discountgreen {
@@ -1552,6 +1556,10 @@ margin-top: 3px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 padding: 0 9px 2px 9px;
+position: absolute;
+bottom: 70px;
+left: 9px;
+z-index: 2;
 }
 
 
