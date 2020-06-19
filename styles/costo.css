@@ -1742,8 +1742,12 @@ text-decoration: line-through;
     padding: 8px 15px 8px 15px;
     font-weight: bold;
     text-align: center;
+    width: 31%;
 }
-
+.all_categories_btn.centered{
+left: 50%;
+transform: translateX(-50%);
+}
 .all_categories_btn.right{
     left: auto;
     /* right: 7px; */
