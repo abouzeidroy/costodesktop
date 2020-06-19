@@ -414,7 +414,7 @@ text-align: left; }
     .productListing .name {
 font-size: 14px;
 line-height: auto;
-margin-bottom: 0;
+margin-bottom: 3px;
 line-height: 13px;
 padding-top: 3px; }
     .productListing .domain {
