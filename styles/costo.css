@@ -866,7 +866,7 @@ aside + main .fixedHeader {
     /* text-align: left;
     padding: 10px; */
 text-align: left;
-padding: 9px;
+padding: 3px 9px 9px 9px;
 background: #ffffff;
 /* margin-top: 20px; */
 }
@@ -944,7 +944,7 @@ margin-bottom: 20px;
     line-height: 22px;
     position: absolute;
     bottom: 0;
-    right: 9px;
+    left: 40px;
     z-index: 2;
     font-weight: bold;
 }
