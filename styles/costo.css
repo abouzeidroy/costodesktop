@@ -934,30 +934,30 @@ margin-bottom: 20px;
 
 .productListing .minus {
     background-color: #ee0f0f;
-    height: 30px;
-    width: 30px;
+    height: 26px;
+    width: 26px;
     display: block;
     border-radius: 5px;
     color: #fff;
     font-size: 27px;
-    line-height: 26px;
+    line-height: 22px;
     position: absolute;
     bottom: 50px;
-    left: 9px;
+    right: 9px;
     z-index: 2;
     font-weight: bold;
 }
 
 .productListing .counter {
 background-color: #2dac13;
-height: 30px;
-min-width: 30px;
+height: 26px;
+min-width: 26px;
 font-size: 15px;
-line-height: 26px;
+line-height: 22px;
 color: #fff;
 display: block;
 position: absolute;
-right: 9px;
+left: 9px;
 bottom: 50px;
 border-radius: 5px;
 font-weight: bold;
