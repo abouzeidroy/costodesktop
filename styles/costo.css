@@ -1736,7 +1736,7 @@ text-decoration: line-through;
     border-radius: 2px;
     background-color: #2dac12;
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     display: block;
     z-index: 101;
     padding: 8px 15px 8px 15px;
@@ -1747,7 +1747,8 @@ text-decoration: line-through;
 .all_categories_btn.right{
     left: auto;
     /* right: 7px; */
-        right: 0px;
+        right: 10px;
+        bottom: 10px;
 }
 
 
