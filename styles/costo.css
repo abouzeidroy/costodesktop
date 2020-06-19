@@ -1747,8 +1747,7 @@ text-decoration: line-through;
 .all_categories_btn.right{
     left: auto;
     /* right: 7px; */
-        right: 10px;
-        bottom: 10px;
+        right: 0px;
 }
 
 
