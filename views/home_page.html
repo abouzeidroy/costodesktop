@@ -88,24 +88,29 @@
           <div class="listingItem" ng-repeat="product in products">
             <div class="itemParent">
                 <a href="javascript:;" class="addToCart" ng-click="add_to_cart(product, 1);"></a>
-                <a href="javascript:;" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)" class="minus"> - </a>
 
-                <span class="counter" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)">{{product_quantity(product.id)}}</span>
-                <div class="item_image_main" ng-if="product.images[0].src"><img ng-src="{{product.images[0].src}}" alt=""></div>
-                <div class="item_image_main" ng-if="!product.images[0].src"><img src="https://via.placeholder.com/250x250.jpg" alt="">
-                                                        <div ng-if="(product.regular_price - product.sale_price) >= 500 && product_quantity(product.id)>=1">
-                                                            <span class="discountgreen">You Saved
-                                                                {{ (product.regular_price - product.sale_price)*product_quantity(product.id)}} LL وفرت</span>
-                                                        </div>
-                                                        <div
-                                                            ng-if="product_quantity(product.id) == 0 || !product_quantity(product.id) && (product.regular_price - product.sale_price) >= 500">
-                                                            <span class="discount">Save {{(product.regular_price - product.sale_price)}} LL وفر</span>
-                                                        </div>
-                                                        <div ng-if="(product.regular_price - product.sale_price) < 500">
-                                                            <span class="discount">Save
-                                                                {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }}% خصم</span>
-                                                        </div>
+                <div class="item_image_main" ng-if="product.images[0].src"><img ng-src="{{product.images[0].src}}" alt="">
+                                    <a href="javascript:;" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)" class="minus"> - </a>
+                                    
+                                    <span class="counter" ng-click="add_to_cart(product, -1);"
+                                        ng-if="available_in_cart(product.id)">{{product_quantity(product.id)}}</span>
+                    <div ng-if="(product.regular_price - product.sale_price) >= 500 && product_quantity(product.id)>=1">
+                        <span class="discountgreen">You Saved
+                            {{ (product.regular_price - product.sale_price)*product_quantity(product.id)}} LL وفرت</span>
+                    </div>
+                    <div
+                        ng-if="product_quantity(product.id) == 0 || !product_quantity(product.id) && (product.regular_price - product.sale_price) >= 500">
+                        <span class="discount">Save {{(product.regular_price - product.sale_price)}} LL وفر</span>
+                    </div>
+                    <div ng-if="(product.regular_price - product.sale_price) < 500">
+                        <span class="discount">Save
+                            {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }}% خصم</span>
+                    </div>
                 </div>
+                <!-- <div class="item_image_main" ng-if="!product.images[0].src"><img src="https://via.placeholder.com/250x250.jpg" alt="">
+                    
+                                                        
+                </div> -->
                 <div class="listingInfos">
                     <h2 class="name">{{product.name}}</h2>
                     <div class="price">

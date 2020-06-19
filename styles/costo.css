@@ -88,7 +88,7 @@ body {
     font-size: 14px;
     font-family: 'Roboto', 'Cairo', sans-serif;
     color: #24292F;
-    background-color: #eeeeee;
+    background-color: #e1dddd;
 }
 
 .backdrop {
@@ -868,7 +868,7 @@ aside + main .fixedHeader {
 text-align: left;
 padding: 9px;
 background: #ffffff;
-margin-top: 20px;
+/* margin-top: 20px; */
 }
 
 .productListing img {
@@ -930,6 +930,7 @@ margin-bottom: 20px;
     height: 100%;
     width: 100%;
     border-bottom: 1px solid #ddd;
+    z-index: 2;
 }
 
 .productListing .minus {
@@ -942,7 +943,7 @@ margin-bottom: 20px;
     font-size: 27px;
     line-height: 22px;
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
     right: 9px;
     z-index: 2;
     font-weight: bold;
@@ -953,12 +954,12 @@ background-color: #2dac13;
 height: 26px;
 min-width: 26px;
 font-size: 15px;
-line-height: 22px;
+line-height: 24px;
 color: #fff;
 display: block;
 position: absolute;
 left: 9px;
-bottom: 50px;
+bottom: 0;
 border-radius: 5px;
 font-weight: bold;
 }
@@ -1664,6 +1665,7 @@ text-decoration: line-through;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .signup_form{
