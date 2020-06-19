@@ -943,8 +943,8 @@ margin-bottom: 20px;
     font-size: 27px;
     line-height: 22px;
     position: absolute;
-    bottom: 0;
-    left: 50px;
+    top: 10px;
+    right: 10px;
     z-index: 2;
     font-weight: bold;
 }
@@ -959,7 +959,7 @@ color: #fff;
 display: block;
 position: absolute;
 left: 9px;
-bottom: 0;
+top: 10px;
 border-radius: 5px;
 font-weight: bold;
 }
@@ -1542,7 +1542,7 @@ border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 padding: 0 11px 2px 9px;
 position: absolute;
-top: 9px;
+bottom: 55px;
 left: 9px;
 z-index: 2;
 }
@@ -1558,7 +1558,7 @@ border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 padding: 0 11px 2px 9px;
 position: absolute;
-top: 9px;
+bottom: 55px;
 left: 9px;
 z-index: 2;
 }
