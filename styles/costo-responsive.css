@@ -666,6 +666,8 @@ padding-top: 3px; }
       width: calc(100% / 4);
     }
 
+
+
     .all_categories_btn {
     position: fixed;
     left: 7px;
@@ -673,7 +675,7 @@ padding-top: 3px; }
     left: 15px;
     bottom: 0px;
     border-radius: 2px;
-    background-color: #2dac13;
+    background-color: #075ca3;
     color: #fff;
     font-size: 14px;
     display: block;

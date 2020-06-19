@@ -150,13 +150,14 @@
                 </div>
             </div>
           </div>
-          <div class="lds-roller" ng-if="products_loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-      </div>
+          <div class="lds-roller" ng-if="products_loading">
     </section>
    
     <a href="javascript:;" class="all_categories_btn" ng-click="reset_category_selection();reset_search_criterias()">All Categories<br> العودة للأقسام</a>
-        <div class="all_categories_btn centered blue" ng-click="reset_category_selection();reset_search_criterias()">مجموع التوفير
-            <br>{{get_discount_total()}}</div>
+
+<div class="all_categories_btn centered blue" ng-if="get_discount_total()>5000">مجموع التوفير
+    <br><span >{{ get_discount_total() | number: '0' }} LL</span></div>
+
 
     <a href="javascript:;" class="all_categories_btn right" ng-click="visibleCart = true"">View Trolley<br> رؤية السلة</a>
   
