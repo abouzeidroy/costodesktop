@@ -221,14 +221,16 @@
 				if(from_cart){
 					var item_object = {
 						name: product.name,
-						regular_price: product.sale_price || product.regular_price,
+						regular_price: product.regular_price,
+						sale_price:product.sale_price,
 						image: '',
 						id: product.id
 					}
 				}else{
 					var item_object = {
 						name: product.name,
-						regular_price: product.sale_price || product.regular_price,
+						regular_price: product.regular_price,
+						sale_price:product.sale_price,
 						image: '',
 						id: product.id
 					}
@@ -237,7 +239,7 @@
 					item_object.image = product.images[0].src;
 				}
 				var get_row_index = get_row_id($scope.cart.items, 'id', item_object.id);
-				$scope.cart.regular_price += parseInt(item_object.regular_price) * quantity;
+				$scope.cart.regular_price += parseInt(item_object.sale_price || item_object.regular_price) * quantity;
 				if(get_row_index != '-1'){
 					$scope.cart.items[get_row_index].quantity += quantity
 					if($scope.cart.items[get_row_index].quantity == 0){
@@ -331,6 +333,16 @@
 					$scope.submitting_order = false;
 				});
 			};
+
+			$scope.get_discount_total = function(){
+				var total_discounted = 0;
+				angular.forEach($scope.cart.items, function(cart_item){
+					if(cart_item.sale_price){
+						total_discounted+=(cart_item.regular_price - cart_item.sale_price)*cart_item.quantity
+					}
+				})
+				return total_discounted;
+			}
 
 		}
 	]);
