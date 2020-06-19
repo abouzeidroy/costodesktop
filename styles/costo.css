@@ -88,7 +88,7 @@ body {
     font-size: 14px;
     font-family: 'Roboto', 'Cairo', sans-serif;
     color: #24292F;
-    background-color: #e1dddd;
+    background-color: #dbd6d6;
 }
 
 .backdrop {
@@ -944,7 +944,7 @@ margin-bottom: 20px;
     line-height: 22px;
     position: absolute;
     bottom: 0;
-    left: 40px;
+    left: 45px;
     z-index: 2;
     font-weight: bold;
 }
