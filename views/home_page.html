@@ -113,31 +113,22 @@
                                 {{ (product.regular_price - product.sale_price)*product_quantity(product.id)}} LL وفرت</span>
                         </div>
                         <div
-                            ng-if="product_quantity(product.id) == 0 || !product_quantity(product.id) && (product.regular_price - product.sale_price) >= 500">
+                            ng-if="product_quantity(product.id) == 0 || !product_quantity(product.id)">
                             <span class="discount">Save {{(product.regular_price - product.sale_price)}} LL وفر</span>
                         </div>
                         <div ng-if="(product.regular_price - product.sale_price) < 500">
                             <span class="discount">Save
                                 {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }}% خصم</span>
                         </div>
+                        <div ng-if="(product.regular_price - product.sale_price) < 500 && product_quantity(product.id)>=1">
+                                <span class="discount red">You Saved
+                                        {{ (product.regular_price - product.sale_price) / (product.regular_price) * (100) | number : 2 }}% وفرت</span>
+                        </div>
+                        <div ng-if="(product.regular_price - product.sale_price) < 500 && product_quantity(product.id)>=1 && (product.regular_price - product.sale_price)*product_quantity(product.id)>=300">
+                                <span class="discount red">You Saved
+                                    {{ (product.regular_price - product.sale_price)*product_quantity(product.id)}} LL وفرت</span>
+                        </div>
                     </div>
-
-                      
-
-
-
-
-
-
-                        
-
-
-        
-
-
-
-
-                  
                     <!-- <div class="size">
                       {{product_quantity(product.id)}} x 330ml
                     </div> -->
