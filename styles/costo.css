@@ -1407,7 +1407,7 @@ font-weight: bold;
 }
 
 .categories .item {
-    width: 50%;
+    width: 100%;
     float: left;
     padding: 0 3px;
     margin-bottom: 16px;
