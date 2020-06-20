@@ -149,7 +149,7 @@
    
     <a href="javascript:;" class="all_categories_btn blue" ng-click="reset_category_selection();reset_search_criterias()"> العودة للأقسام<br>All Categories</a>
 
-<div class="all_categories_btn centered" ng-if="get_discount_total()>3000">مجموع التوفير
+<div class="all_categories_btn centered red" ng-if="get_discount_total()>3000">مجموع التوفير
     <br><span >{{ get_discount_total() | number: '0' }} LL</span></div>
 
 
