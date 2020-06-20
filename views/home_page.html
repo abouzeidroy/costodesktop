@@ -34,6 +34,7 @@
                 </div>
             </div>
         </div>
+   
         <div class="searchParent mobile_search">
             <div class="container">
                 <input type="text" ng-model="search.search_key" class="search_input" placeholder="Search for a product ...">
@@ -53,7 +54,11 @@
             </div>
         </div>
     </header>
+
+  
+
     <aside class="catgories_main_holder" ng-class="{filtered_category: parent_category || search.search_key != ''}">
+     
         <div class="categories">
             <div class="holder clearAfter">
                 <a href="javascript:;" class="item" ng-repeat="category in categories" ng-click="filter_by_category(category)" ng-if="category.count > 0 && category.parent == 0" ng-class="{selected:parent_category.id == category.id}">
@@ -114,7 +119,7 @@
                         </div>
                         <div
                             ng-if="product_quantity(product.id) == 0 || !product_quantity(product.id) && (product.regular_price - product.sale_price) >= 500">
-                            <span class="discount">Save {{(product.regular_price - product.sale_price)}} LL وفر</span>
+                            <span class="discount">Save {{(product.regular_price - product.sale_price)}} LL خصم</span>
                         </div>
                         <div ng-if="(product.regular_price - product.sale_price) < 500">
                             <span class="discount">Save
@@ -147,9 +152,9 @@
           <div class="lds-roller" ng-if="products_loading">
     </section>
    
-    <a href="javascript:;" class="all_categories_btn" ng-click="reset_category_selection();reset_search_criterias()"> العودة للأقسام<br>All Categories</a>
+    <a href="javascript:;" class="all_categories_btn centered blue" ng-click="reset_category_selection();reset_search_criterias()"> العودة للأقسام<br>All Categories</a>
 
-<div class="all_categories_btn centered red" ng-if="get_discount_total()>3000">مجموع التوفير
+<div class="all_categories_btn" ng-if="get_discount_total()>3000">مجموع التوفير
     <br><span >{{ get_discount_total() | number: '0' }} LL</span></div>
 
 
