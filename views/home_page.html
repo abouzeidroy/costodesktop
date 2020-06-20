@@ -147,9 +147,9 @@
           <div class="lds-roller" ng-if="products_loading">
     </section>
    
-    <a href="javascript:;" class="all_categories_btn centered" ng-click="reset_category_selection();reset_search_criterias()"> العودة للأقسام<br>All Categories</a>
+    <a href="javascript:;" class="all_categories_btn blue" ng-click="reset_category_selection();reset_search_criterias()"> العودة للأقسام<br>All Categories</a>
 
-<div class="all_categories_btn blue" ng-if="get_discount_total()>3000">مجموع التوفير
+<div class="all_categories_btn centered" ng-if="get_discount_total()>3000">مجموع التوفير
     <br><span >{{ get_discount_total() | number: '0' }} LL</span></div>
 
 
