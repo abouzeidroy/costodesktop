@@ -1532,7 +1532,7 @@ aside {
 }
 
 .discount {
-background-color: #ee0f0f;
+background-color: #2dac13;
 color: #fff;
 margin-bottom: 2px;
 Display: inline-block;
@@ -1548,7 +1548,7 @@ z-index: 2;
 }
 
 .discountgreen {
-background-color: #2dac13;
+background-color: #ee0f0f;
 color: #fff;
 margin-bottom: 2px;
 Display: inline-block;
