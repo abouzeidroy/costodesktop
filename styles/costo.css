@@ -873,7 +873,7 @@ background: #ffffff;
 
 .productListing img {
     margin: 0 auto;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     margin-top: 15px;
     /* max-height: 240px; */
 }
@@ -1534,7 +1534,7 @@ aside {
 .discount {
 background-color: #2dac13;
 color: #fff;
-margin-bottom: 2px;
+
 Display: inline-block;
 font-size: 13px;
 margin-top: 3px;
@@ -1550,7 +1550,7 @@ z-index: 2;
 .discountgreen {
 background-color: #ee0f0f;
 color: #fff;
-margin-bottom: 2px;
+
 Display: inline-block;
 font-size: 13px;
 margin-top: 3px;
