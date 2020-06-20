@@ -2036,6 +2036,10 @@ main{
     background-color: #075ca3;
 }
 
+.red{
+    background-color: #ee0f0f;
+}
+
 
 @media all and (min-width: 1440px) {
     .productListing .listingItem {
