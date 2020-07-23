@@ -33,12 +33,12 @@
 
 
 				// Roy Local Mac API Supermarket 
-				// var domain = 'http://localhost:8888/apisupermarket/wp-json';
-				// var json_params = {
-				// 	consumer_key:'ck_c2c56559b72b8e9ccc8eb09db2bc15be21c856a0',
-				// 	consumer_secret:'cs_50a6f66807151839d917422e63f7ae55bf588bee'
-				// 	//'format' : get_config_data('default_api_format')
-				// };
+				var domain = 'http://localhost:8888/apisupermarket/wp-json';
+				var json_params = {
+					consumer_key:'ck_c2c56559b72b8e9ccc8eb09db2bc15be21c856a0',
+					consumer_secret:'cs_50a6f66807151839d917422e63f7ae55bf588bee'
+					//'format' : get_config_data('default_api_format')
+				};
 
 				// var domain = 'https://192.168.1.5/raz/discountedgrocerybackendwoocommerce/wp-json';
 				// var json_params = {
@@ -48,12 +48,12 @@
 				// };
 
 				// // Online woocommerce.dekkanjeh.com credentiasl
-				var domain = 'https://apisupermarket.digicircleqa.com/wp-json';
-				var json_params = {
-					consumer_key:'ck_fa69dfaa13e0b936c5de2c87a709c01608ad6dad',
-					consumer_secret:'cs_30610bf74465cf6453317466dc3859572f227ed4'
-					//'format' : get_config_data('default_api_format')
-				};
+				// var domain = 'https://apisupermarket.digicircleqa.com/wp-json';
+				// var json_params = {
+				// 	consumer_key:'ck_fa69dfaa13e0b936c5de2c87a709c01608ad6dad',
+				// 	consumer_secret:'cs_30610bf74465cf6453317466dc3859572f227ed4'
+				// 	//'format' : get_config_data('default_api_format')
+				// };
 				var endpoint_url = domain + endpoint;
 				var url = endpoint_url;
 				var headers = {

@@ -143,8 +143,8 @@
 }
 
         .main {
-font-size: 14px;
-color: #727082;
+font-size: 12px;
+color: #5f758c;
 font-weight: bold;
 line-height: 18px;
 text-decoration: line-through;
@@ -412,11 +412,10 @@ text-align: left; }
       height: 14px;
       width: 14px; }
     .productListing .name {
-font-size: 14px;
+font-size: 12px;
 line-height: auto;
 margin-bottom: 3px;
-line-height: 13px;
-padding-top: 3px; }
+line-height: 13px;}
     .productListing .domain {
       margin-bottom: 5px; }
     .productListing .totalPrice {
@@ -604,7 +603,7 @@ padding-top: 3px; }
         padding-bottom: 70px;
       }
         header .cartToggle .totalPrice{
-            padding: 4px 13px 8px 13px;
+            padding: 8px 13px 8px 13px;
     padding-left:35px;
   
   }

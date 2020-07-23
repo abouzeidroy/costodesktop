@@ -86,9 +86,9 @@ textarea,
 select,
 body {
     font-size: 14px;
-    font-family: 'Roboto', 'Cairo', sans-serif;
+    font-family: 'Tajawal';
     color: #24292F;
-    background-color: #dbd6d6;
+    background-color: #f9f9f9;
 }
 
 .backdrop {
@@ -874,7 +874,7 @@ background: #ffffff;
 .productListing img {
     margin: 0 auto;
     /* margin-bottom: 5px; */
-    margin-top: 15px;
+    margin: 15px;
     /* max-height: 240px; */
 }
 
@@ -886,7 +886,7 @@ background: #ffffff;
 }
 
 .productListing .name {
-    color: #403939;
+    color: #5f758c;
     font-size: 14px;
     font-weight: 100;
 }
@@ -934,33 +934,33 @@ margin-bottom: 20px;
 }
 
 .productListing .minus {
-    background-color: #ee0f0f;
-    height: 26px;
-    width: 26px;
-    display: block;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 27px;
-    line-height: 22px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 2;
-    font-weight: bold;
+background-color: #ee0f0f;
+height: 22px;
+width: 22px;
+display: block;
+border-radius: 2px;
+color: #fff;
+font-size: 22px;
+line-height: 25px;
+position: absolute;
+top: 7px;
+right: 7px;
+z-index: 2;
+font-weight: bold;
 }
 
 .productListing .counter {
 background-color: #2dac13;
-height: 26px;
-min-width: 26px;
-font-size: 15px;
-line-height: 24px;
+height: 22px;
+min-width: 22px;
+font-size: 13px;
+line-height: 27px;
 color: #fff;
 display: block;
 position: absolute;
-left: 9px;
-top: 10px;
-border-radius: 5px;
+left: 7px;
+top: 7px;
+border-radius: 2px;
 font-weight: bold;
 }
 
@@ -1539,8 +1539,9 @@ font-size: 13px;
 margin-top: 3px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
-padding: 0 11px 2px 9px;
-/* position: absolute; */
+padding: 4px 11px 0 5px;
+position: absolute;
+font-weight: bold;
 bottom: 50px;
 left: 9px;
 font-weight: 17px;
@@ -1556,8 +1557,9 @@ font-size: 13px;
 margin-top: 3px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
-padding: 0 11px 2px 9px;
-/* position: absolute; */
+padding: 4px 11px 0 5px;
+position: absolute;
+font-weight: bold;
 bottom: 50px;
 left: 9px;
 font-weight: 17px;
@@ -1737,10 +1739,10 @@ text-decoration: line-through;
     border-radius: 2px;
     background-color: #2dac12;
     color: #fff;
-    font-size: 13px;
+    font-size: 12px;
     display: block;
     z-index: 101;
-    padding: 8px 15px 8px 15px;
+    padding: 8px 15px 3px 15px;
     font-weight: bold;
     text-align: center;
     width: 31%;
@@ -2053,3 +2055,9 @@ main{
     }}
 
 .all_categories_btn span{font-size: 18px;}
+
+.background {
+    background-color: red;
+}
+
+.background:after{display:block;content:'';clear:both;}
