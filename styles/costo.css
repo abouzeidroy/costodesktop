@@ -935,13 +935,13 @@ margin-bottom: 20px;
 
 .productListing .minus {
 background-color: #ee0f0f;
-height: 22px;
-width: 22px;
+height: 24px;
+width: 24px;
 display: block;
 border-radius: 2px;
 color: #fff;
-font-size: 25px;
-line-height: 27px;
+font-size: 27px;
+line-height: 29px;
 position: absolute;
 top: 7px;
 right: 7px;
@@ -951,10 +951,10 @@ font-weight: bold;
 
 .productListing .counter {
 background-color: #2dac13;
-height: 22px;
-min-width: 22px;
-font-size: 17px;
-line-height: 27px;
+height: 24px;
+min-width: 24px;
+font-size: 19px;
+line-height: 29px;
 color: #fff;
 display: block;
 position: absolute;
@@ -1739,10 +1739,10 @@ text-decoration: line-through;
     border-radius: 2px;
     background-color: #2dac12;
     color: #fff;
-    font-size: 14px;
+    font-size: 13.5px;
     display: block;
     z-index: 101;
-    padding: 8px 15px 3px 15px;
+    padding: 9px 15px 4px 15px;
     font-weight: bold;
     text-align: center;
     width: 31%;
