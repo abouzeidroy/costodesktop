@@ -603,9 +603,9 @@ line-height: 13px;}
         padding-bottom: 70px;
       }
         header .cartToggle .totalPrice{
-            padding: 8px 13px 8px 13px;
-    padding-left:35px;
-    font-size: 20px;
+          padding: 8px 13px 3px 13px;
+          padding-left: 35px;
+          font-size: 17px;
   
   }
   header .cartToggle .totalPrice span {
