@@ -941,7 +941,7 @@ display: block;
 border-radius: 2px;
 color: #fff;
 font-size: 22px;
-line-height: 25px;
+line-height: 27px;
 position: absolute;
 top: 7px;
 right: 7px;
@@ -954,7 +954,7 @@ background-color: #2dac13;
 height: 22px;
 min-width: 22px;
 font-size: 14px;
-line-height: 25px;
+line-height: 27px;
 color: #fff;
 display: block;
 position: absolute;
@@ -2036,7 +2036,7 @@ main{
 }
 
 .blue{
-    background-color: #075ca3;
+    background-color: #2dac13;
 }
 
 .red{
