@@ -543,7 +543,7 @@ line-height: 13px;}
       }
       .productListing .listingItem{
         padding: 0 3px;
-        flex-basis: calc(100% / 2);
+        flex-basis: calc(100% / 3);
         width: calc(100% / 3);
         /* float:left; 
         background-color:blue */
