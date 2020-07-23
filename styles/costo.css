@@ -953,7 +953,7 @@ font-weight: bold;
 background-color: #2dac13;
 height: 22px;
 min-width: 22px;
-font-size: 13px;
+font-size: 14px;
 line-height: 25px;
 color: #fff;
 display: block;
@@ -1716,7 +1716,7 @@ text-decoration: line-through;
     line-height: 24px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 16px 0 20px 0;
+    padding: 16px 0 10px 0;
     text-align: center;
     position: relative;
 }
