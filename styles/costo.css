@@ -1534,16 +1534,16 @@ aside {
 .discount {
 background-color: #2dac13;
 color: #fff;
-
 Display: inline-block;
 font-size: 13px;
 margin-top: 3px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 padding: 0 11px 2px 9px;
-position: absolute;
+/* position: absolute; */
 bottom: 50px;
 left: 9px;
+font-weight: 17px;
 z-index: 2;
 }
 
@@ -1557,9 +1557,10 @@ margin-top: 3px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 padding: 0 11px 2px 9px;
-position: absolute;
+/* position: absolute; */
 bottom: 50px;
 left: 9px;
+font-weight: 17px;
 z-index: 2;
 }
 
@@ -2050,3 +2051,5 @@ main{
         flex-basis: calc(100%/3);
         margin-bottom: 17px;
     }}
+
+.all_categories_btn span{font-size: 18px;}
