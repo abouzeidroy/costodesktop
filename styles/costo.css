@@ -874,7 +874,7 @@ background: #ffffff;
 .productListing img {
     margin: 0 auto;
     /* margin-bottom: 5px; */
-    margin: 15px;
+    margin: 18px;
     /* max-height: 240px; */
 }
 
@@ -1535,7 +1535,7 @@ aside {
 background-color: #2dac13;
 color: #fff;
 Display: inline-block;
-font-size: 13px;
+font-size: 14px;
 margin-top: 3px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
