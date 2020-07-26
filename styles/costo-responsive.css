@@ -638,7 +638,7 @@ line-height: 13px;}
     }
 
     .all_categories_btn {
-    position: fixed;
+    position: static;
     left: 7px;
     bottom: 10px;
     left: 15px;

@@ -875,6 +875,7 @@ background: #ffffff;
     margin: 0 auto;
     /* margin-bottom: 5px; */
     margin: 18px;
+    max-height: 250px;
     /* max-height: 240px; */
 }
 
@@ -1730,8 +1731,20 @@ text-decoration: line-through;
 .search_input{
     width: 100%;
 }
+.btnsHolder{
+   display: flex;
+align-items: flex-end;
+background-color: #fff;
+position: fixed;
+bottom: 0;
+left: 0;
+padding: 10px 0 0; 
+width: 100%;
+z-index: 10;
+justify-content: space-between;
+}
 .all_categories_btn{
-    position: fixed;
+    
     left: 7px;
     bottom: 10px;
     left: 0px;
@@ -1747,10 +1760,7 @@ text-decoration: line-through;
     text-align: center;
     width: 31%;
 }
-.all_categories_btn.centered{
-left: 50%;
-transform: translateX(-50%);
-}
+
 .all_categories_btn.right{
     left: auto;
     /* right: 7px; */
