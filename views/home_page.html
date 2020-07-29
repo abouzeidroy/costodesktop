@@ -95,7 +95,7 @@
                                     <a href="javascript:;" ng-click="add_to_cart(product, -1);" ng-if="available_in_cart(product.id)" class="minus"> - </a>
                                     
                                     <span class="counter" ng-click="add_to_cart(product, -1);"
-                                        ng-if="available_in_cart(product.id)">{{product_quantity(product.id)}}</span>
+                                        ng-if="available_in_cart(product.id)">x{{product_quantity(product.id)}}</span>
 
                 </div>
                 <!-- <div class="item_image_main" ng-if="!product.images[0].src"><img src="https://via.placeholder.com/250x250.jpg" alt="">
