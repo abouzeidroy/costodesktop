@@ -37,7 +37,7 @@
 				// var json_params = {
 				// 	consumer_key:'ck_c2c56559b72b8e9ccc8eb09db2bc15be21c856a0',
 				// 	consumer_secret:'cs_50a6f66807151839d917422e63f7ae55bf588bee'
-				// 	//'format' : get_config_data('default_api_format')
+					//'format' : get_config_data('default_api_format')
 				// };
 
 				// var domain = 'https://192.168.1.5/raz/discountedgrocerybackendwoocommerce/wp-json';
@@ -48,11 +48,11 @@
 				// };
 
 				// // Online https://apicosto.misco-furniture.com/
-				var domain = 'https://apicosto.misco-furniture.com/wp-json';
+				var domain = 'https://apicosto.digicircle.fr/wp-json';
 				var json_params = {
 					consumer_key:'ck_c2c56559b72b8e9ccc8eb09db2bc15be21c856a0',
 					consumer_secret:'cs_50a6f66807151839d917422e63f7ae55bf588bee'
-					//'format' : get_config_data('default_api_format')
+				// 	//'format' : get_config_data('default_api_format')
 				};
 				var endpoint_url = domain + endpoint;
 				var url = endpoint_url;
